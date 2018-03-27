@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <title>test grid flexbox</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,700|Nunito:600,700|Pacifico" rel="stylesheet">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="grille.css">
+</head>
+
+<body>
+    <section id="inputElts" class="container">
+        <div class="row">
+            <div class="form col-lg-3">
+                <label for="nbrDeDiv">Nbr de Col:</label>
+                <input type="text" name="nbrDeDiv" id="nbrDiv" placeholder="Nbr de colonnes" />
+            </div>
+            <div class="form col-lg-3">
+                <label for="nbrDeCol">Nbr de lignes:</label>
+                <input type="text" name="nbrDeCol" id="nbrCol" placeholder="Nbr de lignes" />
+            </div>
+            <div class="form col-lg-2" id="choixSaison">
+                <input class="inputRadio" type="radio" name="ete-hiver" value="ete" id="ete" />
+                <label for="ete">Eté</label>
+                <input class="inputRadio" type="radio" name="ete-hiver" value="hiver" id="hiver" />
+                <label for="hiver">Hiver</label>
+            </div>
+            <div class="form col-lg-2">
+                <button type="submit" id="valider">Valider</button>
+                <button type="reset" id="reset">Annuler</button>
+            </div>
+            <div class="form col-lg-2">
+                <input type="checkbox" name="montrer" value="montrer" id="montrer" checked />Cacher/Montrer
+                <button type="button" id="valider2">OK</button>
+            </div>
+        </div>
+    </section>
+    <button type="button" id="save">Sauver</button>
+    <input type="text" name="inputSave" id="inputSave" />
+    <select id="myselect">
+      <option value="valeur1" selected>Vide</option> 
+      <option value="valeur2">Vide</option>
+      <option value="valeur3">Vide</option>
+    </select>
+    <section id="inputsRadio" class="">
+        <div class="">
+            <p>Terrain été :</p>
+            <form class="form" action="" method="" id="inputRadio">
+                <button type="button" id="forSummer">Terrains été</button>
+                <div class="colonne">
+                    <img class="imgInput" src="img/2d/plaine.gif">
+                    <input class="inputRadio" type="radio" name="terrain" value="plaine" id="plaine" />
+                    <label for="plaine">Plaine</label><br />
+                    <img class="imgInput" src="img/2d/montagne.gif">
+                    <input class="inputRadio" type="radio" name="terrain" value="montagne" id="montagne" />
+                    <label for="montagne">Montagne</label><br />
+                    <img class="imgInput" src="img/2d/foret.gif">
+                    <input class="inputRadio" type="radio" name="terrain" value="foret" id="foret" />
+                    <label for="foret">Forêt</label><br />
+                    <img class="imgInput" src="img/2d/riviere.gif">
+                    <input class="inputRadio" type="radio" name="terrain" value="riviere" id="riviere" />
+                    <label for="riviere">Rivière</label>
+                </div>
+                <div class="colonne">
+                    <img class="imgInput" src="img/2d/marais.gif">
+                    <input class="inputRadio" type="radio" name="terrain" value="marais" id="marais" />
+                    <label for="marais">Marais</label><br />
+                    <img class="imgInput" src="img/2d/champ.gif">
+                    <input class="inputRadio" type="radio" name="terrain" value="champ" id="champ" />
+                    <label for="champ">Champ</label><br />
+                    <img class="imgInput" src="img/2d/fortin.gif">
+                    <input class="inputRadio" type="radio" name="terrain" value="fortin" id="fortin" />
+                    <label for="fortin">Fortin</label><br />
+                    <img class="imgInput" src="img/2d/ville.gif">
+                    <input class="inputRadio" type="radio" name="terrain" value="ville" id="ville" />
+                    <label for="ville">Ville</label>
+                </div>
+                <div class="colonne">
+                    <img class="imgInput" src="img/2d/moulin.gif">
+                    <input class="inputRadio" type="radio" name="terrain" value="moulin" id="moulin" />
+                    <label for="moulin">Moulin</label><br />
+                    <img class="imgInput" src="img/2d/forteresse.gif">
+                    <input class="inputRadio" type="radio" name="terrain" value="forteresse" id="forteresse" />
+                    <label for="forteresse">Forteresse</label><br />
+                    <img class="imgInput" src="img/2d/grandeVille.gif">
+                    <input class="inputRadio" type="radio" name="terrain" value="grandeVille" id="grandeVille" />
+                    <label for="grandeVille">Grande ville</label><br />
+                    <img class="imgInput" src="img/2d/mine.gif">
+                    <input class="inputRadio" type="radio" name="terrain" value="mine" id="mine" />
+                    <label for="mine">Mine</label>
+                </div>
+                <div class="colonne">
+                    <img class="imgInput" src="img/2d/routeHoriz.gif">
+                    <input class="inputRadio" type="radio" name="terrain" value="routeHoriz" id="routeHoriz" />
+                    <label for="routeHoriz">Route horizontale</label><br />
+                    <img class="imgInput" src="img/2d/routeVerti.gif">
+                    <input class="inputRadio" type="radio" name="terrain" value="routeVerti" id="routeVerti" />
+                    <label for="routeVerti">Route verticale</label><br />
+                    <img class="imgInput" src="img/2d/eglise.gif">
+                    <input class="inputRadio" type="radio" name="terrain" value="eglise" id="eglise" />
+                    <label for="eglise">Eglise</label><br />
+                    <img class="imgInput" src="img/2d/ferme.gif">
+                    <input class="inputRadio" type="radio" name="terrain" value="ferme" id="ferme" />
+                    <label for="ferme">Ferme</label>
+                </div>
+                <div class="colonne">
+                    <img class="imgInput" src="img/2d/pont.gif">
+                    <input class="inputRadio" type="radio" name="terrain" value="pont" id="pont" />
+                    <label for="pont">Pont</label><br />
+                    <img class="imgInput" src="img/2d/animaux.gif">
+                    <input class="inputRadio" type="radio" name="terrain" value="animaux" id="animaux" />
+                    <label for="animaux">Animaux</label><br />
+                    <img class="imgInput" src="img/2d/routeHoriz.gif">
+                    <input class="inputRadio" type="radio" name="terrain" value="routeCroix" id="routeCroix" />
+                    <label for="routeCroix">Route croisement</label><br />
+                    <img class="imgInput" src="img/2d/routeHoriz.gif">
+                    <input class="inputRadio " type="radio" name="terrainH" value="routeCoin1H" id="routeCoin1H" />
+                    <label for="routeCoin1H">Route coin g</label><br />
+                    <img class="imgInput" src="img/2d/routeHoriz.gif">
+                    <input class="inputRadio " type="radio" name="terrainH" value="routeCoin2H" id="routeCoin2H" />
+                    <label for="routeCoin2H">Route coin d</label><br />
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <section id="inputsRadio1" class="">
+        <div class="">
+            <p>Terrain hiver :</p>
+            <form class="form" action="" method="" id="inputRadio1">
+                <button type="button" id="forWinter">Terrains hiver</button>
+                <div class="colonne">
+                    <img class="imgInput" src="img/2d/t1h.gif">
+                    <input class="inputRadio" type="radio" name="terrainH" value="plaineH" id="plaineH" />
+                    <label for="plaineH">Plaine</label><br />
+                    <img class="imgInput" src="img/2d/t3h.gif">
+                    <input class="inputRadio" type="radio" name="terrainH" value="montagneH" id="montagneH" />
+                    <label for="montagneH">Montagne</label><br />
+                    <img class="imgInput" src="img/2d/t7h.gif">
+                    <input class="inputRadio" type="radio" name="terrainH" value="foretH" id="foretH" />
+                    <label for="foretH">Forêt</label><br />
+                    <img class="imgInput" src="img/2d/t4h.gif">
+                    <input class="inputRadio" type="radio" name="terrainH" value="riviereH" id="riviereH" />
+                    <label for="riviereH">Rivière</label>
+                </div>
+                <div class="colonne">
+                    <img class="imgInput" src="img/2d/t6h.gif">
+                    <input class="inputRadio" type="radio" name="terrainH" value="maraisH" id="maraisH" />
+                    <label for="maraisH">Marais</label><br />
+                    <img class="imgInput" src="img/2d/champHiver.gif">
+                    <input class="inputRadio" type="radio" name="terrainH" value="champH" id="champH" />
+                    <label for="champH">Champ</label><br />
+                    <img class="imgInput" src="img/2d/t13h.gif">
+                    <input class="inputRadio" type="radio" name="terrainH" value="fortinH" id="fortinH" />
+                    <label for="fortinH">Fortin</label><br />
+                    <img class="imgInput" src="img/2d/t10h.gif">
+                    <input class="inputRadio" type="radio" name="terrainH" value="villeH" id="villeH" />
+                    <label for="villeH">Ville</label>
+                </div>
+                <div class="colonne">
+                    <img class="imgInput" src="img/2d/t14h.gif">
+                    <input class="inputRadio" type="radio" name="terrainH" value="moulinH" id="moulinH" />
+                    <label for="moulinH">Moulin</label><br />
+                    <img class="imgInput" src="img/2d/t15h.gif">
+                    <input class="inputRadio" type="radio" name="terrainH" value="forteresseH" id="forteresseH" />
+                    <label for="forteresseH">Forteresse</label><br />
+                    <img class="imgInput" src="img/2d/grandeVille.gif">
+                    <input class="inputRadio" type="radio" name="terrainH" value="grandeVilleH" id="grandeVilleH" />
+                    <label for="grandeVilleH">Grande ville</label><br />
+                    <img class="imgInput" src="img/2d/t11h.gif">
+                    <input class="inputRadio" type="radio" name="terrainH" value="mineH" id="mineH" />
+                    <label for="mineH">Mine</label>
+                </div>
+                <div class="colonne">
+                    <img class="imgInput" src="img/2d/t20h.gif">
+                    <input class="inputRadio" type="radio" name="terrainH" value="routeHorizH" id="routeHorizH" />
+                    <label for="routeHorizH">Route horizontale</label><br />
+                    <img class="imgInput" src="img/2d/t21h.gif">
+                    <input class="inputRadio" type="radio" name="terrainH" value="routeVertiH" id="routeVertiH" />
+                    <label for="routeVertiH">Route verticale</label><br />
+                    <img class="imgInput" src="img/2d/eglise.gif">
+                    <input class="inputRadio" type="radio" name="terrainH" value="egliseH" id="egliseH" />
+                    <label for="egliseH">Eglise</label><br />
+                    <img class="imgInput" src="img/2d/ferme.gif">
+                    <input class="inputRadio " type="radio" name="terrainH" value="fermeH" id="fermeH" />
+                    <label for="fermeH">Ferme</label>
+                </div>
+                <div class="colonne">
+                    <img class="imgInput" src="img/2d/t33.gif">
+                    <input class="inputRadio " type="radio" name="terrainH" value="pontH" id="pontH" />
+                    <label for="pontH">Pont</label><br />
+                    <img class="imgInput" src="img/2d/animaux.gif">
+                    <input class="inputRadio " type="radio" name="terrainH" value="animauxH" id="animauxH" />
+                    <label for="animauxH">Animaux</label><br />
+                    <img class="imgInput" src="img/2d/t22.gif">
+                    <input class="inputRadio " type="radio" name="terrainH" value="routeCroixH" id="routeCroixH" />
+                    <label for="routeCroixH">Route croisement</label><br />
+                    <img class="imgInput" src="img/2d/t24h.gif">
+                    <input class="inputRadio " type="radio" name="terrainH" value="routeCoin1H" id="routeCoin1H" />
+                    <label for="routeCoin1H">Route coin g</label><br />
+                    <img class="imgInput" src="img/2d/t26h.gif">
+                    <input class="inputRadio " type="radio" name="terrainH" value="routeCoin2H" id="routeCoin2H" />
+                    <label for="routeCoin2H">Route coin d</label><br />
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <section id="inputsRadio2" class="">
+        <div class="">
+            <p>Unités russes :</p>
+            <form class="form" action="" method="" id="inputRadio2">
+                <button type="button" id="forUniteRu">Unités Ru</button>
+                <div class="colonne">
+                    <img class="imgInput" src="img/2d/inf_rus.gif">
+                    <input class="inputRadio" type="radio" name="uniteRu" value="fusilierRu" id="fusilierRu" />
+                    <label for="fusilierRu">Fusilier</label><br />
+                    <img class="imgInput" src="img/2d/gnt_rus.gif">
+                    <input class="inputRadio " type="radio" name="uniteRu" value="gardeNatRu" id="gardeNatRu" />
+                    <label for="gardeNatRu">Garde national</label><br />
+                    <img class="imgInput" src="img/2d/vol_rus.gif">
+                    <input class="inputRadio " type="radio" name="uniteRu" value="voltiRu" id="voltiRu" />
+                    <label for="voltiRu">Voltigeur</label><br />
+                    <img class="imgInput" src="img/2d/gre_rus.gif">
+                    <input class="inputRadio " type="radio" name="uniteRu" value="grenadierRu" id="grenadierRu" />
+                    <label for="grenadierRu">Grenadier</label>
+                </div>
+                <div class="colonne">
+                    <img class="imgInput" src="img/2d/sap_rus.gif">
+                    <input class="inputRadio " type="radio" name="uniteRu" value="sapeurRu" id="sapeurRu" />
+                    <label for="sapeurRu">Sapeur</label><br />
+                    <img class="imgInput" src="img/2d/cav_rus.gif">
+                    <input class="inputRadio " type="radio" name="uniteRu" value="hussardRu" id="hussardRu" />
+                    <label for="hussardRu">Hussard</label><br />
+                    <img class="imgInput" src="img/2d/lan_rus.gif">
+                    <input class="inputRadio " type="radio" name="uniteRu" value="lancierRu" id="lancierRu" />
+                    <label for="lancierRu">Lancier</label><br />
+                    <img class="imgInput" src="img/2d/cac_rus.gif">
+                    <input class="inputRadio " type="radio" name="uniteRu" value="chasseurRu" id="chasseurRu" />
+                    <label for="chasseurRu">Chasseur</label>
+                </div>
+                <div class="colonne">
+                    <img class="imgInput" src="img/2d/cui_rus.gif">
+                    <input class="inputRadio " type="radio" name="uniteRu" value="cuirassierRu" id="cuirassierRu" />
+                    <label for="cuirassierRu">Cuirassier</label><br />
+                    <img class="imgInput" src="img/2d/dra_rus.gif">
+                    <input class="inputRadio " type="radio" name="uniteRu" value="dragonRu" id="dragonRu" />
+                    <label for="dragonRu">Dragon</label><br />
+                    <img class="imgInput" src="img/2d/ca4_rus.gif">
+                    <input class="inputRadio " type="radio" name="uniteRu" value="canon4Ru" id="canon4Ru" />
+                    <label for="canon4Ru">Canon de 4</label><br />
+                    <img class="imgInput" src="img/2d/ca6_rus.gif">
+                    <input class="inputRadio " type="radio" name="uniteRu" value="canon6Ru" id="canon6Ru" />
+                    <label for="canon6Ru">Canon de 6</label>
+                </div>
+                <div class="colonne">
+                    <img class="imgInput" src="img/2d/can_rus.gif">
+                    <input class="inputRadio " type="radio" name="uniteRu" value="canon8Ru" id="canon8Ru" />
+                    <label for="canon8Ru">Canon de 8</label><br />
+                    <img class="imgInput" src="img/2d/c12_rus.gif">
+                    <input class="inputRadio " type="radio" name="uniteRu" value="canon12Ru" id="canon12Ru" />
+                    <label for="canon12Ru">Canon de 12</label><br />
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <section id="inputsRadio3" class="">
+        <div class="">
+            <p>Unités françaises :</p>
+            <form class="form" action="" method="" id="inputRadio3">
+                <button type="button" id="forUniteFr">Unités Fr</button>
+                <div class="colonne">
+                    <img class="imgInput" src="img/2d/inf_fra.gif">
+                    <input class="inputRadio " type="radio" name="uniteFr" value="fusilierFr" id="fusilierFr" />
+                    <label for="fusilierFr">Fusilier</label><br />
+                    <img class="imgInput" src="img/2d/gnt_fra.gif">
+                    <input class="inputRadio " type="radio" name="uniteFr" value="gardeNatFr" id="gardeNatFr" />
+                    <label for="gardeNatFr">Garde national</label><br />
+                    <img class="imgInput" src="img/2d/vol_fra.gif">
+                    <input class="inputRadio " type="radio" name="uniteFr" value="voltiFr" id="voltiFr" />
+                    <label for="voltiFr">Voltigeur</label><br />
+                    <img class="imgInput" src="img/2d/gre_fra.gif">
+                    <input class="inputRadio " type="radio" name="uniteFr" value="grenadierFr" id="grenadierFr" />
+                    <label for="grenadierFr">Grenadier</label>
+                </div>
+                <div class="colonne">
+                    <img class="imgInput" src="img/2d/sap_fra.gif">
+                    <input class="inputRadio " type="radio" name="uniteFr" value="sapeurFr" id="sapeurFr" />
+                    <label for="sapeurFr">Sapeur</label><br />
+                    <img class="imgInput" src="img/2d/cav_fra.gif">
+                    <input class="inputRadio " type="radio" name="uniteFr" value="hussardFr" id="hussardFr" />
+                    <label for="hussardFr">Hussard</label><br />
+                    <img class="imgInput" src="img/2d/lan_fra.gif">
+                    <input class="inputRadio " type="radio" name="uniteFr" value="lancierFr" id="lancierFr" />
+                    <label for="lancierFr">Lancier</label><br />
+                    <img class="imgInput" src="img/2d/cac_fra.gif">
+                    <input class="inputRadio " type="radio" name="uniteFr" value="chasseurFr" id="chasseurFr" />
+                    <label for="chasseurFr">Chasseur</label>
+                </div>
+                <div class="colonne">
+                    <img class="imgInput" src="img/2d/cui_fra.gif">
+                    <input class="inputRadio " type="radio" name="uniteFr" value="cuirassierFr" id="cuirassierFr" />
+                    <label for="cuirassierFr">Cuirassier</label><br />
+                    <img class="imgInput" src="img/2d/dra_fra.gif">
+                    <input class="inputRadio " type="radio" name="uniteFr" value="dragonFr" id="dragonFr" />
+                    <label for="dragonFr">Dragon</label><br />
+                    <img class="imgInput" src="img/2d/ca4_fra.gif">
+                    <input class="inputRadio " type="radio" name="uniteFr" value="canon4Fr" id="canon4Fr" />
+                    <label for="canon4Fr">Canon de 4</label><br />
+                    <img class="imgInput" src="img/2d/ca6_fra.gif">
+                    <input class="inputRadio " type="radio" name="uniteFr" value="canon6Fr" id="canon6Fr" />
+                    <label for="canon6Fr">Canon de 6</label>
+                </div>
+                <div class="colonne">
+                    <img class="imgInput" src="img/2d/can_fra.gif">
+                    <input class="inputRadio " type="radio" name="uniteFr" value="canon8Fr" id="canon8Fr" />
+                    <label for="canon8Fr">Canon de 8</label><br />
+                    <img class="imgInput" src="img/2d/c12_fra.gif">
+                    <input class="inputRadio " type="radio" name="uniteFr" value="canon12Fr" id="canon12Fr" />
+                    <label for="canon12Fr">Canon de 12</label><br />
+                </div>
+            </form>
+        </div>
+    </section>
+    
+        <section id="inputsRadio4" class="">
+        <div class="">
+            <p>Sauvegardes :</p>
+            <form class="form" action="" method="" id="inputRadio4">
+                <button type="button" id="sauvegardes">Sauvegardes</button>
+                <div class="colonne" id="putSaves">
+                    
+                </div>
+            </form>
+        </div>
+    </section>
+    
+    <div class="container-fluid" id="container">
+    </div>
+    <div id="output">
+    </div>
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

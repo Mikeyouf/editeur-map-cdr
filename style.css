@@ -1,0 +1,652 @@
+body {
+    background: url(img/2d/fond.jpg) repeat left top;
+    
+}
+
+#monArray {
+    border-collapse: collapse;
+    table-layout:fixed;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+table {
+    border-collapse: collapse;
+    table-layout:fixed;
+}
+
+td {
+    width: 32px;
+    min-width: 32px;
+    height: 32px;
+    padding: 0;
+    border: 1px solid #555;
+    border-collapse: collapse;
+    table-layout:fixed;
+}
+
+.inputRadio:hover{
+    cursor: pointer;
+}
+
+label:hover {
+    cursor: pointer;
+}
+
+#inputElts {
+    position: fixed;
+    top: 0;
+    left: calc(50% - 33em);
+    margin-left: auto;
+    margin-bottom: 3.5em;
+    width: 66em;
+    height: 1.5em;
+    padding: 2em;
+    align-content: space-between;
+    border: 1px solid black;
+    box-shadow: 2px 3px 5px;
+    border-top: none;
+    background: #eee;
+    border-radius: 0 0 5px 5px;
+}
+
+#inputElts label {
+    font-weight: bold;
+}
+
+#forSummer {
+    position: fixed;
+    top: 130px;
+    left: 168px;
+    width: 100px;
+    height: 40px;
+    transform: rotate(90deg);
+    border: 1px solid black;
+    border-bottom: none;
+    border-radius: 5px 5Px 0 0;
+/*    box-shadow: -2px -3px -5px;*/
+}
+
+#forSummer:hover {
+    cursor: pointer;
+}
+
+#inputsRadio {
+    position: fixed;
+    width: 200px;
+    height: 560px;
+    top: 100px;
+    left: 0;
+    border: 1px solid black;
+    box-shadow: 2px 3px 5px;
+    border-left: none;
+    border-radius: 0 0 5px 0;
+    padding: 0.7em;
+    background: #eee;
+}
+
+#forWinter {
+    position: fixed;
+    top: 230px;
+    left: 168px;
+    width: 100px;
+    height: 40px;
+    transform: rotate(90deg);
+    border: 1px solid black;
+    border-bottom: none;
+    border-radius: 5px 5Px 0 0;
+}
+
+#forWinter:hover {
+    cursor: pointer;
+}
+
+#inputsRadio1 {
+    position: fixed;
+    width: 200px;
+    height: 560px;
+    top: 100px;
+    left: 0;
+    border: 1px solid black;
+    box-shadow: 2px 3px 5px;
+    border-left: none;
+    border-radius: 0 0 5px 0;
+    padding: 0.7em;
+    background: #eee;
+}
+
+#forUniteRu {
+    position: fixed;
+    top: 330px;
+    left: 168px;
+    width: 100px;
+    height: 40px;
+    transform: rotate(90deg);
+    border: 1px solid black;
+    border-bottom: none;
+    border-radius: 5px 5Px 0 0;
+}
+
+#forUniteRu:hover {
+    cursor: pointer;
+}
+
+#inputsRadio2 {
+    position: fixed;
+    width: 200px;
+    height: 560px;
+    top: 100px;
+    left: 0;
+    border: 1px solid black;
+    box-shadow: 2px 3px 5px;
+    border-left: none;
+    border-radius: 0 0 5px 0;
+    padding: 0.7em;
+    background: #eee;
+}
+
+#forUniteFr {
+    position: fixed;
+    top: 430px;
+    left: 168px;
+    width: 100px;
+    height: 40px;
+    transform: rotate(90deg);
+    border: 1px solid black;
+    border-bottom: none;
+    border-radius: 5px 5Px 0 0;
+}
+
+#forUniteFr:hover {
+    cursor: pointer;
+}
+
+#inputsRadio3 {
+    position: fixed;
+    width: 200px;
+    height: 560px;
+    top: 100px;
+    left: 0;
+    border: 1px solid black;
+    box-shadow: 2px 3px 5px;
+    border-left: none;
+    border-radius: 0 0 5px 0;
+    padding: 0.7em;
+    background: #eee;
+}
+
+#inputsRadio4 {
+    position: fixed;
+    width: 200px;
+    height: 560px;
+    top: 100px;
+    left: 0;
+    border: 1px solid black;
+    box-shadow: 2px 3px 5px;
+    border-left: none;
+    border-radius: 0 0 5px 0;
+    padding: 0.7em;
+    background: #eee;
+}
+
+#sauvegardes {
+    position: fixed;
+    top: 530px;
+    left: 168px;
+    width: 100px;
+    height: 40px;
+    transform: rotate(90deg);
+    border: 1px solid black;
+    border-bottom: none;
+    border-radius: 5px 5Px 0 0;
+}
+
+#myselect {
+    position: fixed;
+    top: 620px;
+    left: 100px;
+    width: 90px;
+    height: 30px;
+    z-index: 25;
+}
+
+#save {
+    position: fixed;
+    top: 620px;
+    left: 10px;
+    width: 80px;
+    height: 30px;
+    border: 1px solid black;
+    border-radius: 5px 5px 5px 5px;
+    z-index: 25;
+    box-shadow: 2px 3px 5px;
+    transition-duration: 2sec;
+}
+
+#save:hover {
+    cursor: pointer;
+    background-color: burlywood;
+}
+
+#inputSave {
+    position: fixed;
+    top: 595px;
+    left: 5px;
+    width: 180px;
+    margin-left: 5px;
+    z-index: 30;
+}
+
+.imgInput {
+    width: 16px;
+    height: 16x;
+    border: 1px solid black;
+}
+
+section p {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 0.5em 0;
+}
+
+.colonne {
+    margin-left: 8px;
+}
+
+#container {
+    margin-left: 250px;
+    margin-top: 100px;
+    width: 100%;
+}
+
+#container>* {
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.terrain {
+    text-align: center;
+    font-size: 1em;
+    color: aliceblue;
+}
+
+.terrain>img {
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.classDisplay {
+    display: none;
+}
+
+.coordonnee {
+    background: rgba(238,238,238,0.6);
+    font-weight: bold;
+    font-size: 1.1em;
+    color: black;
+}
+
+.plaine {
+    background-image: url(./img/2d/plaine.gif);
+}
+
+.foret {
+    background-image: url(./img/2d/foret.gif);
+}
+
+.montagne {
+    background-image: url(./img/2d/montagne.gif);
+}
+
+.riviere {
+    background-image: url(./img/2d/riviere.gif);
+}
+
+.marais {
+    background-image: url(./img/2d/marais.gif);
+}
+
+.champ {
+    background-image: url(./img/2d/champ.gif);
+}
+
+.fortin {
+    background-image: url(./img/2d/fortin.gif);
+}
+
+.ville {
+    background-image: url(./img/2d/ville.gif);
+}
+
+.moulin {
+    background-image: url(./img/2d/moulin.gif);
+}
+
+.forteresse {
+    background-image: url(./img/2d/forteresse.gif);
+}
+
+.grandeVille {
+    background-image: url(./img/2d/grandeVille.gif);
+}
+
+.mine {
+    background-image: url(./img/2d/mine.gif);
+}
+
+.routeHoriz {
+    background-image: url(./img/2d/routeHoriz.gif);
+}
+
+.routeVerti {
+    background-image: url(./img/2d/routeVerti.gif);
+}
+
+.pont {
+    background-image: url(./img/2d/pont.gif);
+}
+
+.eglise {
+    background-image: url(./img/2d/eglise.gif);
+}
+
+.ferme {
+    background-image: url(./img/2d/ferme.gif);
+}
+
+.animaux {
+    background-image: url(./img/2d/animaux.gif);
+}
+
+.champHiver {
+    background-image: url(./img/2d/champHiver.gif);
+}
+
+/* UNITES RUSSES */
+.fusilierRu {
+    background-image: url(./img/2d/inf_rus.gif);
+}
+
+.gardeNatRu {
+    background-image: url(./img/2d/gnt_rus.gif);
+}
+
+.voltiRu {
+    background-image: url(./img/2d/vol_rus.gif);
+}
+
+.grenadierRu {
+    background-image: url(./img/2d/gre_rus.gif);
+}
+
+.sapeurRu {
+    background-image: url(./img/2d/sap_rus.gif);
+}
+
+.hussardRu {
+    background-image: url(./img/2d/cav_rus.gif);
+}
+
+.lancierRu {
+    background-image: url(./img/2d/lan_rus.gif);
+}
+
+.chasseurRu {
+    background-image: url(./img/2d/cac_rus.gif);
+}
+
+.cuirassierRu {
+    background-image: url(./img/2d/cui_rus.gif);
+}
+
+.dragonRu {
+    background-image: url(./img/2d/dra_rus.gif);
+}
+
+.canon4Ru {
+    background-image: url(./img/2d/ca4_rus.gif);
+}
+
+.canon6Ru {
+    background-image: url(./img/2d/ca6_rus.gif);
+}
+
+.canon8Ru {
+    background-image: url(./img/2d/can_rus.gif);
+}
+
+.canon12Ru {
+    background-image: url(./img/2d/c12_rus.gif);
+}
+
+/* UNITES FR */
+.fusilierFr {
+    background-image: url(./img/2d/inf_fra.gif);
+}
+
+.gardeNatFr {
+    background-image: url(./img/2d/gnt_fra.gif);
+}
+
+.voltiFr {
+    background-image: url(./img/2d/vol_fra.gif);
+}
+
+.grenadierFr {
+    background-image: url(./img/2d/gre_fra.gif);
+}
+
+.sapeurFr {
+    background-image: url(./img/2d/sap_fra.gif);
+}
+
+.hussardFr {
+    background-image: url(./img/2d/cav_fra.gif);
+}
+
+.lancierFr {
+    background-image: url(./img/2d/lan_fra.gif);
+}
+
+.chasseurFr {
+    background-image: url(./img/2d/cac_fra.gif);
+}
+
+.cuirassierFr {
+    background-image: url(./img/2d/cui_fra.gif);
+}
+
+.dragonFr {
+    background-image: url(./img/2d/dra_fra.gif);
+}
+
+.canon4Fr {
+    background-image: url(./img/2d/ca4_fra.gif);
+}
+
+.canon6Fr {
+    background-image: url(./img/2d/ca6_fra.gif);
+}
+
+.canon8Fr {
+    background-image: url(./img/2d/can_fra.gif);
+}
+
+.canon12Fr {
+    background-image: url(./img/2d/c12_fra.gif);
+}
+
+/* TERRAINS HIVER */
+
+.plaineH {
+    background-image: url(./img/2d/t1h.gif);
+}
+
+.foretH {
+    background-image: url(./img/2d/t7h.gif);
+}
+
+.montagneH {
+    background-image: url(./img/2d/t3h.gif);
+}
+
+.riviereH {
+    background-image: url(./img/2d/t4h.gif);
+}
+
+.maraisH {
+    background-image: url(./img/2d/t6h.gif);
+}
+
+.champH {
+    background-image: url(./img/2d/champHiver.gif);
+}
+
+.fortinH {
+    background-image: url(./img/2d/t13h.gif);
+}
+
+.villeH {
+    background-image: url(./img/2d/t10h.gif);
+}
+
+.moulinH {
+    background-image: url(./img/2d/t14h.gif);
+}
+
+.forteresseH {
+    background-image: url(./img/2d/t15h.gif);
+}
+
+.grandeVilleH {
+    background-image: url(./img/2d/grandeVille.gif);
+}
+
+.mineH {
+    background-image: url(./img/2d/t11h.gif);
+}
+
+.routeHorizH {
+    background-image: url(./img/2d/t20h.gif);
+}
+
+.routeVertiH {
+    background-image: url(./img/2d/t21h.gif);
+}
+
+.pontH {
+    background-image: url(./img/2d/pont.gif);
+}
+
+.egliseH {
+    background-image: url(./img/2d/eglise.gif);
+}
+
+.fermeH {
+    background-image: url(./img/2d/ferme.gif);
+}
+
+.animauxH {
+    background-image: url(./img/2d/animaux.gif);
+}
+
+.routeCroixH {
+    background-image: url(./img/2d/.gif);
+}
+
+.routeCoin1H {
+    background-image: url(./img/2d/t24h.gif);
+}
+
+.routeCoin2H {
+    background-image: url(./img/2d/t26h.gif);
+}
+
+
+/*ISO */
+
+.terrainIso {
+    border: 1px solid #555;
+    text-align: center;
+    font-size: 0.9em;
+/*    transform: rotate(45deg);*/
+}
+
+.plaineIso {
+    background-image: url(./img/iso/plaine.gif);
+}
+
+.foretIso {
+    background-image: url(./img/iso/foret.gif);
+}
+
+.montagneIso {
+    background-image: url(./img/iso/montagne.gif);
+}
+
+.riviereIso {
+    background-image: url(./img/iso/riviere.gif);
+}
+
+.maraisIso {
+    background-image: url(./img/iso/marais.gif);
+}
+
+.champIso {
+    background-image: url(./img/iso/champ.gif);
+}
+
+.fortinIso {
+    background-image: url(./img/iso/fortin.gif);
+}
+
+.villeIso {
+    background-image: url(./img/iso/ville.gif);
+}
+
+.moulinIso {
+    background-image: url(./img/iso/moulin.gif);
+}
+
+.forteresseIso {
+    background-image: url(./img/iso/forteresse.gif);
+}
+
+.grandeVilleIso {
+    background-image: url(./img/iso/grandeVille.gif);
+}
+
+.mineIso {
+    background-image: url(./img/iso/mine.gif);
+}
+
+.routeHorizIso {
+    background-image: url(./img/iso/routeHoriz.gif);
+}
+
+.routeVertiIso {
+    background-image: url(./img/iso/routeVerti.gif);
+}
+
+.pontIso {
+    background-image: url(./img/iso/pont.gif);
+}
+
+.egliseIso {
+    background-image: url(./img/iso/eglise.gif);
+}
+
+.fermeIso {
+    background-image: url(./img/iso/ferme.gif);
+}
+
+.animauxIso {
+    background-image: url(./img/iso/animaux.gif);
+}
+
+.champHiverIso {
+    background-image: url(./img/iso/champHiver.gif);
+}
