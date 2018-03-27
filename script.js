@@ -258,7 +258,7 @@ buttonSaves.addEventListener('click', function () {
 //Ajouter le tableau
 buttonValider.addEventListener('click', function (e) {
     e.preventDefault();
-//    if (nbrColElt != '' && nbrDivElt != '' && sectionContainer.innerHTML == '') {
+    if (nbrColElt != '' && nbrDivElt != '' && sectionContainer.innerHTML == '') {
 //        if(!lienElements.id) {
 //            loadHtml(lienElements.id);
 //        }
@@ -268,7 +268,7 @@ buttonValider.addEventListener('click', function (e) {
 
         BuildTable(nbrColElt, nbrDivElt);
 //        saveHtml(lienElements.id);
-//    }
+    }
 });
 
 //permet de faire un reset du plateau
