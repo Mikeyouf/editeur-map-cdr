@@ -258,7 +258,7 @@ buttonSaves.addEventListener('click', function () {
 //Ajouter le tableau
 buttonValider.addEventListener('click', function (e) {
     e.preventDefault();
-    if (nbrColElt != '' && nbrDivElt != '' && sectionContainer.innerHTML == '') {
+    if (nbrColElt != '' && nbrDivElt != '' && !sectionContainer.getElementsByTagName('table').length) {
 //        if(!lienElements.id) {
 //            loadHtml(lienElements.id);
 //        }
