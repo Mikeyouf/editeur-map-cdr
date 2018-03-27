@@ -41,6 +41,18 @@ const savesSession = {
     'array' : []
 };
 
+// Initialize Firebase
+  const config = {
+    apiKey: "AIzaSyD2bnkfBLBxG1xBpfSvZsxHDCZjsuzuojk",
+    authDomain: "editeur-map-cdr.firebaseapp.com",
+    databaseURL: "https://editeur-map-cdr.firebaseio.com",
+    projectId: "editeur-map-cdr",
+    storageBucket: "",
+    messagingSenderId: "268671512315"
+  };
+firebase.initializeApp(config);
+const dataBase = firebase.database();
+
 function BuildTable(NrLines, NbrCells) {
 //    savesSession.array.id = 'monArray';
     savesSession.array.push('<table><tbody>');
@@ -79,7 +91,11 @@ function BuildTable(NrLines, NbrCells) {
 }
 
 function saveHtml(idSave) {
-    window.localStorage.setItem(idSave, JSON.stringify(savesSession.array));
+//    window.localStorage.setItem(idSave, JSON.stringify(savesSession.array));
+    firebase.database().ref('/' + idSave).set({
+    save: savesSession
+  });
+
 }
 
 function loadHtml(idSave) {
@@ -156,29 +172,29 @@ choixSaison.addEventListener('click', function () {
 });
 
 //sauvegarde
-//buttonSave.addEventListener('click', function () {
-//    const valInputElt = document.getElementById('inputSave').value;
-//    let saves = savesSession.array;
-//
-//    //on crée le lien de sauvegarde
-//    const spanElt = document.createElement('span');
-//
-//    if (nbrsOfSaves < 3) {
-//        spanElt.innerHTML = `<a href='#' class='liens' id='save${nbrsOfSaves}'>${valInputElt}</a></br>`;
-//        divEltSaves.appendChild(spanElt);
-//        change_value(valInputElt, nbrsOfSaves);
-//        nbrsOfSaves++;
-//        
-//    }
-//    
-//    document.querySelectorAll('.liens').forEach(lienElements => {
-////        array = [];
-//        savesSession.array.id = nbrsOfSaves;
-//        savesSession.array.push(sectionContainer.innerHTML);
-//        saveHtml(lienElements.id);
-//    })
-//    
-//});
+buttonSave.addEventListener('click', function () {
+    const valInputElt = document.getElementById('inputSave').value;
+    let saves = savesSession.array;
+
+    //on crée le lien de sauvegarde
+    const spanElt = document.createElement('span');
+
+    if (nbrsOfSaves < 3) {
+        spanElt.innerHTML = `<a href='#' class='liens' id='save${nbrsOfSaves}'>${valInputElt}</a></br>`;
+        divEltSaves.appendChild(spanElt);
+        change_value(valInputElt, nbrsOfSaves);
+        nbrsOfSaves++;
+        
+    }
+    
+    document.querySelectorAll('.liens').forEach(lienElements => {
+//        array = [];
+        savesSession.array.id = nbrsOfSaves;
+        savesSession.array.push(sectionContainer.innerHTML);
+        saveHtml(lienElements.id);
+    })
+    
+});
 
 function change_value(input, id) {
     choix = selectElt.selectedIndex // Récupération de l'index du <option> choisi
