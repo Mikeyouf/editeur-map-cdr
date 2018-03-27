@@ -172,29 +172,29 @@ choixSaison.addEventListener('click', function () {
 });
 
 //sauvegarde
-buttonSave.addEventListener('click', function () {
-    const valInputElt = document.getElementById('inputSave').value;
-    let saves = savesSession.array;
-
-    //on crée le lien de sauvegarde
-    const spanElt = document.createElement('span');
-
-    if (nbrsOfSaves < 3) {
-        spanElt.innerHTML = `<a href='#' class='liens' id='save${nbrsOfSaves}'>${valInputElt}</a></br>`;
-        divEltSaves.appendChild(spanElt);
-        change_value(valInputElt, nbrsOfSaves);
-        nbrsOfSaves++;
-        
-    }
-    
-    document.querySelectorAll('.liens').forEach(lienElements => {
-//        array = [];
-        savesSession.array.id = nbrsOfSaves;
-        savesSession.array.push(sectionContainer.innerHTML);
-        saveHtml(lienElements.id);
-    })
-    
-});
+//buttonSave.addEventListener('click', function () {
+//    const valInputElt = document.getElementById('inputSave').value;
+//    let saves = savesSession.array;
+//
+//    //on crée le lien de sauvegarde
+//    const spanElt = document.createElement('span');
+//
+//    if (nbrsOfSaves < 3) {
+//        spanElt.innerHTML = `<a href='#' class='liens' id='save${nbrsOfSaves}'>${valInputElt}</a></br>`;
+//        divEltSaves.appendChild(spanElt);
+//        change_value(valInputElt, nbrsOfSaves);
+//        nbrsOfSaves++;
+//        
+//    }
+//    
+//    document.querySelectorAll('.liens').forEach(lienElements => {
+////        array = [];
+//        savesSession.array.id = nbrsOfSaves;
+//        savesSession.array.push(sectionContainer.innerHTML);
+//        saveHtml(lienElements.id);
+//    })
+//    
+//});
 
 function change_value(input, id) {
     choix = selectElt.selectedIndex // Récupération de l'index du <option> choisi
