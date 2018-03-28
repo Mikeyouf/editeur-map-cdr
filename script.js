@@ -41,6 +41,7 @@ const savesSession = {
     'array' : []
 };
 
+
 // Initialize Firebase
   const config = {
     apiKey: "AIzaSyD2bnkfBLBxG1xBpfSvZsxHDCZjsuzuojk",

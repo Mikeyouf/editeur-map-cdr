@@ -43,14 +43,18 @@ label:hover {
     margin-left: auto;
     margin-bottom: 3.5em;
     width: 66em;
-    height: 1.5em;
-    padding: 2em;
+    height: 3em;
+    padding: 1em;
     align-content: space-between;
     border: 1px solid black;
     box-shadow: 2px 3px 5px;
     border-top: none;
     background: #eee;
     border-radius: 0 0 5px 5px;
+}
+
+#inputElts .row {
+    margin-bottom: 1em;
 }
 
 #inputElts label {
@@ -287,6 +291,26 @@ section p {
     font-weight: bold;
     font-size: 1.1em;
     color: black;
+}
+
+/* --------------------
+        PAGE 2
+----------------------*/
+#calculMoral {
+    position: fixed;
+    top: 0;
+    left: calc(50% - 33em);
+    margin-left: auto;
+    margin-bottom: 3.5em;
+    width: 66em;
+    height: 3em;
+    padding: 1em;
+    align-content: space-between;
+    border: 1px solid black;
+    box-shadow: 2px 3px 5px;
+    border-top: none;
+    background: #eee;
+    border-radius: 0 0 5px 5px;
 }
 
 .plaine {
