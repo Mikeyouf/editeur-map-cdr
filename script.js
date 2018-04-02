@@ -15,7 +15,6 @@ const buttonValider = document.getElementById('valider'),
     buttonUniteFr = document.getElementById('forUniteFr'),
     buttonSaves = document.getElementById('sauvegardes'),
     formRadio = document.querySelectorAll('form'),
-
     choixSaison = document.getElementById('choixSaison'),
     choixSaisonEte = document.getElementById('ete'),
     choixSaisonHiver = document.getElementById('hiver'),
@@ -25,15 +24,16 @@ const buttonValider = document.getElementById('valider'),
 
     selectElt = document.getElementById('myselect'),
 
-    lienElements = document.querySelectorAll('a');
+    lienElements = document.querySelectorAll('a'),
+
+    putPseudo = document.getElementById('putPseudo');
 
 
 
 //let regex = new RegExp ('/[0-9]/');
 //let array = [],
 let div = document.createElement('div'),
-    nbrDivElt = inputDiv.value,
-    nbrColElt = inputNbrCol.value,
+    
     nbrsOfSaves = 0,
     id = 0;
 
@@ -41,18 +41,20 @@ const savesSession = {
     'array' : []
 };
 
+//connexion
+const inputPseudo = document.getElementById('inputConnexion');
+const buttonConnexion = document.getElementById('buttonConnexion');
+const formConnexion = document.getElementById('connexion');
+let pseudo;
 
-// Initialize Firebase
-  const config = {
-    apiKey: "AIzaSyD2bnkfBLBxG1xBpfSvZsxHDCZjsuzuojk",
-    authDomain: "editeur-map-cdr.firebaseapp.com",
-    databaseURL: "https://editeur-map-cdr.firebaseio.com",
-    projectId: "editeur-map-cdr",
-    storageBucket: "",
-    messagingSenderId: "268671512315"
-  };
-firebase.initializeApp(config);
-const dataBase = firebase.database();
+buttonConnexion.addEventListener('click', function(e) {
+    e.preventDefault();
+    pseudo = inputPseudo.value;
+    if(pseudo !=  '') {
+        putPseudo.innerHTML = `<p>${inputPseudo.value}</p>`;
+        formConnexion.style.display = 'none';
+    }
+});
 
 function BuildTable(NrLines, NbrCells) {
 //    savesSession.array.id = 'monArray';
@@ -91,22 +93,14 @@ function BuildTable(NrLines, NbrCells) {
 
 }
 
-function saveHtml(idSave) {
-//    window.localStorage.setItem(idSave, JSON.stringify(savesSession.array));
-    firebase.database().ref('/' + idSave).set({
-    save: savesSession
-  });
+// function loadHtml(idSave) {
+//     if (!JSON.parse(window.localStorage.getItem(idSave))) return;
 
-}
+//     const arrayJSON = JSON.parse(window.localStorage.getItem(idSave));
+//     savesSession.array = arrayJSON;
 
-function loadHtml(idSave) {
-    if (!JSON.parse(window.localStorage.getItem(idSave))) return;
-
-    const arrayJSON = JSON.parse(window.localStorage.getItem(idSave));
-    savesSession.array = arrayJSON;
-
-    sectionContainer.innerHTML = savesSession.array.join('');
-}
+//     sectionContainer.innerHTML = savesSession.array.join('');
+// }
 
 function returnInputRadio(classe, divElt) {
     if (id == 0) {
@@ -172,30 +166,82 @@ choixSaison.addEventListener('click', function () {
     }
 });
 
+// Initialize Firebase
+const config = {
+    apiKey: "AIzaSyD2bnkfBLBxG1xBpfSvZsxHDCZjsuzuojk",
+    authDomain: "editeur-map-cdr.firebaseapp.com",
+    databaseURL: "https://editeur-map-cdr.firebaseio.com",
+    projectId: "editeur-map-cdr",
+    storageBucket: "",
+    messagingSenderId: "268671512315"
+  };
+  
+firebase.initializeApp(config);
+const dataBase = firebase.database();
+
+function saveHtml(idSave, val) {
+    //    window.localStorage.setItem(idSave, JSON.stringify(savesSession.array));
+        firebase.database().ref('/' + idSave + ' ' + val).set({
+        username: idSave,
+        saveName: val,
+        save: savesSession
+      });
+    }
+
+function upDateHtml(idSave, val) {
+        //    window.localStorage.setItem(idSave, JSON.stringify(savesSession.array));
+            firebase.database().ref('/' + idSave + ' ' + val).update({
+            username: idSave,
+            saveName: val,
+            save: savesSession
+          });
+        
+        }
+
+function loadHtml2(idSave, val) {
+    let load = dataBase.ref('/' + idSave).child(val);
+    load.on('value', function(snapshot) {
+        console.log(snapshot.val());
+    });
+}
+
 //sauvegarde
-//buttonSave.addEventListener('click', function () {
+// buttonSave.addEventListener('click', function () {
+//     formConnexion.style.display = 'block';
+//     pseudo = inputPseudo.value;
+
 //    const valInputElt = document.getElementById('inputSave').value;
 //    let saves = savesSession.array;
-//
+
 //    //on crée le lien de sauvegarde
 //    const spanElt = document.createElement('span');
-//
-//    if (nbrsOfSaves < 3) {
+
+//    if (nbrsOfSaves < 3) { //RAJOUTER UN CHOIX POUR EMPECHER UN DOUBLONS
 //        spanElt.innerHTML = `<a href='#' class='liens' id='save${nbrsOfSaves}'>${valInputElt}</a></br>`;
 //        divEltSaves.appendChild(spanElt);
 //        change_value(valInputElt, nbrsOfSaves);
 //        nbrsOfSaves++;
-//        
+       
 //    }
-//    
+   
 //    document.querySelectorAll('.liens').forEach(lienElements => {
-////        array = [];
+// //        array = [];
 //        savesSession.array.id = nbrsOfSaves;
 //        savesSession.array.push(sectionContainer.innerHTML);
-//        saveHtml(lienElements.id);
-//    })
-//    
-//});
+//        if(valInputElt == lienElements.textContent) {
+//            upDateHtml(pseudo, valInputElt);
+//        } else {
+//             saveHtml(pseudo, valInputElt);
+//        }
+
+//        lienElements.addEventListener('click', event => {
+//            loadHtml2(pseudo, valInputElt);
+//        });
+       
+//    });
+
+   
+// });
 
 function change_value(input, id) {
     choix = selectElt.selectedIndex // Récupération de l'index du <option> choisi
@@ -206,6 +252,9 @@ function change_value(input, id) {
 
 
 window.addEventListener('load', function () {
+    // const valInputElt = document.getElementById('inputSave').value;
+    // loadHtml2(pseudo, valInputElt);
+
     sectionInputs.style.zIndex = 20;
     sectionInputsHiver.style.zIndex = 0;
     sectionInputsUniteFr.style.zIndex = 0;
@@ -274,8 +323,11 @@ buttonSaves.addEventListener('click', function () {
 
 //Ajouter le tableau
 buttonValider.addEventListener('click', function (e) {
+    let nbrDivElt = inputDiv.value,
+        nbrColElt = inputNbrCol.value;
+
     e.preventDefault();
-    if (nbrColElt != '' && nbrDivElt != '' && !sectionContainer.getElementsByTagName('table').length) {
+    if (pseudo !=  '' && nbrColElt != '' && nbrDivElt != '' && !sectionContainer.getElementsByTagName('table').length) {
 //        if(!lienElements.id) {
 //            loadHtml(lienElements.id);
 //        }

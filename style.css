@@ -53,6 +53,41 @@ label:hover {
     border-radius: 0 0 5px 5px;
 }
 
+#connexion {
+    position: fixed;
+    top: 10em;
+    left: calc(50% - 6em);
+    margin-left: auto;
+    margin-bottom: 3.5em;
+    width: 12em;
+    height: 10em;
+    padding: 1em;
+    align-content: space-between;
+    border: 1px solid black;
+    box-shadow: 2px 3px 5px;
+    border-top: none;
+    background: #eee;
+    border-radius: 5px 5px 5px 5px;
+    display: none;
+}
+
+#connexion h3 {
+    text-align: center;
+}
+
+#connexion button {
+    width: 7em;
+    height: 2em;
+    margin-left: calc(50% - 3.5em);
+}
+
+#connexion input {
+    width: 12em;
+    height: 2em;
+    margin-left: calc(50% - 6em);
+    margin-bottom: 1em;
+}
+
 #inputElts .row {
     margin-bottom: 1em;
 }
