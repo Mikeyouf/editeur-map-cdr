@@ -16,3 +16,61 @@
     color: whitesmoke;
     cursor: pointer;
 }
+
+#popup-content {
+    width: 350px;
+    height: 370px;
+}
+
+#mainDivChat {
+    width: 250px;
+    border-radius: 5px;
+}
+
+#mainDivElt {
+    width: 100%;
+    height: 350px;
+    border: 1px solid black;
+    background-color: antiquewhite;
+    box-sizing: border-box;
+    overflow-y: scroll;
+}
+
+#mainDivElt ul {
+    padding: 0;
+}
+
+#divContainer {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#inputMessageElt {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#boutonEnvoyer {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#boutonChat {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#listeMessage {
+    list-style: none;
+}
+
+.pseudoChat {
+    font-size: 0.9em;
+    font-weight: bold;
+    margin: 5px 10px;
+}
+
+.messageChat {
+    font-size: 0.8em;
+    margin: 5px 10px;
+}
