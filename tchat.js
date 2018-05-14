@@ -27,12 +27,12 @@ window.onload = function () {
     let database = firebase.database();
 
     //on recupère le pseudo
-    const pseudoEntier = document.querySelector('option').textContent;
-    const pseudo = pseudoEntier.split(" ");
-    const prenom = pseudo[1];
-    const nom = pseudo[2];
-    // const prenom = "Mikael";
-    // const nom = "Dremov";
+    // const pseudoEntier = document.querySelector('option').textContent;
+    // const pseudo = pseudoEntier.split(" ");
+    // const prenom = pseudo[1];
+    // const nom = pseudo[2];
+    const prenom = "Mikael";
+    const nom = "Dremov";
 
     //envoyer le message dans la div message
     boutonEnvoyer.addEventListener("click", function () {
