@@ -1,0 +1,18 @@
+#openPopup {
+    width: 164px;
+    height: 30px;
+    margin-top: 15px;
+    box-sizing: border-box;
+    border: 1px solid black;
+    box-shadow: 3px 5px 5px;
+    border-radius: 5px;
+    background-color: transparent;
+    font-weight: bold;
+    transition: 0.5s;
+}
+
+#openPopup:hover {
+    background-color: cadetblue;
+    color: whitesmoke;
+    cursor: pointer;
+}

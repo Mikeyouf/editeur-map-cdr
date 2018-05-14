@@ -1,0 +1,21 @@
+{
+
+  "manifest_version": 2,
+  "name": "Chat CDR",
+  "version": "1.1",
+
+  "description": "Ajoute un tchat au jeu CDR",
+
+  "icons": {
+    "48": "icons/border-48.png"
+  },
+
+
+  "content_scripts": [
+    {
+      "matches": ["http://campagne-de-russie.com/jeu.php"],
+      "js": ["tchat.js"],
+      "css": ["styleTchat.css"]
+    }
+  ]
+}
