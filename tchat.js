@@ -9,6 +9,6 @@ window.onload = function () {
     //fonction qui ouvre la popup au clic
     const openPopup = document.getElementById("openPopup");
     openPopup.addEventListener("click", function() {
-        window.open("file:///C:/Users/mikael/OneDrive/Documents/Site%20web/module-firefox/mini-tchat-popup/tchatPopup.html", "tchat CDR", 'menubar=yes, scrollbars=yes, top=20, left=500, width=300, height=350');
+        window.open("https://editeur-map-cdr.netlify.com/tchatpopup.html", "tchat CDR", 'menubar=yes, scrollbars=yes, top=20, left=500, width=300, height=350');
     });
 }
