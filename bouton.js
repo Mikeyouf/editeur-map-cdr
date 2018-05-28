@@ -14,7 +14,11 @@ window.onload = function () {
     divElt.innerHTML = `<button type="button" id="openPopup">Tchat CDR</button>`;
     divInformation.appendChild(divElt);
 
-
+    //fonction qui ouvre la popup au clic
+    const openPopup = document.getElementById("openPopup");
+    openPopup.addEventListener("click", function () {
+        window.open("https://editeur-map-cdr.netlify.com/tchatPopup.html", "tchat CDR", 'menubar=yes, scrollbars=no, top=20, left=700, width=370, height=450');
+    });
 
     //https://editeur-map-cdr.netlify.com/tchatPopup.html
 
@@ -30,9 +34,5 @@ window.onload = function () {
     const joueurs = document.querySelectorAll("td");
     console.log(joueurs);
 
-        //fonction qui ouvre la popup au clic
-        const openPopup = document.getElementById("openPopup");
-        openPopup.addEventListener("click", function () {
-            window.open("https://editeur-map-cdr.netlify.com/tchatPopup.html", "tchat CDR", 'menubar=yes, scrollbars=no, top=20, left=700, width=370, height=450');
-        });
+
 }

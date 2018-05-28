@@ -48,10 +48,10 @@ window.onload = function () {
     });
 
     //pour le test
-    // const prenom = "Charbonnel";
-    // const nom = "Nel";
-    // const pseudo = `Charbonnel Nel`;
-    // const nation = "Fr";
+    const prenom = prenom;
+    const nom = nom;
+    const pseudo = pseudo;
+    const nation = "";
 
     const listenMessages = firebase.database().ref('messages');
 
