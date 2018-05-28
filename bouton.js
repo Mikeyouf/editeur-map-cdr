@@ -12,6 +12,20 @@ window.onload = function () {
     const openPopup = document.getElementById("openPopup");
     openPopup.addEventListener("click", function () {
         window.open("https://editeur-map-cdr.netlify.com/tchatPopup.html", "tchat CDR", 'menubar=yes, scrollbars=no, top=20, left=700, width=370, height=450');
+    
+        //on recupère le pseudo
+    var pseudoEntier = document.querySelector('option').textContent;
+    var pseudoSplit = pseudoEntier.split(" ");
+    var prenom = pseudoSplit[1];
+    var nom = pseudoSplit[2];
+    var pseudo = `${prenom} ${nom}`;
+    // var pseudo = pseudo1.trim();
+
+    // const prenom = "Mikael";
+    // const nom = "Dremov";
+    // const pseudo = `${prenom} ${nom}`;
+
+    console.log(`${prenom} - ${nom} - ${pseudo}`);
     });
 
     // alert("test");
@@ -27,17 +41,5 @@ document.getElementsByTagName("head")[0].appendChild(lienCss);
 // const joueurs = document.querySelectorAll("td");
 // console.log(joueurs);
 
-//on recupère le pseudo
-var pseudoEntier = document.querySelector('option').textContent;
-var pseudoSplit = pseudoEntier.split(" ");
-var prenom = pseudoSplit[1];
-var nom = pseudoSplit[2];
-var pseudo = `${prenom} ${nom}`;
-// var pseudo = pseudo1.trim();
 
-// const prenom = "Mikael";
-// const nom = "Dremov";
-// const pseudo = `${prenom} ${nom}`;
-
-console.log(`${prenom} - ${nom} - ${pseudo}`);
 }
