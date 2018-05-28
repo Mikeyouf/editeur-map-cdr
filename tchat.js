@@ -35,12 +35,12 @@ window.onload = function () {
 
         if (message !== "") {
             ref.push({
-                prenom: `${prenom}`,
-                nom: `${nom}`,
-                pseudo: `${pseudo}`,
-                text: `${message}`,
-                messageId: `${messageId}`,
-                nation: `${nation}`
+                prenom: prenom,
+                nom: nom,
+                pseudo: pseudo,
+                text: message,
+                messageId: messageId,
+                nation: nation
             });
         }
 
