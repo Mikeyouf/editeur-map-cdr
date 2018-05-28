@@ -20,7 +20,7 @@ window.onload = function () {
         boutonEnvoyer.disabled = textArea.value.length > 120 ? true : false;
     });
 
-    console.log(`${pseudoEntier} - ${prenom} - ${nom} - ${pseudo}`);
+    
 
     //envoyer le message dans la div message
     boutonEnvoyer.addEventListener("click", function () {
@@ -48,6 +48,8 @@ window.onload = function () {
         textArea.value = "";
         textArea.style.focus = "auto";
     });
+
+    console.log(`${pseudoEntier} - ${prenom} - ${nom} - ${pseudo}`);
 
     //pour le test
     // const prenom = prenom;

@@ -1,6 +1,4 @@
 const pseudoEntier = document.querySelector('option').textContent;
-
-window.onload = function () {
     //on recupère le pseudo
     
     const pseudoSplit = pseudoEntier.split(" ");
@@ -37,6 +35,3 @@ window.onload = function () {
     //on récupère le joueur Ru ou Fr
     // const joueurs = document.querySelectorAll("td");
     // console.log(joueurs);
-
-
-}
