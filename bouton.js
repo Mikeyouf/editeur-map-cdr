@@ -29,7 +29,7 @@ window.onload = function () {
     var prenom = pseudoSplit[1];
     var nom = pseudoSplit[2];
     var pseudo1 = `${prenom} ${nom}`;
-    var pseudo = pseudo.trim();
+    var pseudo = pseudo1.trim();
 
     //on récupère le joueur Ru ou Fr
     const joueurs = document.querySelectorAll(td);
