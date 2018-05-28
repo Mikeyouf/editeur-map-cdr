@@ -27,7 +27,7 @@ window.onload = function () {
     var pseudo = pseudo1.trim();
 
     //on récupère le joueur Ru ou Fr
-    const joueurs = document.querySelectorAll(td);
+    const joueurs = document.querySelectorAll("td");
     console.log(joueurs);
 
         //fonction qui ouvre la popup au clic
