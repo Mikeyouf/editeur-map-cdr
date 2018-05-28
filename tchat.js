@@ -28,15 +28,18 @@ window.onload = function () {
         const messageId = now;
         const ref = firebase.database().ref('messages');
         const nation = "Ru";
+        const prenom1 = prenom;
+        const nom1 = nom;
+        const pseudo1 = `${prenom} ${nom}`;
 
         if (message !== "") {
             ref.push({
-                prenom: prenom,
-                nom: nom,
-                pseudo: pseudo,
-                text: message,
-                messageId: messageId,
-                nation: nation
+                prenom: `${prenom1}`,
+                nom: `${nom1}`,
+                pseudo: `${pseudo1}`,
+                text: `${message}`,
+                messageId: `${messageId}`,
+                nation: `${nation}`
             });
         }
 
@@ -105,7 +108,7 @@ window.onload = function () {
     }
 
     // ecouter les changements
-    // startListening();
+    startListening();
     listenMessages.off();
 
 }

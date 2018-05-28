@@ -16,7 +16,7 @@ var pseudoEntier = document.querySelector('option').textContent;
 var pseudoSplit = pseudoEntier.split(" ");
 var prenom = pseudoSplit[1];
 var nom = pseudoSplit[2];
-var pseudo = `${prenom} ${nom}`;
+// var pseudo = `${prenom} ${nom}`;
 // var pseudo = pseudo1.trim();
 
 // const prenom = "Mikael";
