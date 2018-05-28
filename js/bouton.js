@@ -1,4 +1,5 @@
-    // alert("test");
+window.onload = function () {
+   // alert("test");
     //on recupere la feuille de style et on la met dans le head
     const lienCss = document.createElement('link');
     lienCss.href = "styleTchat.css";
@@ -32,3 +33,4 @@
         const pseudo = `${prenom} ${nom}`;
         // var pseudo = pseudo1.trim();
         console.log(`${pseudoEntier} - ${prenom} - ${nom} - ${pseudo}`);
+}

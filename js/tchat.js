@@ -1,4 +1,4 @@
-
+window.onload = function () {
 
     // Initialize Firebase
     const firebaseConfig = {
@@ -110,3 +110,4 @@
     // ecouter les changements
     startListening();
 
+}
