@@ -23,11 +23,11 @@ window.onload = function () {
     //https://editeur-map-cdr.netlify.com/tchatPopup.html
 
     //on recupère le pseudo
-    var pseudoEntier = document.querySelector('option').textContent;
-    var pseudoSplit = pseudoEntier.split(" ");
-    var prenom = pseudoSplit[1];
-    var nom = pseudoSplit[2];
-    var pseudo = `${prenom} ${nom}`;
+    const pseudoEntier = document.querySelector('option').textContent;
+    const pseudoSplit = pseudoEntier.split(" ");
+    const prenom = pseudoSplit[1];
+    const nom = pseudoSplit[2];
+    const pseudo = `${prenom} ${nom}`;
     // var pseudo = pseudo1.trim();
     console.log(`${pseudoEntier} - ${prenom} - ${nom} - ${pseudo}`);
 
