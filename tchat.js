@@ -30,7 +30,7 @@ window.onload = function () {
         const nation = "Ru";
         const prenom1 = prenom;
         const nom1 = nom;
-        const pseudo1 = `${prenom} ${nom}`;
+        const pseudo1 = `${prenom1} ${nom1}`;
 
         if (message !== "") {
             ref.push({
