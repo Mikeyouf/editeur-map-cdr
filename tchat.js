@@ -55,10 +55,12 @@ window.onload = function () {
     // const nation = "";
 
     const listenMessages = firebase.database().ref('messages');
+    listenMessages.off();
 
     const startListening = function () {
         listenMessages.on('child_added', function (snapshot) {
             const messages = snapshot.val();
+            console.log(messages.prenom);
             
             //const de CSS
             const userClassRu = messages.pseudo === pseudo && messages.nation === "Ru" ? "messageContentRu" : " ";
