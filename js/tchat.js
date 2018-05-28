@@ -1,4 +1,4 @@
-window.onload = function () {
+
 
     // Initialize Firebase
     const firebaseConfig = {
@@ -20,8 +20,6 @@ window.onload = function () {
         boutonEnvoyer.disabled = textArea.value.length > 120 ? true : false;
     });
 
-    
-
     //envoyer le message dans la div message
     boutonEnvoyer.addEventListener("click", function () {
         //on capture le message dans le textarea
@@ -32,6 +30,7 @@ window.onload = function () {
         const cutoff = now + 2 * (60 * 1000);
         const messageId = cutoff;
         const ref = firebase.database().ref('messages');
+        const nation = "";
 
         if (message !== "") {
             ref.push({
@@ -111,4 +110,3 @@ window.onload = function () {
     // ecouter les changements
     startListening();
 
-}

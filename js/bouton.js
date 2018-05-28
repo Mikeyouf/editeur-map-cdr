@@ -19,9 +19,6 @@
         window.open("https://editeur-map-cdr.netlify.com/tchatPopup.html", "tchat CDR", 'menubar=yes, scrollbars=no, top=20, left=700, width=370, height=450');
     });
 
-    //https://editeur-map-cdr.netlify.com/tchatPopup.html
-
-
 
     //on récupère le joueur Ru ou Fr
     // const joueurs = document.querySelectorAll("td");
