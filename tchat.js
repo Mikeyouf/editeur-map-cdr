@@ -30,7 +30,7 @@ window.onload = function () {
         const cutoff = now + 2 * (60 * 1000);
         const messageId = cutoff;
         const ref = firebase.database().ref('messages');
-        const nation = "";
+        const nation = "Ru";
 
         if (message !== "") {
             ref.push({
@@ -48,7 +48,7 @@ window.onload = function () {
         textArea.style.focus = "auto";
     });
 
-    console.log(`${pseudoEntier} - ${prenom} - ${nom} - ${pseudo}`);
+    console.log(`${prenom} - ${nom} - ${pseudo}`);
 
     //pour le test
     // const prenom = prenom;

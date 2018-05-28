@@ -1,5 +1,5 @@
-window.onload = function () {
-   // alert("test");
+
+    // alert("test");
     //on recupere la feuille de style et on la met dans le head
     const lienCss = document.createElement('link');
     lienCss.href = "styleTchat.css";
@@ -24,6 +24,7 @@ window.onload = function () {
     //on récupère le joueur Ru ou Fr
     // const joueurs = document.querySelectorAll("td");
     // console.log(joueurs);
+
     //on recupère le pseudo
     const pseudoEntier = document.querySelector('option').textContent;
     const pseudoSplit = pseudoEntier.split(" ");
@@ -31,7 +32,9 @@ window.onload = function () {
     const nom = pseudoSplit[2];
     const pseudo = `${prenom} ${nom}`;
     // var pseudo = pseudo1.trim();
-    console.log(`${pseudoEntier} - ${prenom} - ${nom} - ${pseudo}`);
-}
 
-        
+    // const prenom = "Mikael";
+    // const nom = "Dremov";
+    // const pseudo = `${prenom} ${nom}`;
+
+    console.log(`${prenom} - ${nom} - ${pseudo}`);
