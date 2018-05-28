@@ -20,6 +20,8 @@ window.onload = function () {
         boutonEnvoyer.disabled = textArea.value.length > 120 ? true : false;
     });
 
+    console.log(`${pseudoEntier} - ${prenom} - ${nom} - ${pseudo}`);
+
     //envoyer le message dans la div message
     boutonEnvoyer.addEventListener("click", function () {
         //on capture le message dans le textarea
