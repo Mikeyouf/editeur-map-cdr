@@ -22,6 +22,15 @@ window.onload = function () {
 
     //https://editeur-map-cdr.netlify.com/tchatPopup.html
 
+
+
+    //on récupère le joueur Ru ou Fr
+    // const joueurs = document.querySelectorAll("td");
+    // console.log(joueurs);
+
+
+}
+
     //on recupère le pseudo
     const pseudoEntier = document.querySelector('option').textContent;
     const pseudoSplit = pseudoEntier.split(" ");
@@ -30,10 +39,3 @@ window.onload = function () {
     const pseudo = `${prenom} ${nom}`;
     // var pseudo = pseudo1.trim();
     console.log(`${pseudoEntier} - ${prenom} - ${nom} - ${pseudo}`);
-
-    //on récupère le joueur Ru ou Fr
-    // const joueurs = document.querySelectorAll("td");
-    // console.log(joueurs);
-
-
-}
