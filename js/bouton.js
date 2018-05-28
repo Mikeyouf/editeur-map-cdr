@@ -25,6 +25,9 @@ window.onload = function () {
     // const joueurs = document.querySelectorAll("td");
     // console.log(joueurs);
 
+
+}
+
         //on recupère le pseudo
         const pseudoEntier = document.querySelector('option').textContent;
         const pseudoSplit = pseudoEntier.split(" ");
@@ -33,4 +36,3 @@ window.onload = function () {
         const pseudo = `${prenom} ${nom}`;
         // var pseudo = pseudo1.trim();
         console.log(`${pseudoEntier} - ${prenom} - ${nom} - ${pseudo}`);
-}
