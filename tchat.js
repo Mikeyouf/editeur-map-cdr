@@ -108,6 +108,4 @@ window.onload = function () {
     // ecouter les changements
     startListening();
 
-    console.log(`${prenom} - ${nom} - ${pseudo}`);
-
 }
