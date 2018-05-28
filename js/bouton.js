@@ -1,12 +1,12 @@
 window.onload = function () {
-        //on recupère le pseudo
-        const pseudoEntier = document.querySelector('option').textContent;
-        const pseudoSplit = pseudoEntier.split(" ");
-        const prenom = pseudoSplit[1];
-        const nom = pseudoSplit[2];
-        const pseudo = `${prenom} ${nom}`;
-        // var pseudo = pseudo1.trim();
-        console.log(`${pseudoEntier} - ${prenom} - ${nom} - ${pseudo}`);
+    //on recupère le pseudo
+    const pseudoEntier = document.querySelector('option').textContent;
+    const pseudoSplit = pseudoEntier.split(" ");
+    const prenom = pseudoSplit[1];
+    const nom = pseudoSplit[2];
+    const pseudo = `${prenom} ${nom}`;
+    // var pseudo = pseudo1.trim();
+    console.log(`${pseudoEntier} - ${prenom} - ${nom} - ${pseudo}`);
     // alert("test");
     //on recupere la feuille de style et on la met dans le head
     const lienCss = document.createElement('link');

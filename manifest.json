@@ -13,7 +13,7 @@
   "content_scripts": [
     {
       "matches": ["http://www.campagne-de-russie.com/jeu.php"],
-      "js": ["tchat.js","bouton.js"],
+      "js": ["./js/tchat.js","./js/bouton.js"],
       "css": ["styleTchat.css"]
     }
   ]
