@@ -12,11 +12,11 @@ document.getElementsByTagName("head")[0].appendChild(lienCss);
 // console.log(joueurs);
 
 //on recupère le pseudo
-const pseudoEntier = document.querySelector('option').textContent;
-const pseudoSplit = pseudoEntier.split(" ");
-const prenom = pseudoSplit[1];
-const nom = pseudoSplit[2];
-const pseudo = `${prenom} ${nom}`;
+var pseudoEntier = document.querySelector('option').textContent;
+var pseudoSplit = pseudoEntier.split(" ");
+var prenom = pseudoSplit[1];
+var nom = pseudoSplit[2];
+var pseudo = `${prenom} ${nom}`;
 // var pseudo = pseudo1.trim();
 
 // const prenom = "Mikael";
