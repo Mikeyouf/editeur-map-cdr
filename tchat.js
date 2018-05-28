@@ -24,11 +24,8 @@ window.onload = function () {
     boutonEnvoyer.addEventListener("click", function () {
         //on capture le message dans le textarea
         const message = document.getElementById('inputMessageElt').value;
-        const divMessageEntier = document.querySelectorAll(".message");
-        const messageArray = Array.from(divMessageEntier);
         const now = Date.now();
-        const cutoff = now + 2 * (60 * 1000);
-        const messageId = cutoff;
+        const messageId = now;
         const ref = firebase.database().ref('messages');
         const nation = "Ru";
 
@@ -55,7 +52,7 @@ window.onload = function () {
     // const nation = "";
 
     const listenMessages = firebase.database().ref('messages');
-    listenMessages.off();
+    
 
     const startListening = function () {
         listenMessages.on('child_added', function (snapshot) {
@@ -108,6 +105,7 @@ window.onload = function () {
     }
 
     // ecouter les changements
-    startListening();
+    // startListening();
+    listenMessages.off();
 
 }
