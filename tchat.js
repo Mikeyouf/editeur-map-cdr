@@ -14,9 +14,9 @@ window.onload = function () {
 
     const database = firebase.database();
 
-    // const prenom1 = prenom;
-    // const nom1 = nom;
-    // const pseudo1 = `${prenom1} ${nom1}`;
+    const prenom1 = `${prenom}`;
+    const nom1 = `${nom}`;
+    const pseudo1 = `${prenom1} ${nom1}`;
 
     const boutonEnvoyer = document.querySelector("#boutonEnvoyer");
     const textArea = document.querySelector("#inputMessageElt");
@@ -35,9 +35,9 @@ window.onload = function () {
 
         if (message !== "") {
             ref.push({
-                prenom: `${prenom}`,
-                nom: `${nom}`,
-                pseudo: `${pseudo}`,
+                prenom: `${prenom1}`,
+                nom: `${nom1}`,
+                pseudo: `${pseudo1}`,
                 text: `${message}`,
                 messageId: `${messageId}`,
                 nation: `${nation}`
