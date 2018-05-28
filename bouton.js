@@ -1,14 +1,14 @@
 //on recupère le pseudo
-var pseudoEntier = document.querySelector('option').textContent;
-var pseudoSplit = pseudoEntier.split(" ");
-var prenom = pseudoSplit[1];
-var nom = pseudoSplit[2];
-var pseudo = `${prenom} ${nom}`;
+// var pseudoEntier = document.querySelector('option').textContent;
+// var pseudoSplit = pseudoEntier.split(" ");
+// var prenom = pseudoSplit[1];
+// var nom = pseudoSplit[2];
+// var pseudo = `${prenom} ${nom}`;
 // var pseudo = pseudo1.trim();
 
-// const prenom = "Mikael";
-// const nom = "Dremov";
-// const pseudo = `${prenom} ${nom}`;
+var prenom = "Mikael";
+var nom = "Dremov";
+var pseudo = `${prenom} ${nom}`;
 
 console.log(`${prenom} - ${nom} - ${pseudo}`);
 
