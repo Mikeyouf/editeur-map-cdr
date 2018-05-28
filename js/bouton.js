@@ -1,6 +1,8 @@
+const pseudoEntier = document.querySelector('option').textContent;
+
 window.onload = function () {
     //on recupère le pseudo
-    const pseudoEntier = document.querySelector('option').textContent;
+    
     const pseudoSplit = pseudoEntier.split(" ");
     const prenom = pseudoSplit[1];
     const nom = pseudoSplit[2];
