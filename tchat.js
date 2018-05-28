@@ -1,16 +1,4 @@
 window.onload = function () {
-    // //on récupère la div où va aller le bouton
-    // const divInformation = document.getElementById("informations");
-    // //on lui colle le bouton que l'on crée
-    // const divElt = document.createElement("div");
-    // divElt.innerHTML = `<button type="button" id="openPopup">Tchat CDR</button>`;
-    // divInformation.appendChild(divElt);
-
-    // //fonction qui ouvre la popup au clic
-    // const openPopup = document.getElementById("openPopup");
-    // openPopup.addEventListener("click", function () {
-    //     window.open("https://editeur-map-cdr.netlify.com/tchatpopup.html", "tchat CDR", 'menubar=yes, scrollbars=yes, top=20, left=500, width=370, height=450');
-    // });
 
     // Initialize Firebase
     const firebaseConfig = {
@@ -24,52 +12,98 @@ window.onload = function () {
 
     firebase.initializeApp(firebaseConfig);
 
-    let database = firebase.database();
+    const database = firebase.database();
 
-    //on recupère le pseudo
-    // const pseudoEntier = document.querySelector('option').textContent;
-    // const pseudo = pseudoEntier.split(" ");
-    // const prenom = pseudo[1];
-    // const nom = pseudo[2];
-    const prenom = "Mikael";
-    const nom = "Dremov";
+    const boutonEnvoyer = document.querySelector("#boutonEnvoyer");
+    const textArea = document.querySelector("#inputMessageElt");
+    textArea.addEventListener("keyup", function () {
+        boutonEnvoyer.disabled = textArea.value.length > 120 ? true : false;
+    });
 
     //envoyer le message dans la div message
     boutonEnvoyer.addEventListener("click", function () {
         //on capture le message dans le textarea
-        let message = document.getElementById('inputMessageElt').value;
+        const message = document.getElementById('inputMessageElt').value;
+        const divMessageEntier = document.querySelectorAll(".message");
+        const messageArray = Array.from(divMessageEntier);
+        const now = Date.now();
+        const cutoff = now + 2 * (60 * 1000);
+        const messageId = cutoff;
+        const ref = firebase.database().ref('messages');
+
+        if (message !== "") {
+            ref.push({
+                prenom: prenom,
+                nom: nom,
+                pseudo: pseudo,
+                text: message,
+                messageId: messageId,
+                nation: nation
+            });
+        }
 
         //on vide l'input
-        document.getElementById('inputMessageElt').value = " ";
-
-        firebase.database().ref('messages').push({
-            prenom: prenom,
-            nom: nom,
-            text: message
-        });
+        textArea.value = "";
+        textArea.style.focus = "auto";
     });
 
-    let listenMessages = firebase.database().ref('messages');
+    //pour le test
+    // const prenom = "Charbonnel";
+    // const nom = "Nel";
+    // const pseudo = `Charbonnel Nel`;
+    // const nation = "Fr";
 
-    var startListening = function () {
+    const listenMessages = firebase.database().ref('messages');
+
+    const startListening = function () {
         listenMessages.on('child_added', function (snapshot) {
-            let messages = snapshot.val();
-
-            const prenom = messages.prenom;
-            const nom = messages.nom;
-            const message = messages.text;
+            const messages = snapshot.val();
+            
+            //const de CSS
+            const userClassRu = messages.pseudo === pseudo && messages.nation === "Ru" ? "messageContentRu" : " ";
+            const userClassFr = messages.pseudo === pseudo && messages.nation === "Fr" ? "messageContentFr" : " ";
+            const noUserClassFr = messages.pseudo !== pseudo && messages.nation === "Fr" ? "messageContentLeftFr" : " ";
+            const noUserClassRu = messages.pseudo !== pseudo && messages.nation === "Ru" ? "messageContentLeftRu" : " ";
+            
 
             //on crée une balise li pour y mettre le message
             const liElt = document.createElement('li');
+
             liElt.innerHTML = `
-            <p class="pseudoChat">${prenom} ${nom} dit: </p>
-            <p class="messageChat">- ${message}</p>
+            <div class="message ${userClassRu} ${userClassFr} ${noUserClassRu} ${noUserClassFr}">
+            <p class="pseudoChat">${messages.prenom} ${messages.nom}</p>
+            <p class="messageChat"> ${messages.text}</p>
+            </div>
             `;
 
             const ulEltMessage = document.getElementById('listeMessage');
             ulEltMessage.appendChild(liElt);
+
+            //supprime au delà d'un certain nombre de messages
+            const divMessageEntier = document.querySelectorAll(".message");
+            Object.keys(divMessageEntier).slice(0, -20).map(
+                key => divMessageEntier[key].remove()
+            );
         });
+
+        //suppression des anciens messages
+        listenMessages.on("value", function (snapshot) {
+            const messages = snapshot.val();
+            if (!messages) {
+                return
+            }
+            if (Object.keys(messages).length > 25) {
+                const query = listenMessages.orderByChild('messages').limitToFirst(5);
+                const updates = {};
+                query.on('value', function (snapshot) {
+                    snapshot.forEach(child => updates[child.key] = null);
+                });
+                return listenMessages.update(updates);
+            }
+        });
+
     }
+
     // ecouter les changements
     startListening();
 
