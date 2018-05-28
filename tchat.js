@@ -48,8 +48,6 @@ window.onload = function () {
         textArea.style.focus = "auto";
     });
 
-    console.log(`${prenom} - ${nom} - ${pseudo}`);
-
     //pour le test
     // const prenom = prenom;
     // const nom = nom;
@@ -109,5 +107,7 @@ window.onload = function () {
 
     // ecouter les changements
     startListening();
+
+    console.log(`${prenom} - ${nom} - ${pseudo}`);
 
 }
