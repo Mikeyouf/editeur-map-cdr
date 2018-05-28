@@ -17,6 +17,7 @@ window.onload = function () {
     const prenom1 = `${prenom}`;
     const nom1 = `${nom}`;
     const pseudo1 = `${prenom1} ${nom1}`;
+    console.log(`${prenom1} - ${nom1} - ${pseudo1}`);
 
     const boutonEnvoyer = document.querySelector("#boutonEnvoyer");
     const textArea = document.querySelector("#inputMessageElt");
