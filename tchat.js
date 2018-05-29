@@ -1,7 +1,7 @@
-const prenom1 = `${prenom}`;
-const nom1 = `${nom}`;
-const pseudo1 = `${prenom1} ${nom1}`;
-console.log(`${prenom1} - ${nom1} - ${pseudo1}`);
+// const prenom1 = `${prenom}`;
+// const nom1 = `${nom}`;
+// const pseudo1 = `${prenom1} ${nom1}`;
+// console.log(`${prenom1} - ${nom1} - ${pseudo1}`);
 
 window.onload = function () {
 
@@ -36,9 +36,9 @@ window.onload = function () {
 
         if (message !== "") {
             ref.push({
-                prenom: `${prenom1}`,
-                nom: `${nom1}`,
-                pseudo: `${pseudo1}`,
+                prenom: `${prenom}`,
+                nom: `${nom}`,
+                pseudo: `${pseudo}`,
                 text: `${message}`,
                 messageId: `${messageId}`,
                 nation: `${nation}`
