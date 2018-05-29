@@ -1,3 +1,10 @@
+var pseudoEntier;
+var pseudoSplit;
+
+var prenom;
+var nom;
+var pseudo;
+
 window.onload = function () {
     //on récupère la div où va aller le bouton
     const divInformation = document.getElementById("informations");
@@ -28,20 +35,17 @@ window.onload = function () {
     // console.log(joueurs);
 
     //on recupère le pseudo
-    var pseudoEntier = document.querySelector('option').textContent;
-    var pseudoSplit = pseudoEntier.split(" ");
+    pseudoEntier = document.querySelector('option').textContent;
+    pseudoSplit = pseudoEntier.split(" ");
+    
+    prenom = pseudoSplit[1];
+    nom = pseudoSplit[2];
+    pseudo = `${prenom} ${nom}`;
     console.log(`${prenom} - ${nom} - ${pseudo}`);
+    // var pseudo = pseudo1.trim();
+
+    // var prenom = "Mikael";
+    // var nom = "Dremov";
+    // var pseudo = `${prenom} ${nom}`;
 
 }
-
-
-
-var prenom = pseudoSplit[1];
-var nom = pseudoSplit[2];
-var pseudo = `${prenom} ${nom}`;
-// var pseudo = pseudo1.trim();
-
-// var prenom = "Mikael";
-// var nom = "Dremov";
-// var pseudo = `${prenom} ${nom}`;
-
