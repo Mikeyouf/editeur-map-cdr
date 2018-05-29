@@ -3,7 +3,7 @@
 // const pseudo1 = `${prenom1} ${nom1}`;
 
 
-window.onload = function () {
+
     console.log(`${prenom} - ${nom} - ${pseudo}`);
     // Initialize Firebase
     const firebaseConfig = {
@@ -111,4 +111,3 @@ window.onload = function () {
     // ecouter les changements
     startListening();
 
-}
