@@ -1,38 +1,39 @@
-var pseudoEntier;
-var pseudoSplit;
+// var pseudoEntier;
+// var pseudoSplit;
 
-var prenom;
-var nom;
-var pseudo;
+// var prenom;
+// var nom;
+// var pseudo;
+//on recupère le pseudo
+var pseudoEntier = document.querySelector('option').textContent;
+var pseudoSplit = pseudoEntier.split(" ");
+
+var prenom = pseudoSplit[1];
+var nom = pseudoSplit[2];
+var pseudo = `${prenom} ${nom}`;
+
+// var prenom = "Mikael";
+// var nom = "Dremov";
+// var pseudo = `${prenom} ${nom}`;
+console.log(`${prenom} - ${nom} - ${pseudo}`);
 
 window.onload = function () {
-    
-    //on recupère le pseudo
-    pseudoEntier = document.querySelector('option').textContent;
-    pseudoSplit = pseudoEntier.split(" ");
-    
-    prenom = pseudoSplit[1];
-    nom = pseudoSplit[2];
-    pseudo = `${prenom} ${nom}`;
-    console.log(`${prenom} - ${nom} - ${pseudo}`);
+
     // var pseudo = pseudo1.trim();
 
-    // var prenom = "Mikael";
-    // var nom = "Dremov";
-    // var pseudo = `${prenom} ${nom}`;
 
 
-    //on récupère la div où va aller le bouton
-    const divInformation = document.getElementById("informations");
-    //on lui colle le bouton que l'on crée
-    const divElt = document.createElement("div");
-    divElt.innerHTML = `<button type="button" id="openPopup">Tchat CDR</button>`;
-    divInformation.appendChild(divElt);
+    // //on récupère la div où va aller le bouton
+    // const divInformation = document.getElementById("informations");
+    // //on lui colle le bouton que l'on crée
+    // const divElt = document.createElement("div");
+    // divElt.innerHTML = `<button type="button" id="openPopup">Tchat CDR</button>`;
+    // divInformation.appendChild(divElt);
 
     //fonction qui ouvre la popup au clic
     const openPopup = document.getElementById("openPopup");
     openPopup.addEventListener("click", function () {
-        window.open("https://editeur-map-cdr.netlify.com/tchatPopup.html", "tchat CDR", 'menubar=yes, scrollbars=no, top=20, left=700, width=370, height=450');
+        window.open("https://editeur-map-cdr.netlify.com/tchatPopup.html", "tchat CDR", 'menubar=yes, scrollbars=yes, top=20, left=700, width=370, height=450');
 
 
     });
