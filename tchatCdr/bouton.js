@@ -22,9 +22,9 @@ window.onload = function () {
 
     console.log(`${prenom} - ${nom} - ${pseudo}`);
 
-    window.sessionStorage.setItem("prenom", prenom);
-    window.sessionStorage.setItem("nom", nom);
-    window.sessionStorage.setItem("pseudo", pseudo);
+    // window.sessionStorage.setItem("prenom", prenom);
+    // window.sessionStorage.setItem("nom", nom);
+    // window.sessionStorage.setItem("pseudo", pseudo);
 
     // var pseudo = pseudo1.trim();
 
@@ -37,7 +37,7 @@ window.onload = function () {
 
     //fonction qui ouvre la popup au clic
     const openPopup = document.getElementById("openPopup");
-    const popup = window.open("https://editeur-map-cdr.netlify.com/tchatCdr/tchatPopup.html", "tchat CDR", 'menubar=yes, scrollbars=yes, top=20, left=700, width=370, height=450');
+    const popup = window.open("https://editeur-map-cdr.netlify.com/tchatCdr/tchatPopup.html?prenom="+prenom+"&nom="+nom+"&pseudo="+pseudo, "tchat CDR", 'menubar=yes, scrollbars=yes, top=20, left=700, width=370, height=450');
     openPopup.addEventListener("click", popup());
 
     // alert("test");
