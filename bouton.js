@@ -7,7 +7,7 @@
 
 window.onload = function () {
     //on récupère la div où va aller le bouton
-    const divInformation = document.getElementById("informations");
+    const divInformation = document.querySelector("#informations");
     //on lui colle le bouton que l'on crée
     const divElt = document.createElement("div");
     divElt.innerHTML = `<button type="button" id="openPopup">Tchat CDR</button>`;
