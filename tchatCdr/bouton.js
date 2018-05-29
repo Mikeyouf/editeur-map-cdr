@@ -22,9 +22,9 @@ window.onload = function () {
 
     console.log(`${prenom} - ${nom} - ${pseudo}`);
 
-    sessionStorage.setItem("prenom", prenom);
-    sessionStorage.setItem("nom", nom);
-    sessionStorage.setItem("pseudo", pseudo);
+    window.sessionStorage.setItem("prenom", prenom);
+    window.sessionStorage.setItem("nom", nom);
+    window.sessionStorage.setItem("pseudo", pseudo);
 
     // var pseudo = pseudo1.trim();
 

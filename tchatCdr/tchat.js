@@ -6,9 +6,9 @@
 
 window.onload = function () {
     //pour le test
-    const prenom = sessionStorage.getItem(prenom);
-    const nom = sessionStorage.getItem(nom);
-    const pseudo = sessionStorage.getItem(pseudo);
+    const prenom = window.opener.sessionStorage.getItem(prenom);
+    const nom = window.opener.sessionStorage.getItem(nom);
+    const pseudo = window.opener.sessionStorage.getItem(pseudo);
     const nation = "";
 
     // Initialize Firebase
