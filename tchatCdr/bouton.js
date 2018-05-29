@@ -38,7 +38,7 @@ window.onload = function () {
     //fonction qui ouvre la popup au clic
     const openPopup = document.getElementById("openPopup");
     const popup = window.open("https://editeur-map-cdr.netlify.com/tchatCdr/tchatPopup.html", "tchat CDR", 'menubar=yes, scrollbars=yes, top=20, left=700, width=370, height=450');
-    openPopup.addEventListener("click", popup);
+    openPopup.addEventListener("click", popup());
 
     // alert("test");
     //on recupere la feuille de style et on la met dans le head
