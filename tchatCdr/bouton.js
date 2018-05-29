@@ -2,16 +2,6 @@
 // var pseudoSplit;
 
 // var prenom;
-// var nom;
-// var pseudo;
-//on recupère le pseudo
-
-
-// var prenom = "Mikael";
-// var nom = "Dremov";
-// var pseudo = `${prenom} ${nom}`;
-
-
 window.onload = function () {
     var pseudoEntier = document.querySelector('option').textContent;
     var pseudoSplit = pseudoEntier.split(" ");
@@ -21,10 +11,6 @@ window.onload = function () {
     var pseudo = `${prenom} ${nom}`;
 
     console.log(`${prenom} - ${nom} - ${pseudo}`);
-
-    // window.sessionStorage.setItem("prenom", prenom);
-    // window.sessionStorage.setItem("nom", nom);
-    // window.sessionStorage.setItem("pseudo", pseudo);
 
     // var pseudo = pseudo1.trim();
 

@@ -1,14 +1,9 @@
-// const prenom1 = `${prenom}`;
-// const nom1 = `${nom}`;
-// const pseudo1 = `${prenom1} ${nom1}`;
-// var gettingPage = browser.runtime.getBackgroundPage()
-
-
 window.onload = function () {
     //pour le test
-    const prenom = GET_PRENOM_FROM_PARAMETER;
-    const nom = GET_NOM_FROM_PARAMETER;
-    const pseudo = GET_PSEUDO_FROM_PARAMETER;
+    const prenom = window.location.split("?")[1];
+    const nom = window.location.split("&")[1];
+    const pseudo = window.location.split("&")[2];
+    console.log(`${prenom} - ${nom} - ${pseudo}`);
     // const nation = "";
 
     // Initialize Firebase
