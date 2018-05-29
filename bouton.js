@@ -1,9 +1,9 @@
-// var pseudoEntier;
-// var pseudoSplit;
+var pseudoEntier;
+var pseudoSplit;
 
-// var prenom;
-// var nom;
-// var pseudo;
+var prenom;
+var nom;
+var pseudo;
 
 window.onload = function () {
     //on recupère le pseudo
