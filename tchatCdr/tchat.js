@@ -1,8 +1,9 @@
 window.onload = function () {
+    const decodeURL = decodeURI(window.location.href);
     //pour le test
-    const prenom = window.location.href.split("?")[1];
-    const nom = window.location.href.split("&")[1];
-    const pseudo = window.location.href.split("&")[2];
+    const prenom = decodeURL.split("?")[1];
+    const nom = decodeURL.split("&")[1];
+    const pseudo = decodeURL.split("&")[2];
     console.log(`${prenom} - ${nom} - ${pseudo}`);
     // const nation = "";
 

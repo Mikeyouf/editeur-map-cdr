@@ -1,7 +1,3 @@
-// var pseudoEntier;
-// var pseudoSplit;
-
-// var prenom;
 window.onload = function () {
     var pseudoEntier = document.querySelector('option').textContent;
     var pseudoSplit = pseudoEntier.split(" ");
@@ -20,13 +16,13 @@ window.onload = function () {
     const divElt = document.createElement("div");
     divElt.innerHTML = `<button type="button" id="openPopup">Tchat CDR</button>`;
     divInformation.appendChild(divElt);
-
+    const encodeURL = encodeURI("https://editeur-map-cdr.netlify.com/tchatCdr/tchatPopup.html?prenom="+prenom+"&nom="+nom+"&pseudo="+pseudo, "tchat CDR", 'menubar=yes, scrollbars=yes, top=20, left=700, width=370, height=450');
     //fonction qui ouvre la popup au clic
     const openPopup = document.getElementById("openPopup");
-    const popup = window.open("https://editeur-map-cdr.netlify.com/tchatCdr/tchatPopup.html?prenom="+prenom+"&nom="+nom+"&pseudo="+pseudo, "tchat CDR", 'menubar=yes, scrollbars=yes, top=20, left=700, width=370, height=450');
-    openPopup.addEventListener("click", popup());
+    openPopup.addEventListener("click", function() {
+        window.open(encodeURL);
+    });
 
-    // alert("test");
     //on recupere la feuille de style et on la met dans le head
     const lienCss = document.createElement('link');
     lienCss.href = "styleTchat.css";
