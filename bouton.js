@@ -35,12 +35,12 @@ window.onload = function () {
     // console.log(joueurs);
 
     //on recupère le pseudo
-    const pseudoEntier = document.querySelector('option').textContent;
-    const pseudoSplit = pseudoEntier.split(" ");
+    var pseudoEntier = document.querySelector('option').textContent;
+    var pseudoSplit = pseudoEntier.split(" ");
     
-    const prenom = pseudoSplit[1];
-    const nom = pseudoSplit[2];
-    const pseudo = `${prenom} ${nom}`;
+    var prenom = pseudoSplit[1];
+    var nom = pseudoSplit[2];
+    var pseudo = `${prenom} ${nom}`;
     console.log(`${prenom} - ${nom} - ${pseudo}`);
     // var pseudo = pseudo1.trim();
 
