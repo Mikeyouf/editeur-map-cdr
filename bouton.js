@@ -1,17 +1,3 @@
-//on recupère le pseudo
-var pseudoEntier = document.querySelector('option').textContent;
-var pseudoSplit = pseudoEntier.split(" ");
-var prenom = pseudoSplit[1];
-var nom = pseudoSplit[2];
-var pseudo = `${prenom} ${nom}`;
-var pseudo = pseudo1.trim();
-
-// var prenom = "Mikael";
-// var nom = "Dremov";
-// var pseudo = `${prenom} ${nom}`;
-
-console.log(`${prenom} - ${nom} - ${pseudo}`);
-
 window.onload = function () {
     //on récupère la div où va aller le bouton
     const divInformation = document.getElementById("informations");
@@ -40,6 +26,21 @@ window.onload = function () {
     //on récupère le joueur Ru ou Fr
     // const joueurs = document.querySelectorAll("td");
     // console.log(joueurs);
-
+    
+    //on recupère le pseudo
+    var pseudoEntier = document.querySelector('option').textContent;
 
 }
+
+
+var pseudoSplit = pseudoEntier.split(" ");
+var prenom = pseudoSplit[1];
+var nom = pseudoSplit[2];
+var pseudo = `${prenom} ${nom}`;
+var pseudo = pseudo1.trim();
+
+// var prenom = "Mikael";
+// var nom = "Dremov";
+// var pseudo = `${prenom} ${nom}`;
+
+console.log(`${prenom} - ${nom} - ${pseudo}`);
