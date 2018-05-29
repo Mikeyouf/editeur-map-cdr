@@ -4,7 +4,12 @@
 // var gettingPage = browser.runtime.getBackgroundPage()
 
 
-window.onload = function() {
+window.onload = function () {
+    //pour le test
+    const prenom = sessionStorage.getItem(prenom);
+    const nom = sessionStorage.getItem(nom);
+    const pseudo = sessionStorage.getItem(pseudo);
+    const nation = "";
 
     // Initialize Firebase
     const firebaseConfig = {
@@ -51,25 +56,19 @@ window.onload = function() {
         textArea.style.focus = "auto";
     });
 
-    //pour le test
-    const prenom = localStorage.getItem(prenom);
-    const nom = localStorage.getItem(nom);
-    const pseudo = localStorage.getItem(pseudo);
-    const nation = "";
-
     const listenMessages = firebase.database().ref('messages');
-    
+
 
     const startListening = function () {
         listenMessages.on('child_added', function (snapshot) {
             const messages = snapshot.val();
-            
+
             //const de CSS
             const userClassRu = messages.pseudo === pseudo && messages.nation === "Ru" ? "messageContentRu" : " ";
             const userClassFr = messages.pseudo === pseudo && messages.nation === "Fr" ? "messageContentFr" : " ";
             const noUserClassFr = messages.pseudo !== pseudo && messages.nation === "Fr" ? "messageContentLeftFr" : " ";
             const noUserClassRu = messages.pseudo !== pseudo && messages.nation === "Ru" ? "messageContentLeftRu" : " ";
-            
+
 
             //on crée une balise li pour y mettre le message
             const liElt = document.createElement('li');
