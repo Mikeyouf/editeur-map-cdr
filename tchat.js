@@ -1,11 +1,11 @@
 // const prenom1 = `${prenom}`;
 // const nom1 = `${nom}`;
 // const pseudo1 = `${prenom1} ${nom1}`;
-
+var gettingPage = browser.runtime.getBackgroundPage()
+console.log(gettingPage);
 
 window.onload = function() {
-    var gettingPage = browser.runtime.getBackgroundPage()
-    console.log(gettingPage);
+
     console.log(`${prenom} - ${nom} - ${pseudo}`);
     // Initialize Firebase
     const firebaseConfig = {
