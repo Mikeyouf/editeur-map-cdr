@@ -5,7 +5,7 @@ var prenom;
 var nom;
 var pseudo;
 
-window.onload = function () {
+
     //on recupère le pseudo
     pseudoEntier = document.querySelector('option').textContent;
     pseudoSplit = pseudoEntier.split(" ");
@@ -161,7 +161,3 @@ window.onload = function () {
 
     // ecouter les changements
     startListening();
-
-
-
-}
