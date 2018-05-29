@@ -1,7 +1,7 @@
 // const prenom1 = `${prenom}`;
 // const nom1 = `${nom}`;
 // const pseudo1 = `${prenom1} ${nom1}`;
-// console.log(`${prenom1} - ${nom1} - ${pseudo1}`);
+console.log(`${prenom} - ${nom} - ${pseudo}`);
 
 window.onload = function () {
 
