@@ -2,7 +2,7 @@
 // const nom1 = `${nom}`;
 // const pseudo1 = `${prenom1} ${nom1}`;
 // var gettingPage = browser.runtime.getBackgroundPage()
-console.log(window);
+
 
 window.onload = function() {
 
@@ -54,10 +54,10 @@ window.onload = function() {
     });
 
     //pour le test
-    // const prenom = prenom;
-    // const nom = nom;
-    // const pseudo = pseudo;
-    // const nation = "";
+    const prenom = localStorage.getItem(prenom);
+    const nom = localStorage.getItem(nom);
+    const pseudo = localStorage.getItem(pseudo);
+    const nation = "";
 
     const listenMessages = firebase.database().ref('messages');
     
