@@ -20,15 +20,13 @@ console.log(`${prenom} - ${nom} - ${pseudo}`);
 window.onload = function () {
 
     // var pseudo = pseudo1.trim();
-
-
-
-    // //on récupère la div où va aller le bouton
-    // const divInformation = document.getElementById("informations");
-    // //on lui colle le bouton que l'on crée
-    // const divElt = document.createElement("div");
-    // divElt.innerHTML = `<button type="button" id="openPopup">Tchat CDR</button>`;
-    // divInformation.appendChild(divElt);
+    
+    //on récupère la div où va aller le bouton
+    const divInformation = document.getElementById("informations");
+    //on lui colle le bouton que l'on crée
+    const divElt = document.createElement("div");
+    divElt.innerHTML = `<button type="button" id="openPopup">Tchat CDR</button>`;
+    divInformation.appendChild(divElt);
 
     //fonction qui ouvre la popup au clic
     const openPopup = document.getElementById("openPopup");
