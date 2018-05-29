@@ -1,12 +1,13 @@
 // const prenom1 = `${prenom}`;
 // const nom1 = `${nom}`;
 // const pseudo1 = `${prenom1} ${nom1}`;
-var gettingPage = browser.runtime.getBackgroundPage()
-console.log(gettingPage);
+// var gettingPage = browser.runtime.getBackgroundPage()
+console.log(window);
 
 window.onload = function() {
 
     console.log(`${prenom} - ${nom} - ${pseudo}`);
+    console.log(window);
     // Initialize Firebase
     const firebaseConfig = {
         apiKey: "AIzaSyC0hDMeatsFgqlMWHFpSoex45_I88G-7CQ",
