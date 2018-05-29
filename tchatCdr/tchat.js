@@ -1,8 +1,8 @@
 window.onload = function () {
     //pour le test
-    const prenom = window.location.split("?")[1];
-    const nom = window.location.split("&")[1];
-    const pseudo = window.location.split("&")[2];
+    const prenom = window.location.href.split("?")[1];
+    const nom = window.location.href.split("&")[1];
+    const pseudo = window.location.href.split("&")[2];
     console.log(`${prenom} - ${nom} - ${pseudo}`);
     // const nation = "";
 
