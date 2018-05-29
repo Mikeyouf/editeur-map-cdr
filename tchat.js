@@ -1,10 +1,10 @@
 // const prenom1 = `${prenom}`;
 // const nom1 = `${nom}`;
 // const pseudo1 = `${prenom1} ${nom1}`;
-console.log(`${prenom} - ${nom} - ${pseudo}`);
+
 
 window.onload = function () {
-
+    console.log(`${prenom} - ${nom} - ${pseudo}`);
     // Initialize Firebase
     const firebaseConfig = {
         apiKey: "AIzaSyC0hDMeatsFgqlMWHFpSoex45_I88G-7CQ",
