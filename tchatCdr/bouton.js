@@ -20,7 +20,7 @@ console.log(`${prenom} - ${nom} - ${pseudo}`);
 window.onload = function () {
 
     // var pseudo = pseudo1.trim();
-    
+
     //on récupère la div où va aller le bouton
     const divInformation = document.getElementById("informations");
     //on lui colle le bouton que l'on crée
@@ -31,7 +31,7 @@ window.onload = function () {
     //fonction qui ouvre la popup au clic
     const openPopup = document.getElementById("openPopup");
     openPopup.addEventListener("click", function () {
-        window.open("https://editeur-map-cdr.netlify.com/tchatPopup.html", "tchat CDR", 'menubar=yes, scrollbars=yes, top=20, left=700, width=370, height=450');
+        window.open("https://editeur-map-cdr.netlify.com/tchatCdr/tchatPopup.html", "tchat CDR", 'menubar=yes, scrollbars=yes, top=20, left=700, width=370, height=450');
 
 
     });
