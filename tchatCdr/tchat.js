@@ -6,8 +6,6 @@
 
 window.onload = function() {
 
-    console.log(`${prenom} - ${nom} - ${pseudo}`);
-    console.log(window);
     // Initialize Firebase
     const firebaseConfig = {
         apiKey: "AIzaSyC0hDMeatsFgqlMWHFpSoex45_I88G-7CQ",
