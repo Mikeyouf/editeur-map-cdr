@@ -36,7 +36,7 @@ window.onload = function () {
     // );
     let match = joueursArray.filter(function(element) {
         for (let i = 0; i < element.length; i++) {
-          if (!element[i].classList.contains("coord")) {
+          if (element[i].classList.contains("coord")) {
             return element;
           }
         }
