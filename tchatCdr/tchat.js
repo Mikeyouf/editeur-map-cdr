@@ -11,26 +11,6 @@ window.onload = function () {
     const pseudo = params.pseudo;
     // const nation = "";
 
-    //On change le titre et fait clignoter si nouveau message
-    const oldTitle = document.title;
-    const msg = "Nouveau message!";
-    const timeoutId = false;
-    
-    const blink = function () {
-        const interval = setInterval(blink, 500);
-        document.title = document.title == msg ? oldTitle : msg; //change le message de la popup
-        if (document.hasFocus()) //Stop la fonction blink quand la page a le focus
-        {
-            document.title = oldTitle;
-            clearInterval(interval);
-            timeoutId = false;
-        }
-    };
-    if (!timeoutId) {
-        timeoutId = true;
-        interval(); //Initialise
-    }; 
-
     // Initialize Firebase
     const firebaseConfig = {
         apiKey: "AIzaSyC0hDMeatsFgqlMWHFpSoex45_I88G-7CQ",
