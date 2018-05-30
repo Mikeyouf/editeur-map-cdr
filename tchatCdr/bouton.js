@@ -38,8 +38,13 @@ window.onload = function () {
       }
     let match = joueursArray.filter(getClass);
     const indexJoueur = Math.floor(match.length/2);
+    // function arrayUnsetByIndex(array, index){
+    //     array.splice(index, 1);
+    // }
+    // const player = arrayUnsetByIndex(match , indexJoueur);
+    
 
-    const player = match.split(match, indexJoueur);
+    const player = match.splice(match, indexJoueur);
 
     console.log(Math.floor(match.length/2));
     console.log(player);
