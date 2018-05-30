@@ -39,7 +39,7 @@ window.onload = function () {
     let match = joueursArray.filter(getClass);
     const indexJoueur = Math.floor(match.length/2);
     const player = match.splice(indexJoueur, indexJoueur +1).shift();
-    const nation = player.contains("rus") ? "Ru" : "Fr";
+    // const nation = player.contains("rus") ? "Ru" : "Fr";
 
-    console.log(nation);
+    console.log(player);
 }
