@@ -31,5 +31,5 @@ window.onload = function () {
     const divVisu = this.document.querySelector(".tableau_visu");
     const joueurs = divVisu.querySelectorAll("td");
     const joueursArray = Array.from(joueurs);
-    console.log(joueursArray, joueursArray[( -23)/2]);
+    console.log(joueursArray, joueursArray[(joueursArray.length -23)/2]);
 }
