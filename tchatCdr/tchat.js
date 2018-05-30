@@ -89,7 +89,7 @@ window.onload = function () {
                 key => divMessageEntier[key].remove()
             );
 
-            window.onfocus();
+            window.focus();
         });
 
         //suppression des anciens messages
