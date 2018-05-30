@@ -35,7 +35,7 @@ window.onload = function () {
     //     (element) => element !== element.classList.contains("coord")
     // );
     function getClass(item) {
-        if (item.classList == "coord") {
+        if (!item.classList == "coord") {
           return joueursArray;
         }
       }
