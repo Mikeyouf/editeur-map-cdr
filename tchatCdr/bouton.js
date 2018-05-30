@@ -31,19 +31,21 @@ window.onload = function () {
     const divVisu = this.document.querySelector(".tableau_visu");
     const joueurs = divVisu.querySelectorAll("td");
     const joueursArray = Array.from(joueurs);
-    // const resultJoueurs = joueursArray.filter(
-    //     (element) => element !== element.classList.contains("coord")
-    // );
     function getClass(item) {
         if (item.classList != "coord") {
           return joueursArray;
         }
       }
-
     let match = joueursArray.filter(getClass);
 
-        
-        // item => item.querySelectorAll(".coord"));
-    console.log(joueursArray);
+    const player = match.filter(function(element) {
+        for (let i = 0; i < element.length; i++) {
+            if (element[i] === element.length/2) {
+              return element;
+            }
+          }
+    });
+
     console.log(match);
+    console.log(player);
 }
