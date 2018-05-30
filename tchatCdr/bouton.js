@@ -43,7 +43,7 @@ window.onload = function () {
     // const nation = player.classList.contains("rus") ? "Ru" : "Fr";
     // const nation = playerClass.indexOf("rus") != -1 ? "Ru" : "Fr";
 
-    console.log(typeof player);
+    console.log(player.className);
     // console.log(playerClass);
     // console.log(nation);
 }
