@@ -28,8 +28,7 @@ window.onload = function () {
 
 
     //on récupère le joueur Ru ou Fr
-    // const joueurs = document.querySelectorAll("td");
-    // console.log(joueurs);
-
-
+    const joueurs = document.querySelectorAll("td");
+    const joueursArray = Array.from(joueurs);
+    console.log(joueursArray);
 }
