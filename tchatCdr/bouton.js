@@ -38,13 +38,8 @@ window.onload = function () {
       }
     let match = joueursArray.filter(getClass);
     const indexJoueur = Math.floor(match.length/2);
-    // function arrayUnsetByIndex(array, index){
-    //     array.splice(index, 1);
-    // }
-    // const player = arrayUnsetByIndex(match , indexJoueur);
-    
-
     const player = match.splice(indexJoueur, indexJoueur +1).shift();
+    const nation = player.contains("rus") ? "Ru" : "Fr";
 
-    console.log(player);
+    console.log(nation);
 }
