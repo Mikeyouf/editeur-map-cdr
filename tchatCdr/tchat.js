@@ -5,11 +5,10 @@ window.onload = function () {
         p[param[0]] = param[1];
         return p;
     }, {});
-    //pour le test
+
     const prenom = params.prenom;
     const nom = params.nom;
     const pseudo = params.pseudo;
-    console.log(`${prenom} - ${nom} - ${pseudo}`);
     // const nation = "";
 
     // Initialize Firebase

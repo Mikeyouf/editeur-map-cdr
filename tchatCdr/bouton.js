@@ -1,14 +1,10 @@
 window.onload = function () {
-    var pseudoEntier = document.querySelector('option').textContent;
-    var pseudoSplit = pseudoEntier.split(" ");
+    const pseudoEntier = document.querySelector('option').textContent;
+    const pseudoSplit = pseudoEntier.split(" ");
 
-    var prenom = pseudoSplit[1];
-    var nom = pseudoSplit[2];
-    var pseudo = `${prenom} ${nom}`;
-
-    console.log(`${prenom} - ${nom} - ${pseudo}`);
-
-    // var pseudo = pseudo1.trim();
+    const prenom = pseudoSplit[1];
+    const nom = pseudoSplit[2];
+    const pseudo = `${prenom} ${nom}`;
 
     //on récupère la div où va aller le bouton
     const divInformation = document.getElementById("informations");
