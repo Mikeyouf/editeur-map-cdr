@@ -32,7 +32,7 @@ window.onload = function () {
     const joueurs = divVisu.querySelectorAll("td");
     const joueursArray = Array.from(joueurs);
     const resultJoueurs = joueursArray.filter(
-        (element) => element !== classList.contain("coord")
+        (element) => element !== classList.contains("coord")
     );
         
         // item => item.querySelectorAll(".coord"));
