@@ -9,7 +9,7 @@ window.onload = function () {
     const prenom = params.prenom;
     const nom = params.nom;
     const pseudo = params.pseudo;
-    // const nation = "";
+    const nation = params.nation;
 
     // Initialize Firebase
     const firebaseConfig = {
@@ -38,7 +38,7 @@ window.onload = function () {
         const now = Date.now();
         const messageId = now;
         const ref = firebase.database().ref('messages');
-        const nation = "Ru";
+        
 
         if (message !== "") {
             ref.push({
