@@ -15,7 +15,7 @@ window.onload = function () {
     const oldTitle = document.title;
     const msg = "Nouveau message!";
     const timeoutId = false;
-    const interval;
+    const interval = setInterval();
     const blink = function () {
         document.title = document.title == msg ? oldTitle : msg; //change le message de la popup
         if (document.hasFocus()) //Stop la fonction blink quand la page a le focus
