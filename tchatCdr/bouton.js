@@ -31,10 +31,18 @@ window.onload = function () {
     const divVisu = this.document.querySelector(".tableau_visu");
     const joueurs = divVisu.querySelectorAll("td");
     const joueursArray = Array.from(joueurs);
-    const resultJoueurs = joueursArray.filter(
-        (element) => element !== element.classList.contains("coord")
-    );
+    // const resultJoueurs = joueursArray.filter(
+    //     (element) => element !== element.classList.contains("coord")
+    // );
+    let match = joueursArray.filter(function(element) {
+        for (let i = 0; i < element.length; i++) {
+          if (!element[i].classList.contains("coord")) {
+            return element;
+          }
+        }
+      });
         
         // item => item.querySelectorAll(".coord"));
-    console.log(resultJoueurs);
+    console.log(joueursArray);
+    console.log(match);
 }
