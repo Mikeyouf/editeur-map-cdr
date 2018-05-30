@@ -12,11 +12,11 @@ window.onload = function () {
     const divElt = document.createElement("div");
     divElt.innerHTML = `<button type="button" id="openPopup">Tchat CDR</button>`;
     divInformation.appendChild(divElt);
-    const encodeURL = encodeURI("https://editeur-map-cdr.netlify.com/tchatCdr/tchatPopup.html?prenom="+prenom+"&nom="+nom+"&pseudo="+pseudo, "tchat CDR","target=_blank" , 'menubar=yes, scrollbars=yes, top=20, left=700, width=370, height=450');
+    const encodeURL = encodeURI("https://editeur-map-cdr.netlify.com/tchatCdr/tchatPopup.html?prenom="+prenom+"&nom="+nom+"&pseudo="+pseudo, "tchat CDR", 'menubar=yes, scrollbars=yes, top=20, left=700, width=370, height=450');
     //fonction qui ouvre la popup au clic
     const openPopup = document.getElementById("openPopup");
     openPopup.addEventListener("click", function() {
-        window.open(encodeURL);
+        window.open(encodeURL, "target:_blank");
     });
 
     //on recupere la feuille de style et on la met dans le head
