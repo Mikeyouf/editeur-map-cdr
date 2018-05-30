@@ -40,10 +40,10 @@ window.onload = function () {
     const indexJoueur = Math.floor(match.length/2);
     const player = match.splice(indexJoueur, indexJoueur +1).shift();
     const playerClass = player.className;
-    // const nation = playerClass.contains("rus") ? "Ru" : "Fr";
+    const nation = playerClass.search("rus") != -1 ? "Ru" : "Fr";
     // const nation = playerClass.indexOf("rus") != -1 ? "Ru" : "Fr";
 
     console.log(player.className);
     console.log(typeof playerClass);
-    // console.log(nation);
+    console.log(nation);
 }
