@@ -1,6 +1,6 @@
 window.onload = function () {
     const decodeURL = decodeURI(window.location.href);
-    const params = decodeURL.split("?")[1].split("&").reduce((p,c) => {
+    const params = decodeURL.split("?")[1].split("&").reduce((p, c) => {
         const param = c.split("=");
         p[param[0]] = param[1];
         return p;
@@ -10,6 +10,22 @@ window.onload = function () {
     const nom = params.nom;
     const pseudo = params.pseudo;
     // const nation = "";
+
+    //On change le titre et fait clignoter si nouveau message
+    const oldTitle = document.title;
+    const msg = "Nouveau message!";
+    const timeoutId = false;
+    const blink = function () {
+        document.title = document.title == msg ? oldTitle : msg; //change le message de la popup
+        if (document.hasFocus()) //Stop la fonction blink quand la page a le focus
+        {
+            document.title = oldTitle;
+            clearInterval(timeoutId);
+        }
+    };
+    if (!timeoutId) {
+        timeoutId = setInterval(blink, 500); //Initialise
+    }; 
 
     // Initialize Firebase
     const firebaseConfig = {
