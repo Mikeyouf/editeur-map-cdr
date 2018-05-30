@@ -37,9 +37,10 @@ window.onload = function () {
         }
       }
     let match = joueursArray.filter(getClass);
+    const indexJoueur = Math.floor(match.length/2);
 
-    // const player = match.split(match.length/2);
+    const player = match.split(match, indexJoueur);
 
     console.log(Math.floor(match.length/2));
-    // console.log(player);
+    console.log(player);
 }
