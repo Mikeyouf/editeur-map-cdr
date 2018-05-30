@@ -40,6 +40,6 @@ window.onload = function () {
 
     // const player = match.split(match.length/2);
 
-    console.log(match.length);
+    console.log(Math.floor(match.length/2));
     // console.log(player);
 }
