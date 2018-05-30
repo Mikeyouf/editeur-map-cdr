@@ -38,13 +38,7 @@ window.onload = function () {
       }
     let match = joueursArray.filter(getClass);
 
-    const player = match.filter(function(element) {
-        for (let i = 0; i < element.length; i++) {
-            if (element[i] === element.length/2) {
-              return element;
-            }
-          }
-    });
+    const player = match[match.length/2];
 
     console.log(match);
     console.log(player);
