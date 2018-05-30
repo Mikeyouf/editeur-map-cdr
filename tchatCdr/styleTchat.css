@@ -170,6 +170,12 @@
     
 }
 
-/* .messageChat {
-    color: black;
-} */
+/* TCHAT RUSSE */
+#mainChatRu {
+    display: none;
+}
+
+/* TCHAT FRANCAIS */
+#mainChatFr {
+    display: none;
+}
