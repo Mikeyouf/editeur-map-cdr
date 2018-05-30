@@ -95,16 +95,6 @@
     color: black;
 }
 
-/* .joueurRu {
-    color: #3CB371;
-    justify-content: left;
-} */
-
-/* .joueurFr {
-    color: #4897D8;
-    justify-content: left;
-} */
-
 .messageContentRu {
     /* background-color: rgba(60,179,113,0.9); */
     background-color: #3CB371;
@@ -170,6 +160,11 @@
     
 }
 
+#information > button {
+    box-sizing: border-box;
+    height: 30px;
+}
+
 /* TCHAT RUSSE */
 #mainChatRu {
     display: none;
@@ -179,3 +174,4 @@
 #mainChatFr {
     display: none;
 }
+
