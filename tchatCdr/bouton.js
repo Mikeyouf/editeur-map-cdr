@@ -34,13 +34,14 @@ window.onload = function () {
     // const resultJoueurs = joueursArray.filter(
     //     (element) => element !== element.classList.contains("coord")
     // );
-    let match = joueursArray.filter(function(element) {
-        for (let i = 0; i < element.length; i++) {
-          if (element[i].classList.contains("coord")) {
-            return element;
-          }
+    function getClass(item) {
+        if (item.classList == "coord") {
+          return joueursArray;
         }
-      });
+      }
+
+    let match = joueursArray.filter(getClass);
+
         
         // item => item.querySelectorAll(".coord"));
     console.log(joueursArray);
