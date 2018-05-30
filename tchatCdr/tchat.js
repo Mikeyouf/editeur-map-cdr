@@ -6,10 +6,13 @@ window.onload = function () {
         return p;
     }, {});
 
-    const prenom = params.prenom;
-    const nom = params.nom;
-    const pseudo = params.pseudo;
+    // const prenom = params.prenom;
+    // const nom = params.nom;
+    // const pseudo = params.pseudo;
     // const nation = "";
+    const prenom = "Max";
+    const nom = "Yakov";
+    const pseudo = "Max Yakov";
 
     // Initialize Firebase
     const firebaseConfig = {
