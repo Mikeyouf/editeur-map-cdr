@@ -88,6 +88,8 @@ window.onload = function () {
             Object.keys(divMessageEntier).slice(0, -20).map(
                 key => divMessageEntier[key].remove()
             );
+
+            window.onfocus();
         });
 
         //suppression des anciens messages
