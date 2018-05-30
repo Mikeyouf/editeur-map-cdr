@@ -31,6 +31,10 @@ window.onload = function () {
     const divVisu = this.document.querySelector(".tableau_visu");
     const joueurs = divVisu.querySelectorAll("td");
     const joueursArray = Array.from(joueurs);
-    const [resultCoord, ...resultJoueurs] = joueursArray.filter(item => item.querySelectorAll(".coord"));
+    const resultJoueurs = joueursArray.filter(
+        (element) => element !== classList.contain("coord")
+    );
+        
+        // item => item.querySelectorAll(".coord"));
     console.log(resultJoueurs);
 }
