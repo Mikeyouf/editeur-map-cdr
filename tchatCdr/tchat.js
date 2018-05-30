@@ -15,16 +15,19 @@ window.onload = function () {
     const oldTitle = document.title;
     const msg = "Nouveau message!";
     const timeoutId = false;
+    const interval;
     const blink = function () {
         document.title = document.title == msg ? oldTitle : msg; //change le message de la popup
         if (document.hasFocus()) //Stop la fonction blink quand la page a le focus
         {
             document.title = oldTitle;
-            clearInterval(timeoutId);
+            clearInterval(interval);
+            timeoutId = false;
         }
     };
     if (!timeoutId) {
-        timeoutId = setInterval(blink, 500); //Initialise
+        timeoutId = true;
+        interval = setInterval(blink, 500); //Initialise
     }; 
 
     // Initialize Firebase
