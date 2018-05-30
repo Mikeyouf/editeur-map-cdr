@@ -38,8 +38,8 @@ window.onload = function () {
       }
     let match = joueursArray.filter(getClass);
 
-    const player = match.split(match.length/2);
+    // const player = match.split(match.length/2);
 
-    console.log(match);
-    console.log(player);
+    console.log(match.length);
+    // console.log(player);
 }
