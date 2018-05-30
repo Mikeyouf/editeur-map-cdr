@@ -44,6 +44,6 @@ window.onload = function () {
     // const nation = playerClass.indexOf("rus") != -1 ? "Ru" : "Fr";
 
     console.log(player.className);
-    console.log(playerClass);
+    console.log(typeof playerClass);
     // console.log(nation);
 }
