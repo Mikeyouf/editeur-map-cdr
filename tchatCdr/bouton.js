@@ -44,8 +44,7 @@ window.onload = function () {
     // const player = arrayUnsetByIndex(match , indexJoueur);
     
 
-    const player = match.splice(indexJoueur, indexJoueur +1);
+    const player = match.splice(indexJoueur, indexJoueur +1).shift();
 
-    console.log(Math.floor(match.length/2));
     console.log(player);
 }
