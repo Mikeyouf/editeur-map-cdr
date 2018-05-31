@@ -75,7 +75,7 @@ window.onload = function () {
 
             liElt.innerHTML = `
             <div class="message ${userClassRu} ${userClassFr} ${noUserClassRu} ${noUserClassFr}">
-            <p class="pseudoChat">${messages.prenom} ${messages.nom}</p>
+            <p class="pseudoChat">${messages.pseudo}</p>
             <p class="messageChat"> ${messages.text}</p>
             </div>
             `;
