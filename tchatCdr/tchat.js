@@ -9,20 +9,7 @@ window.onload = function () {
             else clearInterval(scrollInterval); 
         },15);
     }
-    // function scrollToTop(scrollDuration) {
-    //     const cosParameter = window.scrollY / 2,
-    //         scrollCount = 0,
-    //         oldTimestamp = performance.now();
-    //     function step (newTimestamp) {
-    //         scrollCount += Math.PI / (scrollDuration / (newTimestamp - oldTimestamp));
-    //         if (scrollCount >= Math.PI) window.scrollTo(0, 0);
-    //         if (window.scrollY === 0) return;
-    //         window.scrollTo(0, Math.round(cosParameter + cosParameter * Math.cos(scrollCount)));
-    //         oldTimestamp = newTimestamp;
-    //         window.requestAnimationFrame(step);
-    //     }
-    //     window.requestAnimationFrame(step);
-    // }
+    scrollToTop(800);
 
     const decodeURL = decodeURI(window.location.href);
     const params = decodeURL.split("?")[1].split("&").reduce((p, c) => {
@@ -58,7 +45,7 @@ window.onload = function () {
 
     //envoyer le message dans la div message
     boutonEnvoyer.addEventListener("click", function () {
-        scrollToTop(500);
+        scrollToTop(800);
         //on capture le message dans le textarea
         const message = document.getElementById('inputMessageElt').value;
         const now = Date.now();
