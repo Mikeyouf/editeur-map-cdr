@@ -44,7 +44,7 @@ window.onload = function () {
 
     //envoyer le message dans la div message
     boutonEnvoyer.addEventListener("click", function () {
-        scrollToTop(1000);
+        scrollToTop(1400);
         //on capture le message dans le textarea
         const message = document.getElementById('inputMessageElt').value;
         const now = Date.now();
@@ -98,7 +98,7 @@ window.onload = function () {
             );
 
             window.focus();
-            scrollToTop(1000);
+            scrollToTop(1400);
         });
 
         //suppression des anciens messages
@@ -121,5 +121,6 @@ window.onload = function () {
 
     // ecouter les changements
     startListening();
+    scrollToTop(1400);
 
 }
