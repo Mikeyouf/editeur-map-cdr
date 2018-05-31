@@ -1,5 +1,13 @@
 window.onload = function () {
-    
+    //récupère la div principale
+    function scrollBar() {
+        const tchatElt = document.querySelector("#popup-content");
+        const height = tchatElt.scrollHeight;
+        tchatElt.scrollTo(0, height);
+        console.log(height);
+    }
+
+    scrollBar();
 
     const decodeURL = decodeURI(window.location.href);
     const params = decodeURL.split("?")[1].split("&").reduce((p, c) => {
@@ -12,12 +20,6 @@ window.onload = function () {
     const nom = params.nom;
     const pseudo = params.pseudo;
     const nation = params.nation;
-
-    //récupère la div principale
-    const tchatElt = document.querySelector("#popup-content");
-    const height = tchatElt.scrollHeight;
-    tchatElt.scrollTo(0, height);
-    // tchatElt.scrollTop = tchatElt.scrollHeight - 30 + "px";
 
     // Initialize Firebase
     const firebaseConfig = {
@@ -46,7 +48,7 @@ window.onload = function () {
         const now = Date.now();
         const messageId = now;
         const ref = firebase.database().ref('messages');
-        
+
 
         if (message !== "") {
             ref.push({
@@ -58,8 +60,8 @@ window.onload = function () {
                 nation: `${nation}`
             });
         }
-        
-        tchatElt.scrollTo(0, height);;
+
+        scrollBar();
 
         //on vide l'input
         textArea.value = "";
@@ -100,7 +102,7 @@ window.onload = function () {
             );
 
             window.focus();
-            tchatElt.scrollTo(0, height);
+            scrollBar();
         });
 
         //suppression des anciens messages
