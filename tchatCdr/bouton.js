@@ -8,9 +8,9 @@ window.onload = function () {
     pseudoSplit.shift();
     console.log(pseudoSplit);
 
-    const prenom = pseudoSplit[1];
-    const nom = pseudoSplit[2];
-    const pseudo = pseudoEntier.trim();
+    const prenom = pseudoSplit[0];
+    const nom = pseudoSplit[1];
+    const pseudo = [...pseudoSplit];
 
     //on récupère le joueur Ru ou Fr
     const divVisu = this.document.querySelector(".tableau_visu");
