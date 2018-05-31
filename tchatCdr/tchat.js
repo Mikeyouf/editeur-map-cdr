@@ -1,14 +1,14 @@
 window.onload = function () {
     //récupère la div principale
-    function scrollBar() {
-        const tchatElt = document.querySelector("#inputMessageElt");
-        const tailleBody = window.innerHeight;
-        const height = tchatElt.scrollHeight;
-        tchatElt.scrollTo(0, - tailleBody);
-        console.log(height, tailleBody);
-    }
+    // function scrollBar() {
+    //     const ancre = document.querySelector("#ancre");
+    //     const tailleBody = window.innerHeight;
+    //     const height = ancre.scrollHeight;
+    //     ancre.scrollTo(0, - tailleBody);
+        
+    // }
 
-    scrollBar();
+    // scrollBar();
 
     const decodeURL = decodeURI(window.location.href);
     const params = decodeURL.split("?")[1].split("&").reduce((p, c) => {
@@ -62,8 +62,6 @@ window.onload = function () {
             });
         }
 
-        scrollBar();
-
         //on vide l'input
         textArea.value = "";
         textArea.style.focus = "auto";
@@ -103,7 +101,6 @@ window.onload = function () {
             );
 
             window.focus();
-            scrollBar();
         });
 
         //suppression des anciens messages
