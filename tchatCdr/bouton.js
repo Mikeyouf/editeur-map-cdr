@@ -1,12 +1,9 @@
 window.onload = function () {
     const pseudoEntier = document.querySelector('option').textContent;
     const pseudoSplit = pseudoEntier.split(" ");
-    console.log(pseudoSplit);
     pseudoSplit.pop();
     pseudoSplit.pop();
-    console.log(pseudoSplit);
     pseudoSplit.shift();
-    console.log(pseudoSplit);
 
     const prenom = pseudoSplit[0];
     const nom = pseudoSplit[1];
