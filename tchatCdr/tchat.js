@@ -49,12 +49,12 @@ window.onload = function () {
 
     //envoyer le message dans la div message
     boutonEnvoyer.addEventListener("click", function () {
+        scrollToTop(500);
         //on capture le message dans le textarea
         const message = document.getElementById('inputMessageElt').value;
         const now = Date.now();
         const messageId = now;
         const ref = firebase.database().ref('messages');
-
 
         if (message !== "") {
             ref.push({
@@ -66,7 +66,6 @@ window.onload = function () {
                 nation: `${nation}`
             });
         }
-        scrollToTop(500);
         //on vide l'input
         textArea.value = "";
         textArea.style.focus = "auto";
