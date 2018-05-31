@@ -11,6 +11,9 @@ window.onload = function () {
     const pseudo = params.pseudo;
     const nation = params.nation;
 
+    //récupère la div principale
+    const tchatElt = document.querySelector("#popup-content");
+
     // Initialize Firebase
     const firebaseConfig = {
         apiKey: "AIzaSyC0hDMeatsFgqlMWHFpSoex45_I88G-7CQ",
@@ -50,8 +53,8 @@ window.onload = function () {
                 nation: `${nation}`
             });
         }
-
-        window.scrollTop = window.scrollHeight;
+        
+        tchatElt.scrollTop = tchatElt.scrollHeight;
 
         //on vide l'input
         textArea.value = "";
@@ -92,6 +95,7 @@ window.onload = function () {
             );
 
             window.focus();
+            tchatElt.scrollTop = tchatElt.scrollHeight;
         });
 
         //suppression des anciens messages
