@@ -4,7 +4,7 @@ window.onload = function () {
         const tchatElt = document.querySelector("#inputMessageElt");
         const tailleBody = window.innerHeight;
         const height = tchatElt.scrollHeight;
-        tchatElt.scrollTo(0, tailleBody);
+        tchatElt.scrollTo(0, - tailleBody);
         console.log(height, tailleBody);
     }
 
