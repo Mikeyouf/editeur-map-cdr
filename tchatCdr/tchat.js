@@ -14,8 +14,10 @@ window.onload = function () {
     const nation = params.nation;
 
     //récupère la div principale
+    const height = document.getElementById("mainDivElt").scrollHeight;
     const tchatElt = document.querySelector("#mainDivElt");
-    tchatElt.scrollTop = tchatElt.scrollHeight;
+    tchatElt.scrollTo(0, height);
+    // tchatElt.scrollTop = tchatElt.scrollHeight - 30 + "px";
 
     // Initialize Firebase
     const firebaseConfig = {
@@ -57,7 +59,7 @@ window.onload = function () {
             });
         }
         
-        tchatElt.scrollTop = tchatElt.scrollHeight;
+        tchatElt.scrollTo(0, height);;
 
         //on vide l'input
         textArea.value = "";
@@ -98,7 +100,7 @@ window.onload = function () {
             );
 
             window.focus();
-            tchatElt.scrollTop = tchatElt.scrollHeight;
+            tchatElt.scrollTo(0, height);
         });
 
         //suppression des anciens messages
