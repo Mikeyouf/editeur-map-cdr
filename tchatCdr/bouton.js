@@ -1,10 +1,11 @@
 window.onload = function () {
     const pseudoEntier = document.querySelector('option').textContent;
-    const pseudoSplit = pseudoEntier.split(" ").split("()");
+    const pseudoSplit = pseudoEntier.split(" ");
+    const pseudoAlone = pseudoSplit.split("()");
 
     const prenom = pseudoSplit[1];
     const nom = pseudoSplit[2];
-    const pseudo = pseudoEntier.trim();
+    const pseudo = pseudoAlone.trim();
 
     //on récupère le joueur Ru ou Fr
     const divVisu = this.document.querySelector(".tableau_visu");
