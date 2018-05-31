@@ -1,19 +1,28 @@
 window.onload = function () {
     //scroll to down
     function scrollToTop(scrollDuration) {
-        const cosParameter = window.scrollY / 2,
-            scrollCount = 0,
-            oldTimestamp = performance.now();
-        function step (newTimestamp) {
-            scrollCount += Math.PI / (scrollDuration / (newTimestamp - oldTimestamp));
-            if (scrollCount >= Math.PI) window.scrollTo(0, 0);
-            if (window.scrollY === 0) return;
-            window.scrollTo(0, Math.round(cosParameter + cosParameter * Math.cos(scrollCount)));
-            oldTimestamp = newTimestamp;
-            window.requestAnimationFrame(step);
-        }
-        window.requestAnimationFrame(step);
+        var scrollStep = -window.scrollY / (scrollDuration / 15),
+            scrollInterval = setInterval(function(){
+            if ( window.scrollY != 0 ) {
+                window.scrollBy( 0, scrollStep );
+            }
+            else clearInterval(scrollInterval); 
+        },15);
     }
+    // function scrollToTop(scrollDuration) {
+    //     const cosParameter = window.scrollY / 2,
+    //         scrollCount = 0,
+    //         oldTimestamp = performance.now();
+    //     function step (newTimestamp) {
+    //         scrollCount += Math.PI / (scrollDuration / (newTimestamp - oldTimestamp));
+    //         if (scrollCount >= Math.PI) window.scrollTo(0, 0);
+    //         if (window.scrollY === 0) return;
+    //         window.scrollTo(0, Math.round(cosParameter + cosParameter * Math.cos(scrollCount)));
+    //         oldTimestamp = newTimestamp;
+    //         window.requestAnimationFrame(step);
+    //     }
+    //     window.requestAnimationFrame(step);
+    // }
 
     const decodeURL = decodeURI(window.location.href);
     const params = decodeURL.split("?")[1].split("&").reduce((p, c) => {
