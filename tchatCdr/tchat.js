@@ -14,7 +14,7 @@ window.onload = function () {
     const nation = params.nation;
 
     //récupère la div principale
-    const tchatElt = document.querySelector("#popup-content");
+    const tchatElt = document.querySelector("#mainDivElt");
     tchatElt.scrollTop = tchatElt.scrollHeight;
 
     // Initialize Firebase
