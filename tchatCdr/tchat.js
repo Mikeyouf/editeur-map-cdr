@@ -51,6 +51,8 @@ window.onload = function () {
             });
         }
 
+        window.scrollTop = window.scrollHeight;
+
         //on vide l'input
         textArea.value = "";
         textArea.style.focus = "auto";
