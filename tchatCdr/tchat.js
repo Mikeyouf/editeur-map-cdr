@@ -1,4 +1,6 @@
 window.onload = function () {
+    document.body.scrollTop = document.body.scrollHeight;
+    
     const decodeURL = decodeURI(window.location.href);
     const params = decodeURL.split("?")[1].split("&").reduce((p, c) => {
         const param = c.split("=");
