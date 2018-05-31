@@ -4,7 +4,7 @@ window.onload = function () {
 
     const prenom = pseudoSplit[1];
     const nom = pseudoSplit[2];
-    const pseudo = `${prenom} ${nom}`;
+    const pseudo = pseudoEntier.trim();
 
     //on récupère le joueur Ru ou Fr
     const divVisu = this.document.querySelector(".tableau_visu");
