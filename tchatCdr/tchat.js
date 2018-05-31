@@ -14,8 +14,8 @@ window.onload = function () {
     const nation = params.nation;
 
     //récupère la div principale
-    const height = document.getElementById("mainDivElt").scrollHeight;
-    const tchatElt = document.querySelector("#mainDivElt");
+    const tchatElt = document.querySelector(".messages");
+    const height = tchatElt.scrollHeight;
     tchatElt.scrollTo(0, height);
     // tchatElt.scrollTop = tchatElt.scrollHeight - 30 + "px";
 
