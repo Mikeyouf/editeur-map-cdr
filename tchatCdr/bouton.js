@@ -1,6 +1,11 @@
 window.onload = function () {
     const pseudoEntier = document.querySelector('option').textContent;
     const pseudoSplit = pseudoEntier.split(" ");
+    console.log(pseudoSplit);
+    pseudoSplit.pop();
+    console.log(pseudoSplit);
+    pseudoSplit.trim();
+    console.log(pseudoSplit);
 
     const prenom = pseudoSplit[1];
     const nom = pseudoSplit[2];
@@ -32,7 +37,7 @@ window.onload = function () {
     //fonction qui ouvre la popup au clic
     const openPopup = document.getElementById("openPopup");
     openPopup.addEventListener("click", function () {
-        window.open(encodeURL, "tchat CDR", 'menubar=yes, scrollbars=yes, top=20, left=700, width=390, height=650');
+        window.open(encodeURL, "tchat CDR", 'menubar=yes, scrollbars=yes, top=20, left=700, width=450, height=650');
     });
 
     //on recupere la feuille de style et on la met dans le head
