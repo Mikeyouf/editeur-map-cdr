@@ -44,7 +44,7 @@ window.onload = function () {
 
     //envoyer le message dans la div message
     boutonEnvoyer.addEventListener("click", function () {
-        scrollToTop(1400);
+        scrollToTop(2500);
         //on capture le message dans le textarea
         const message = document.getElementById('inputMessageElt').value;
         const now = Date.now();
@@ -98,7 +98,7 @@ window.onload = function () {
             );
 
             window.focus();
-            scrollToTop(1400);
+            scrollToTop(2500);
         });
 
         //suppression des anciens messages
@@ -115,12 +115,12 @@ window.onload = function () {
                 });
                 return listenMessages.update(updates);
             }
+            scrollToTop(2500);
         });
 
     }
 
     // ecouter les changements
     startListening();
-    scrollToTop(1400);
 
 }
