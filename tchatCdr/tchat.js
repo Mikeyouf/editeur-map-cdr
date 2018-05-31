@@ -9,7 +9,6 @@ window.onload = function () {
             else clearInterval(scrollInterval); 
         },15);
     }
-    scrollToTop(800);
 
     const decodeURL = decodeURI(window.location.href);
     const params = decodeURL.split("?")[1].split("&").reduce((p, c) => {
@@ -45,7 +44,7 @@ window.onload = function () {
 
     //envoyer le message dans la div message
     boutonEnvoyer.addEventListener("click", function () {
-        scrollToTop(800);
+        scrollToTop(1000);
         //on capture le message dans le textarea
         const message = document.getElementById('inputMessageElt').value;
         const now = Date.now();
@@ -68,8 +67,6 @@ window.onload = function () {
     });
 
     const listenMessages = firebase.database().ref('messages');
-
-
     const startListening = function () {
         listenMessages.on('child_added', function (snapshot) {
             const messages = snapshot.val();
@@ -101,6 +98,7 @@ window.onload = function () {
             );
 
             window.focus();
+            scrollToTop(1000);
         });
 
         //suppression des anciens messages
