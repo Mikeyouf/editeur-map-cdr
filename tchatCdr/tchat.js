@@ -14,7 +14,7 @@ window.onload = function () {
     const nation = params.nation;
 
     //récupère la div principale
-    const tchatElt = document.querySelector(".messages");
+    const tchatElt = document.querySelector("#popup-content");
     const height = tchatElt.scrollHeight;
     tchatElt.scrollTo(0, height);
     // tchatElt.scrollTop = tchatElt.scrollHeight - 30 + "px";
