@@ -3,6 +3,7 @@ window.onload = function () {
     const pseudoSplit = pseudoEntier.split(" ");
     console.log(pseudoSplit);
     pseudoSplit.pop();
+    pseudoSplit.pop();
     console.log(pseudoSplit);
     pseudoSplit.shift();
     console.log(pseudoSplit);
