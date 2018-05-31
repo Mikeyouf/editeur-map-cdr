@@ -1,14 +1,19 @@
 window.onload = function () {
-    //récupère la div principale
-    // function scrollBar() {
-    //     const ancre = document.querySelector("#ancre");
-    //     const tailleBody = window.innerHeight;
-    //     const height = ancre.scrollHeight;
-    //     ancre.scrollTo(0, - tailleBody);
-        
-    // }
-
-    // scrollBar();
+    //scroll to down
+    function scrollToTop(scrollDuration) {
+        const cosParameter = window.scrollY / 2,
+            scrollCount = 0,
+            oldTimestamp = performance.now();
+        function step (newTimestamp) {
+            scrollCount += Math.PI / (scrollDuration / (newTimestamp - oldTimestamp));
+            if (scrollCount >= Math.PI) window.scrollTo(0, 0);
+            if (window.scrollY === 0) return;
+            window.scrollTo(0, Math.round(cosParameter + cosParameter * Math.cos(scrollCount)));
+            oldTimestamp = newTimestamp;
+            window.requestAnimationFrame(step);
+        }
+        window.requestAnimationFrame(step);
+    }
 
     const decodeURL = decodeURI(window.location.href);
     const params = decodeURL.split("?")[1].split("&").reduce((p, c) => {
@@ -61,7 +66,7 @@ window.onload = function () {
                 nation: `${nation}`
             });
         }
-
+        scrollToTop(500);
         //on vide l'input
         textArea.value = "";
         textArea.style.focus = "auto";
