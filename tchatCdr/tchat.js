@@ -2,7 +2,7 @@ window.onload = function () {
     //récupère la div principale
     function scrollBar() {
         const tchatElt = document.querySelector("#inputMessageElt");
-        const tailleBody = document.body.scrollHeight;
+        const tailleBody = window.innerHeight;
         const height = tchatElt.scrollHeight;
         tchatElt.scrollTo(0, height);
         console.log(height, tailleBody);
