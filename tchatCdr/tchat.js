@@ -44,9 +44,11 @@ window.onload = function () {
     const channelRu = document.querySelector("#ruTchatButton");
     channelRu.disabled = nation == "Ru" ? false : true;
     const ruDivChannel = document.querySelector("#mainChatRu");
+    ruDivChannel.style.display = nation == "Ru" ? "block" : "none";
     
     const channelFr = document.querySelector("#frTchatButton");
     channelFr.disabled = nation == "Fr" ? false : true;
+    frDivChannel.style.display = nation == "Fr" ? "block" : "none";
     const frDivChannel = document.querySelector("#mainChatFr");
     // position de départ
     mainDivChannel.style.display = "block";
