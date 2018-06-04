@@ -58,7 +58,9 @@ window.onload = function () {
             ruDivChannel.style.display = "none";
             frDivChannel.style.display = "none";
         }
-        const boutonEnvoyer = document.querySelector("#boutonEnvoyerMain");
+    });
+
+    const boutonEnvoyer = document.querySelector("#boutonEnvoyerMain");
     const textArea = document.querySelector("#inputMessageElt");
     textArea.addEventListener("keyup", function () {
         boutonEnvoyer.disabled = textArea.value.length > 120 ? true : false;
@@ -144,7 +146,6 @@ window.onload = function () {
 
     // ecouter les changements
     startListening();
-    });
 
     //channel RU
     channelRu.addEventListener("click", function () {
@@ -155,6 +156,91 @@ window.onload = function () {
         }
     });
 
+    const boutonEnvoyerRu = document.querySelector("#boutonEnvoyerRu");
+    const textAreaRu = document.querySelector("#inputMessageEltRu");
+    textAreaRu.addEventListener("keyup", function () {
+        boutonEnvoyerRu.disabled = textAreaRu.value.length > 120 ? true : false;
+    });
+
+    //envoyer le message dans la div message
+    boutonEnvoyerRu.addEventListener("click", function () {
+
+        //on capture le message dans le textarea
+        const message = document.getElementById('inputMessageEltRu').value;
+        const now = Date.now();
+        const messageId = now;
+        const ref = firebase.database().ref('messagesRu');
+
+        if (message !== "") {
+            ref.push({
+                prenom: `${prenom}`,
+                nom: `${nom}`,
+                pseudo: `${pseudo}`,
+                text: `${message}`,
+                messageId: `${messageId}`,
+                nation: `${nation}`
+            });
+        }
+        scrollToTop(2500);
+        //on vide l'input
+        textAreaRu.value = "";
+        textAreaRu.style.focus = "auto";
+    });
+
+    const listenMessagesRu = firebase.database().ref('messagesRu');
+    const startListeningRu = function () {
+        listenMessagesRu.on('child_added', function (snapshot) {
+            const messages = snapshot.val();
+
+            //const de CSS
+            const userClassRu = messages.pseudo === pseudo && messages.nation === "Ru" ? "messageContentRu" : " ";
+            const noUserClassRu = messages.pseudo !== pseudo && messages.nation === "Ru" ? "messageContentLeftRu" : " ";
+
+
+            //on crée une balise li pour y mettre le message
+            const liElt = document.createElement('li');
+
+            liElt.innerHTML = `
+            <div class="message ${userClassRu} ${noUserClassRu}">
+            <p class="pseudoChat">${messages.pseudo}</p>
+            <p class="messageChat"> ${messages.text}</p>
+            </div>
+            `;
+
+            const ulEltMessage = document.getElementById('listeMessageRu');
+            ulEltMessage.appendChild(liElt);
+
+            //supprime au delà d'un certain nombre de messages
+            const divMessageEntier = document.querySelectorAll(".message");
+            Object.keys(divMessageEntier).slice(0, -20).map(
+                key => divMessageEntier[key].remove()
+            );
+
+            window.focus();
+            scrollToTop(2500);
+        });
+
+        //suppression des anciens messages
+        listenMessagesRu.on("value", function (snapshot) {
+            const messages = snapshot.val();
+            if (!messages) {
+                return
+            }
+            if (Object.keys(messages).length > 25) {
+                const query = listenMessages.orderByChild('messagesRu').limitToFirst(5);
+                const updates = {};
+                query.on('value', function (snapshot) {
+                    snapshot.forEach(child => updates[child.key] = null);
+                });
+                return listenMessages.update(updates);
+            }
+        });
+
+    }
+
+    // ecouter les changements
+    startListeningRu();
+
     //channel Fr
     channelFr.addEventListener("click", function () {
         if(frDivChannel.style.display === "none") {
@@ -164,6 +250,6 @@ window.onload = function () {
         }
     });
 
-    
+
 
 }
