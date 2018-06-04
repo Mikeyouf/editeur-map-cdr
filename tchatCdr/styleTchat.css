@@ -29,7 +29,7 @@
     border-radius: 5px;
 }
 
-#mainDivElt {
+.mainDivElt {
     width: 100%;
     min-height: 350px;
     border: 1px solid black;
@@ -38,22 +38,22 @@
     /* overflow-y: scroll; */
 }
 
-#mainDivElt ul {
+.mainDivElt ul {
     padding: 0;
 }
 
-#divContainer {
+.divContainer {
     width: 100%;
     box-sizing: border-box;
 }
 
-#inputMessageElt {
+.inputElt {
     width: 100%;
     min-height: 70px;
     box-sizing: border-box;
 }
 
-#boutonEnvoyer {
+.boutonEnvoyer {
     width: 100%;
     height: 40px;
     box-sizing: border-box;
@@ -65,7 +65,7 @@
     transition: 0.5s;
 }
 
-#boutonEnvoyer:hover {
+.boutonEnvoyer:hover {
     background-color: #4897D8;
     color: whitesmoke;
     cursor: pointer;
@@ -170,6 +170,13 @@
     height: 30px;
     flex: 1 100%;
     margin: auto;
+}
+
+/* MAIN TCHAT */
+#mainTchatButton {
+    background: linear-gradient(to right,#3CB371, #4897D8);
+    color: aliceblue;
+    font-weight: bold;
 }
 
 /* TCHAT RUSSE */

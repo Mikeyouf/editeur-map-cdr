@@ -40,13 +40,13 @@ window.onload = function () {
     //et les 3 div parents associé
     const channelRuFr = document.querySelector("#mainTchatButton");
     const mainDivChannel = document.querySelector("#mainChat");
-    mainDivChannel.style.display = "block";
+    // mainDivChannel.style.display = "block";
     const channelRu = document.querySelector("#ruTchatButton");
     const ruDivChannel = document.querySelector("#mainChatRu");
-    ruDivChannel.style.display = "none";
+    // ruDivChannel.style.display = "none";
     const channelFr = document.querySelector("#frTchatButton");
     const frDivChannel = document.querySelector("#mainChatFr");
-    frDivChannel.style.display = "none";
+    // frDivChannel.style.display = "none";
 
     //channel RU / FR
     channelRuFr.addEventListener("click", function () {
@@ -75,7 +75,7 @@ window.onload = function () {
         }
     });
 
-    const boutonEnvoyer = document.querySelector("#boutonEnvoyer");
+    const boutonEnvoyer = document.querySelector("#boutonEnvoyerMain");
     const textArea = document.querySelector("#inputMessageElt");
     textArea.addEventListener("keyup", function () {
         boutonEnvoyer.disabled = textArea.value.length > 120 ? true : false;
