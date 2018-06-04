@@ -107,12 +107,12 @@ window.onload = function () {
 
             //on crée une balise li pour y mettre le message
             const liElt = document.createElement('li');
-            const userMessage = htmlspecialchars(messages.text);
+            // const userMessage = htmlspecialchars(messages.text);
 
             liElt.innerHTML = `
             <div class="message ${userClassRu} ${userClassFr} ${noUserClassRu} ${noUserClassFr}">
             <p class="pseudoChat">${messages.pseudo}</p>
-            <p class="messageChat"> ${userMessage}</p>
+            <p class="messageChat"> ${messages.text}</p>
             </div>
             `;
 
