@@ -39,25 +39,31 @@ window.onload = function () {
     //on récupère les 3 boutons
     //et les 3 div parents associé
     const channelRuFr = document.querySelector("#mainTchatButton");
-    // const mainDivChannel = document.querySelector("#mainChat");
-    // const channelRu = document.getElementById("RuTchatButton");
-    // const ruDivChannel = document.querySelector("#mainChatRu");
-    // const channelFr = document.getElementById("FrTchatButton");
-    // const frDivChannel = document.querySelector("#mainChatFr");
+    const mainDivChannel = document.querySelector("#mainChat");
+    const channelRu = document.querySelector("#ruTchatButton");
+    const ruDivChannel = document.querySelector("#mainChatRu");
+    const channelFr = document.querySelector("#frTchatButton");
+    const frDivChannel = document.querySelector("#mainChatFr");
 
     //channel RU / FR
     channelRuFr.addEventListener("click", function () {
         console.log("clic");
-        // mainDivChannel = mainDivChannel.style.display == "block" ? "none" : "block";
+        mainDivChannel = mainDivChannel.style.display == "block" ? "none" : "block";
+    });
+
+    //channel RU
+    channelRu.addEventListener("click", function () {
+        console.log("clic");
+        ruDivChannel = ruDivChannel.style.display == "block" ? "none" : "block";
         
     });
 
-    // //channel RU
-    // channelRu.addEventListener("click", function () {
-    //     console.log("clic");
-    //     // ruDivChannel = ruDivChannel.style.display == "block" ? "none" : "block";
+    //channel Fr
+    channelFr.addEventListener("click", function () {
+        console.log("clic");
+        frDivChannel = frDivChannel.style.display == "block" ? "none" : "block";
         
-    // });
+    });
 
     const boutonEnvoyer = document.querySelector("#boutonEnvoyer");
     const textArea = document.querySelector("#inputMessageElt");
