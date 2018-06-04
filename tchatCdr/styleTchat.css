@@ -177,6 +177,12 @@
     background: linear-gradient(to right,#3CB371, #4897D8);
     color: aliceblue;
     font-weight: bold;
+    transition: 0.5s;
+}
+
+#mainTchatButton:hover {
+    cursor: pointer;
+    background: linear-gradient(to right, #4897D8,#3CB371);
 }
 
 /* TCHAT RUSSE */
@@ -184,6 +190,12 @@
     background-color: #3CB371;
     color: aliceblue;
     font-weight: bold;
+    transition: 0.5s;
+}
+
+#ruTchatButton:hover {
+    cursor: pointer;
+    background-color: rgba(60, 179, 113, 0.5);
 }
 
 /* TCHAT FRANCAIS */
@@ -191,4 +203,10 @@
     background-color: #4897D8;
     color: aliceblue;
     font-weight: bold;
+    transition: 0.5s;
+}
+
+#frTchatButton:hover {
+    cursor: pointer;
+    background-color: rgba(72, 151, 216, 0.5);
 }

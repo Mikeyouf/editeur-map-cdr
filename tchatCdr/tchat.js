@@ -19,8 +19,7 @@ window.onload = function () {
     const prenom = params.prenom;
     const nom = params.nom;
     const pseudo = params.pseudo;
-    // const nation = params.nation;
-    const nation = "Fr";
+    const nation = params.nation;
 
     // Initialize Firebase
     const firebaseConfig = {
