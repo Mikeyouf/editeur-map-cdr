@@ -7,7 +7,7 @@
   "description": "Ajoute un tchat au jeu CDR",
 
   "icons": {
-    "48": "icons/border-48.png"
+    "48": "icons/bulle-chat.png"
   },
 
   "content_scripts": [
