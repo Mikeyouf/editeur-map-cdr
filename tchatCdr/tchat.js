@@ -19,7 +19,8 @@ window.onload = function () {
     const prenom = params.prenom;
     const nom = params.nom;
     const pseudo = params.pseudo;
-    const nation = params.nation;
+    // const nation = params.nation;
+    const nation = "Fr";
 
     // Initialize Firebase
     const firebaseConfig = {
@@ -48,8 +49,8 @@ window.onload = function () {
     
     const channelFr = document.querySelector("#frTchatButton");
     channelFr.disabled = nation == "Fr" ? false : true;
-    frDivChannel.style.display = nation == "Fr" ? "block" : "none";
     const frDivChannel = document.querySelector("#mainChatFr");
+    frDivChannel.style.display = nation == "Fr" ? "block" : "none";
     // position de départ
     mainDivChannel.style.display = "block";
     ruDivChannel.style.display = "none";
