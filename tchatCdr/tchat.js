@@ -47,21 +47,18 @@ window.onload = function () {
 
     //channel RU / FR
     channelRuFr.addEventListener("click", function () {
-        console.log("clic");
-        mainDivChannel = mainDivChannel.style.display == "block" ? "none" : "block";
+        mainDivChannel.style.display == "block" ? "none" : "block";
     });
 
     //channel RU
     channelRu.addEventListener("click", function () {
-        console.log("clic");
-        ruDivChannel = ruDivChannel.style.display == "block" ? "none" : "block";
+        ruDivChannel.style.display == "block" ? "none" : "block";
         
     });
 
     //channel Fr
     channelFr.addEventListener("click", function () {
-        console.log("clic");
-        frDivChannel = frDivChannel.style.display == "block" ? "none" : "block";
+        frDivChannel.style.display == "block" ? "none" : "block";
         
     });
 
