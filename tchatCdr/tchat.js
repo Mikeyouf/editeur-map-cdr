@@ -45,12 +45,18 @@ window.onload = function () {
     const channelRu = document.querySelector("#ruTchatButton");
     channelRu.disabled = nation == "Ru" ? false : true;
     const ruDivChannel = document.querySelector("#mainChatRu");
-    channelRu.style.display = nation == "Ru" ? "block" : "none";
     
     const channelFr = document.querySelector("#frTchatButton");
     channelFr.disabled = nation == "Fr" ? false : true;
     const frDivChannel = document.querySelector("#mainChatFr");
-    channelFr.style.display = nation == "Fr" ? "block" : "none";
+    if(nation === "Ru") {
+        channelRu.style.display = "block";
+        channelFr.style.display = "none";
+    } else {
+        channelRu.style.display = "none";
+        channelFr.style.display = "block";
+    }
+
     // position de départ
     mainDivChannel.style.display = "block";
     ruDivChannel.style.display = "none";
