@@ -54,34 +54,11 @@ window.onload = function () {
     //channel RU / FR
     channelRuFr.addEventListener("click", function () {
         if(mainDivChannel.style.display === "none") {
-            console.log("clic");
             mainDivChannel.style.display = "block";
             ruDivChannel.style.display = "none";
             frDivChannel.style.display = "none";
         }
-    });
-
-    //channel RU
-    channelRu.addEventListener("click", function () {
-        if(ruDivChannel.style.display === "none") {
-            console.log("clic");
-            mainDivChannel.style.display = "none";
-            ruDivChannel.style.display = "block";
-            frDivChannel.style.display = "none";
-        }
-    });
-
-    //channel Fr
-    channelFr.addEventListener("click", function () {
-        if(frDivChannel.style.display === "none") {
-            console.log("clic");
-            mainDivChannel.style.display = "none";
-            ruDivChannel.style.display = "none";
-            frDivChannel.style.display = "block";
-        }
-    });
-
-    const boutonEnvoyer = document.querySelector("#boutonEnvoyerMain");
+        const boutonEnvoyer = document.querySelector("#boutonEnvoyerMain");
     const textArea = document.querySelector("#inputMessageElt");
     textArea.addEventListener("keyup", function () {
         boutonEnvoyer.disabled = textArea.value.length > 120 ? true : false;
@@ -167,5 +144,26 @@ window.onload = function () {
 
     // ecouter les changements
     startListening();
+    });
+
+    //channel RU
+    channelRu.addEventListener("click", function () {
+        if(ruDivChannel.style.display === "none") {
+            mainDivChannel.style.display = "none";
+            ruDivChannel.style.display = "block";
+            frDivChannel.style.display = "none";
+        }
+    });
+
+    //channel Fr
+    channelFr.addEventListener("click", function () {
+        if(frDivChannel.style.display === "none") {
+            mainDivChannel.style.display = "none";
+            ruDivChannel.style.display = "none";
+            frDivChannel.style.display = "block";
+        }
+    });
+
+    
 
 }
