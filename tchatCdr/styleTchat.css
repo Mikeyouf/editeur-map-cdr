@@ -162,7 +162,7 @@
 
 #container {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
 #container > button {
@@ -173,11 +173,23 @@
 }
 
 /* TCHAT RUSSE */
+#ruTchatButton {
+    background-color: #3CB371;
+    color: aliceblue;
+    font-weight: bold;
+}
+
 #mainChatRu {
     display: none;
 }
 
 /* TCHAT FRANCAIS */
+#frTchatButton {
+    background-color: #4897D8;
+    color: aliceblue;
+    font-weight: bold;
+}
+
 #mainChatFr {
     display: none;
 }

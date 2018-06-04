@@ -2,12 +2,11 @@ window.onload = function () {
     //scroll to down
     function scrollToTop(scrollDuration) {
         var scrollStep = window.scrollY / (scrollDuration / 15),
-            scrollInterval = setInterval(function(){
-            if ( window.scrollY != 0 ) {
-                window.scrollBy( 0, scrollStep );
-            }
-            else clearInterval(scrollInterval); 
-        },15);
+            scrollInterval = setInterval(function () {
+                if (window.scrollY != 0) {
+                    window.scrollBy(0, scrollStep);
+                } else clearInterval(scrollInterval);
+            }, 15);
     }
 
     const decodeURL = decodeURI(window.location.href);
@@ -36,6 +35,30 @@ window.onload = function () {
 
     const database = firebase.database();
 
+    //GESTION DES CHANNELS
+    //on récupère les 3 boutons
+    //et les 3 div parents associé
+    const channelRuFr = document.querySelector("#mainTchatButton");
+    // const mainDivChannel = document.querySelector("#mainChat");
+    // const channelRu = document.getElementById("RuTchatButton");
+    // const ruDivChannel = document.querySelector("#mainChatRu");
+    // const channelFr = document.getElementById("FrTchatButton");
+    // const frDivChannel = document.querySelector("#mainChatFr");
+
+    //channel RU / FR
+    channelRuFr.addEventListener("click", function () {
+        console.log("clic");
+        // mainDivChannel = mainDivChannel.style.display == "block" ? "none" : "block";
+        
+    });
+
+    // //channel RU
+    // channelRu.addEventListener("click", function () {
+    //     console.log("clic");
+    //     // ruDivChannel = ruDivChannel.style.display == "block" ? "none" : "block";
+        
+    // });
+
     const boutonEnvoyer = document.querySelector("#boutonEnvoyer");
     const textArea = document.querySelector("#inputMessageElt");
     textArea.addEventListener("keyup", function () {
@@ -44,7 +67,7 @@ window.onload = function () {
 
     //envoyer le message dans la div message
     boutonEnvoyer.addEventListener("click", function () {
-        scrollToTop(2500);
+
         //on capture le message dans le textarea
         const message = document.getElementById('inputMessageElt').value;
         const now = Date.now();
@@ -61,6 +84,7 @@ window.onload = function () {
                 nation: `${nation}`
             });
         }
+        scrollToTop(2500);
         //on vide l'input
         textArea.value = "";
         textArea.style.focus = "auto";
@@ -115,7 +139,6 @@ window.onload = function () {
                 });
                 return listenMessages.update(updates);
             }
-            scrollToTop(2500);
         });
 
     }
