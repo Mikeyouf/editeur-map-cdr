@@ -50,19 +50,29 @@ window.onload = function () {
 
     //channel RU / FR
     channelRuFr.addEventListener("click", function () {
-        mainDivChannel.style.display === "block" ? "none" : "block";
+        if(mainDivChannel === "none") {
+            mainDivChannel.style.display = "block";
+            ruDivChannel.style.display = "none";
+            frDivChannel.style.display = "none";
+        }
     });
 
     //channel RU
     channelRu.addEventListener("click", function () {
-        ruDivChannel.style.display === "block" ? "none" : "block";
-        
+        if(ruDivChannel === "none") {
+            mainDivChannel.style.display = "none";
+            ruDivChannel.style.display = "block";
+            frDivChannel.style.display = "none";
+        }
     });
 
     //channel Fr
     channelFr.addEventListener("click", function () {
-        frDivChannel.style.display === "block" ? "none" : "block";
-        
+        if(frDivChannel === "none") {
+            mainDivChannel.style.display = "none";
+            ruDivChannel.style.display = "none";
+            frDivChannel.style.display = "block";
+        }
     });
 
     const boutonEnvoyer = document.querySelector("#boutonEnvoyer");
