@@ -162,14 +162,13 @@
 
 #container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 #container > button {
     box-sizing: border-box;
-    height: 30px;
-    flex: 1 100%;
-    margin: auto;
+    height: 35px;
+    width: 100%;
 }
 
 /* MAIN TCHAT */
