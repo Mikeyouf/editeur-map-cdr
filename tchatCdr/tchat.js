@@ -40,25 +40,28 @@ window.onload = function () {
     //et les 3 div parents associé
     const channelRuFr = document.querySelector("#mainTchatButton");
     const mainDivChannel = document.querySelector("#mainChat");
+    mainDivChannel.style.display = "block";
     const channelRu = document.querySelector("#ruTchatButton");
     const ruDivChannel = document.querySelector("#mainChatRu");
+    ruDivChannel.style.display = "none";
     const channelFr = document.querySelector("#frTchatButton");
     const frDivChannel = document.querySelector("#mainChatFr");
+    frDivChannel.style.display = "none";
 
     //channel RU / FR
     channelRuFr.addEventListener("click", function () {
-        mainDivChannel.style.display == "block" ? "none" : "block";
+        mainDivChannel.style.display === "block" ? "none" : "block";
     });
 
     //channel RU
     channelRu.addEventListener("click", function () {
-        ruDivChannel.style.display == "block" ? "none" : "block";
+        ruDivChannel.style.display === "block" ? "none" : "block";
         
     });
 
     //channel Fr
     channelFr.addEventListener("click", function () {
-        frDivChannel.style.display == "block" ? "none" : "block";
+        frDivChannel.style.display === "block" ? "none" : "block";
         
     });
 

@@ -179,18 +179,9 @@
     font-weight: bold;
 }
 
-#mainChatRu {
-    display: none;
-}
-
 /* TCHAT FRANCAIS */
 #frTchatButton {
     background-color: #4897D8;
     color: aliceblue;
     font-weight: bold;
 }
-
-#mainChatFr {
-    display: none;
-}
-
