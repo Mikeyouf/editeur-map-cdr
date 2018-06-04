@@ -196,6 +196,7 @@
 #ruTchatButton:hover {
     cursor: pointer;
     background-color: rgba(60, 179, 113, 0.5);
+    color: black;
 }
 
 /* TCHAT FRANCAIS */
@@ -209,4 +210,5 @@
 #frTchatButton:hover {
     cursor: pointer;
     background-color: rgba(72, 151, 216, 0.5);
+    color: black;
 }
