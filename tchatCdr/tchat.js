@@ -40,17 +40,21 @@ window.onload = function () {
     //et les 3 div parents associé
     const channelRuFr = document.querySelector("#mainTchatButton");
     const mainDivChannel = document.querySelector("#mainChat");
-    // mainDivChannel.style.display = "block";
+    
     const channelRu = document.querySelector("#ruTchatButton");
     const ruDivChannel = document.querySelector("#mainChatRu");
-    // ruDivChannel.style.display = "none";
+    
     const channelFr = document.querySelector("#frTchatButton");
     const frDivChannel = document.querySelector("#mainChatFr");
-    // frDivChannel.style.display = "none";
+    // position de départ
+    mainDivChannel.style.display = "block";
+    ruDivChannel.style.display = "none";
+    frDivChannel.style.display = "none";
 
     //channel RU / FR
     channelRuFr.addEventListener("click", function () {
-        if(mainDivChannel === "none") {
+        if(mainDivChannel.style.display === "none") {
+            console.log("clic");
             mainDivChannel.style.display = "block";
             ruDivChannel.style.display = "none";
             frDivChannel.style.display = "none";
@@ -59,7 +63,8 @@ window.onload = function () {
 
     //channel RU
     channelRu.addEventListener("click", function () {
-        if(ruDivChannel === "none") {
+        if(ruDivChannel.style.display === "none") {
+            console.log("clic");
             mainDivChannel.style.display = "none";
             ruDivChannel.style.display = "block";
             frDivChannel.style.display = "none";
@@ -68,7 +73,8 @@ window.onload = function () {
 
     //channel Fr
     channelFr.addEventListener("click", function () {
-        if(frDivChannel === "none") {
+        if(frDivChannel.style.display === "none") {
+            console.log("clic");
             mainDivChannel.style.display = "none";
             ruDivChannel.style.display = "none";
             frDivChannel.style.display = "block";
