@@ -19,7 +19,8 @@ window.onload = function () {
     const prenom = params.prenom;
     const nom = params.nom;
     const pseudo = params.pseudo;
-    const nation = params.nation;
+    // const nation = params.nation;
+    const nation = "Fr";
 
     // Initialize Firebase
     const firebaseConfig = {
@@ -217,7 +218,6 @@ window.onload = function () {
             );
 
             window.focus();
-            scrollToTop(2500);
         });
 
         //suppression des anciens messages
@@ -250,6 +250,87 @@ window.onload = function () {
         }
     });
 
+    const boutonEnvoyerFr = document.querySelector("#boutonEnvoyerFr");
+    const textAreaFr = document.querySelector("#inputMessageEltFr");
+    textAreaFr.addEventListener("keyup", function () {
+        boutonEnvoyerFr.disabled = textAreaFr.value.length > 120 ? true : false;
+    });
 
+    //envoyer le message dans la div message
+    boutonEnvoyerFr.addEventListener("click", function () {
+
+        //on capture le message dans le textarea
+        const message = document.getElementById('inputMessageEltFr').value;
+        const now = Date.now();
+        const messageId = now;
+        const ref = firebase.database().ref('messagesFr');
+
+        if (message !== "") {
+            ref.push({
+                prenom: `${prenom}`,
+                nom: `${nom}`,
+                pseudo: `${pseudo}`,
+                text: `${message}`,
+                messageId: `${messageId}`,
+                nation: `${nation}`
+            });
+        }
+        scrollToTop(2500);
+        //on vide l'input
+        textAreaFr.value = "";
+        textAreaFr.style.focus = "auto";
+    });
+
+    const listenMessagesFr = firebase.database().ref('messagesFr');
+    const startListeningFr = function () {
+        listenMessagesFr.on('child_added', function (snapshot) {
+            const messages = snapshot.val();
+
+            //const de CSS
+            const userClassFr = messages.pseudo === pseudo && messages.nation === "Fr" ? "messageContentFr" : " ";
+            const noUserClassFr = messages.pseudo !== pseudo && messages.nation === "Fr" ? "messageContentLeftFr" : " ";
+
+            //on crée une balise li pour y mettre le message
+            const liElt = document.createElement('li');
+
+            liElt.innerHTML = `
+            <div class="message ${userClassFr} ${noUserClassFr}">
+            <p class="pseudoChat">${messages.pseudo}</p>
+            <p class="messageChat"> ${messages.text}</p>
+            </div>
+            `;
+
+            const ulEltMessage = document.getElementById('listeMessageFr');
+            ulEltMessage.appendChild(liElt);
+
+            //supprime au delà d'un certain nombre de messages
+            const divMessageEntier = document.querySelectorAll(".message");
+            Object.keys(divMessageEntier).slice(0, -20).map(
+                key => divMessageEntier[key].remove()
+            );
+
+            window.focus();
+        });
+
+        //suppression des anciens messages
+        listenMessagesFr.on("value", function (snapshot) {
+            const messages = snapshot.val();
+            if (!messages) {
+                return
+            }
+            if (Object.keys(messages).length > 25) {
+                const query = listenMessages.orderByChild('messagesFr').limitToFirst(5);
+                const updates = {};
+                query.on('value', function (snapshot) {
+                    snapshot.forEach(child => updates[child.key] = null);
+                });
+                return listenMessages.update(updates);
+            }
+        });
+
+    }
+
+    // ecouter les changements
+    startListeningFr();
 
 }
