@@ -211,3 +211,8 @@
     background-color: rgba(72, 151, 216, 0.5);
     color: black;
 }
+
+.date {
+    color: rgb(27, 26, 26);
+    font-size: 0.6em;
+}

@@ -9,6 +9,19 @@ window.onload = function () {
             }, 15);
     }
 
+    // DATE
+    // les noms de jours / mois
+    const jours = new Array("dimanche", "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi");
+    const mois = new Array("janvier", "fevrier", "mars", "avril", "mai", "juin", "juillet", "aout", "septembre", "octobre", "novembre", "decembre");
+    // on recupere la date
+    const date = new Date();
+    // on construit le message
+    let messageDate = jours[date.getDay()] + " "; // nom du jour
+    messageDate += date.getDate() + " "; // numero du jour
+    messageDate += mois[date.getMonth()] + " "; // mois
+    messageDate += date.getFullYear();
+
+    // DECODE URL
     const decodeURL = decodeURI(window.location.href);
     const params = decodeURL.split("?")[1].split("&").reduce((p, c) => {
         const param = c.split("=");
@@ -40,15 +53,15 @@ window.onload = function () {
     //et les 3 div parents associé
     const channelRuFr = document.querySelector("#mainTchatButton");
     const mainDivChannel = document.querySelector("#mainChat");
-    
+
     const channelRu = document.querySelector("#ruTchatButton");
     channelRu.disabled = nation == "Ru" ? false : true;
     const ruDivChannel = document.querySelector("#mainChatRu");
-    
+
     const channelFr = document.querySelector("#frTchatButton");
     channelFr.disabled = nation == "Fr" ? false : true;
     const frDivChannel = document.querySelector("#mainChatFr");
-    if(nation === "Ru") {
+    if (nation === "Ru") {
         channelRu.style.display = "block";
         channelFr.style.display = "none";
     } else {
@@ -63,7 +76,7 @@ window.onload = function () {
 
     //channel RU / FR
     channelRuFr.addEventListener("click", function () {
-        if(mainDivChannel.style.display === "none") {
+        if (mainDivChannel.style.display === "none") {
             mainDivChannel.style.display = "block";
             ruDivChannel.style.display = "none";
             frDivChannel.style.display = "none";
@@ -87,8 +100,7 @@ window.onload = function () {
 
         if (message !== "") {
             ref.push({
-                prenom: `${prenom}`,
-                nom: `${nom}`,
+                date: `${messageDate}`,
                 pseudo: `${pseudo}`,
                 text: `${message}`,
                 messageId: `${messageId}`,
@@ -119,6 +131,7 @@ window.onload = function () {
 
             liElt.innerHTML = `
             <div class="message ${userClassRu} ${userClassFr} ${noUserClassRu} ${noUserClassFr}">
+            <p class="date">${messageDate}</p>
             <p class="pseudoChat">${messages.pseudo}</p>
             <p class="messageChat"> ${messages.text}</p>
             </div>
@@ -160,7 +173,7 @@ window.onload = function () {
 
     //channel RU
     channelRu.addEventListener("click", function () {
-        if(ruDivChannel.style.display === "none") {
+        if (ruDivChannel.style.display === "none") {
             mainDivChannel.style.display = "none";
             ruDivChannel.style.display = "block";
             frDivChannel.style.display = "none";
@@ -184,8 +197,7 @@ window.onload = function () {
 
         if (message !== "") {
             ref.push({
-                prenom: `${prenom}`,
-                nom: `${nom}`,
+                date: `${messageDate}`,
                 pseudo: `${pseudo}`,
                 text: `${message}`,
                 messageId: `${messageId}`,
@@ -213,6 +225,7 @@ window.onload = function () {
 
             liElt.innerHTML = `
             <div class="message ${userClassRu} ${noUserClassRu}">
+            <p class="date">${messageDate}</p>
             <p class="pseudoChat">${messages.pseudo}</p>
             <p class="messageChat"> ${messages.text}</p>
             </div>
@@ -253,7 +266,7 @@ window.onload = function () {
 
     //channel Fr
     channelFr.addEventListener("click", function () {
-        if(frDivChannel.style.display === "none") {
+        if (frDivChannel.style.display === "none") {
             mainDivChannel.style.display = "none";
             ruDivChannel.style.display = "none";
             frDivChannel.style.display = "block";
@@ -277,8 +290,7 @@ window.onload = function () {
 
         if (message !== "") {
             ref.push({
-                prenom: `${prenom}`,
-                nom: `${nom}`,
+                date: `${messageDate}`,
                 pseudo: `${pseudo}`,
                 text: `${message}`,
                 messageId: `${messageId}`,
@@ -305,6 +317,7 @@ window.onload = function () {
 
             liElt.innerHTML = `
             <div class="message ${userClassFr} ${noUserClassFr}">
+            <p class="date">${messageDate}</p>
             <p class="pseudoChat">${messages.pseudo}</p>
             <p class="messageChat"> ${messages.text}</p>
             </div>
