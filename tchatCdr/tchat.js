@@ -19,7 +19,6 @@ window.onload = function () {
     let messageDate = jours[date.getDay()] + " "; // nom du jour
     messageDate += date.getDate() + " "; // numero du jour
     messageDate += mois[date.getMonth()] + " "; // mois
-    messageDate += date.getFullYear();
 
     // DECODE URL
     const decodeURL = decodeURI(window.location.href);
@@ -131,8 +130,8 @@ window.onload = function () {
 
             liElt.innerHTML = `
             <div class="message ${userClassRu} ${userClassFr} ${noUserClassRu} ${noUserClassFr}">
-            <p class="date">${messageDate}</p>
             <p class="pseudoChat">${messages.pseudo}</p>
+            <p class="date">${messages.messageDate}</p>
             <p class="messageChat"> ${messages.text}</p>
             </div>
             `;
@@ -197,7 +196,7 @@ window.onload = function () {
 
         if (message !== "") {
             ref.push({
-                date: `${messageDate}`,
+                date: `${messages.messageDate}`,
                 pseudo: `${pseudo}`,
                 text: `${message}`,
                 messageId: `${messageId}`,
@@ -225,8 +224,8 @@ window.onload = function () {
 
             liElt.innerHTML = `
             <div class="message ${userClassRu} ${noUserClassRu}">
-            <p class="date">${messageDate}</p>
             <p class="pseudoChat">${messages.pseudo}</p>
+            <p class="date">${messages.messageDate}</p>
             <p class="messageChat"> ${messages.text}</p>
             </div>
             `;
@@ -317,8 +316,8 @@ window.onload = function () {
 
             liElt.innerHTML = `
             <div class="message ${userClassFr} ${noUserClassFr}">
-            <p class="date">${messageDate}</p>
             <p class="pseudoChat">${messages.pseudo}</p>
+            <p class="date">${messages.messageDate}</p>
             <p class="messageChat"> ${messages.text}</p>
             </div>
             `;
