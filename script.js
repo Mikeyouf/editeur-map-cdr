@@ -4,6 +4,7 @@ const buttonValider = document.getElementById('valider'),
     sectionContainer = document.getElementById('container'),
     buttonReset = document.getElementById('reset'),
     buttonSave = document.getElementById('save'),
+    inputSave = document.getElementById('inputSave'),
     sectionInputs = document.getElementById('inputsRadio'),
     sectionInputsHiver = document.getElementById('inputsRadio1'),
     sectionInputsUniteRu = document.getElementById('inputsRadio2'),
@@ -18,46 +19,43 @@ const buttonValider = document.getElementById('valider'),
     choixSaison = document.getElementById('choixSaison'),
     choixSaisonEte = document.getElementById('ete'),
     choixSaisonHiver = document.getElementById('hiver'),
+    ulElt = document.getElementById('UlSaves'),
 
     //div de placement des sauvegardes
-    divEltSaves = document.getElementById('putSaves'),
-
+    divEltSaves = document.getElementById('inputSaves'),
     selectElt = document.getElementById('myselect'),
-
     lienElements = document.querySelectorAll('a'),
-
-    putPseudo = document.getElementById('putPseudo');
-
-
+    inputPseudo = document.getElementById('inputConnexion');
 
 //let regex = new RegExp ('/[0-9]/');
 //let array = [],
 let div = document.createElement('div'),
-    
     nbrsOfSaves = 0,
     id = 0;
 
 const savesSession = {
-    'array' : []
+    'array': []
 };
 
+// const idSave = 'saveMap';
+
 //connexion
-const inputPseudo = document.getElementById('inputConnexion');
 const buttonConnexion = document.getElementById('buttonConnexion');
 const formConnexion = document.getElementById('connexion');
+const paraPseudo = document.getElementById('inputPseudo');
 let pseudo;
 
-buttonConnexion.addEventListener('click', function(e) {
+buttonConnexion.addEventListener('click', function (e) {
     e.preventDefault();
     pseudo = inputPseudo.value;
-    if(pseudo !=  '') {
-        putPseudo.innerHTML = `<p>${inputPseudo.value}</p>`;
+    if (pseudo != '') {
+        paraPseudo.innerHTML = `<p>${pseudo}</p>`;
         formConnexion.style.display = 'none';
     }
 });
 
 function BuildTable(NrLines, NbrCells) {
-//    savesSession.array.id = 'monArray';
+    //    savesSession.array.id = 'monArray';
     savesSession.array.push('<table><tbody>');
     for (let i = 0; i < NrLines; i++) {
         savesSession.array.push('<tr>');
@@ -83,24 +81,18 @@ function BuildTable(NrLines, NbrCells) {
 
     sectionContainer.appendChild(div.getElementsByTagName('table')[0]);
 
+    // Ajout événement à chaque case du tableau
     const tdElement = document.querySelectorAll('td');
-
     document.querySelectorAll('.clic').forEach(tdElement => {
         tdElement.addEventListener('click', event => {
             returnInputRadio(tdElement.classList, tdElement);
         });
     });
 
+    
+    // saveHtml(id);
+
 }
-
-// function loadHtml(idSave) {
-//     if (!JSON.parse(window.localStorage.getItem(idSave))) return;
-
-//     const arrayJSON = JSON.parse(window.localStorage.getItem(idSave));
-//     savesSession.array = arrayJSON;
-
-//     sectionContainer.innerHTML = savesSession.array.join('');
-// }
 
 function returnInputRadio(classe, divElt) {
     if (id == 0) {
@@ -113,6 +105,7 @@ function returnInputRadio(classe, divElt) {
                 }
             }
         }
+        saveHtml();
     } else if (id == 1) {
         for (let i = 0; i < formRadio[1].length; i++) {
             if (formRadio[1][i].checked) {
@@ -123,6 +116,7 @@ function returnInputRadio(classe, divElt) {
                 }
             }
         }
+        saveHtml();
     } else if (id == 2) {
         for (let i = 0; i < formRadio[2].length; i++) {
             if (formRadio[2][i].checked) {
@@ -133,6 +127,7 @@ function returnInputRadio(classe, divElt) {
                 }
             }
         }
+        saveHtml();
     } else if (id == 3) {
         for (let i = 0; i < formRadio[3].length; i++) {
             if (formRadio[3][i].checked) {
@@ -144,6 +139,7 @@ function returnInputRadio(classe, divElt) {
             }
         }
     }
+    saveHtml();
 
 }
 
@@ -166,82 +162,18 @@ choixSaison.addEventListener('click', function () {
     }
 });
 
-// Initialize Firebase
-const config = {
-    apiKey: "AIzaSyD2bnkfBLBxG1xBpfSvZsxHDCZjsuzuojk",
-    authDomain: "editeur-map-cdr.firebaseapp.com",
-    databaseURL: "https://editeur-map-cdr.firebaseio.com",
-    projectId: "editeur-map-cdr",
-    storageBucket: "",
-    messagingSenderId: "268671512315"
-  };
-  
-firebase.initializeApp(config);
-const dataBase = firebase.database();
-
-function saveHtml(idSave, val) {
-    //    window.localStorage.setItem(idSave, JSON.stringify(savesSession.array));
-        firebase.database().ref('/' + idSave + ' ' + val).set({
-        username: idSave,
-        saveName: val,
-        save: savesSession
-      });
-    }
-
-function upDateHtml(idSave, val) {
-        //    window.localStorage.setItem(idSave, JSON.stringify(savesSession.array));
-            firebase.database().ref('/' + idSave + ' ' + val).update({
-            username: idSave,
-            saveName: val,
-            save: savesSession
-          });
-        
-        }
-
-function loadHtml2(idSave, val) {
-    let load = dataBase.ref('/' + idSave).child(val);
-    load.on('value', function(snapshot) {
-        console.log(snapshot.val());
-    });
+function saveHtml() {
+    window.localStorage.setItem("saveMap", JSON.stringify(sectionContainer.innerHTML));
 }
 
-//sauvegarde
-// buttonSave.addEventListener('click', function () {
-//     formConnexion.style.display = 'block';
-//     pseudo = inputPseudo.value;
+function loadHtml() {
+    if (!JSON.parse(window.localStorage.getItem("saveMap"))) return;
 
-//    const valInputElt = document.getElementById('inputSave').value;
-//    let saves = savesSession.array;
+    const arrayJSON = JSON.parse(window.localStorage.getItem("saveMap"));
+    savesSession.array = arrayJSON;
 
-//    //on crée le lien de sauvegarde
-//    const spanElt = document.createElement('span');
-
-//    if (nbrsOfSaves < 3) { //RAJOUTER UN CHOIX POUR EMPECHER UN DOUBLONS
-//        spanElt.innerHTML = `<a href='#' class='liens' id='save${nbrsOfSaves}'>${valInputElt}</a></br>`;
-//        divEltSaves.appendChild(spanElt);
-//        change_value(valInputElt, nbrsOfSaves);
-//        nbrsOfSaves++;
-       
-//    }
-   
-//    document.querySelectorAll('.liens').forEach(lienElements => {
-// //        array = [];
-//        savesSession.array.id = nbrsOfSaves;
-//        savesSession.array.push(sectionContainer.innerHTML);
-//        if(valInputElt == lienElements.textContent) {
-//            upDateHtml(pseudo, valInputElt);
-//        } else {
-//             saveHtml(pseudo, valInputElt);
-//        }
-
-//        lienElements.addEventListener('click', event => {
-//            loadHtml2(pseudo, valInputElt);
-//        });
-       
-//    });
-
-   
-// });
+    sectionContainer.innerHTML = savesSession.array;
+}
 
 function change_value(input, id) {
     choix = selectElt.selectedIndex // Récupération de l'index du <option> choisi
@@ -249,23 +181,16 @@ function change_value(input, id) {
     selectElt.options[id].text = input;
 }
 
-
-
 window.addEventListener('load', function () {
     // const valInputElt = document.getElementById('inputSave').value;
     // loadHtml2(pseudo, valInputElt);
+    loadHtml();
 
     sectionInputs.style.zIndex = 20;
     sectionInputsHiver.style.zIndex = 0;
     sectionInputsUniteFr.style.zIndex = 0;
     sectionInputsUniteRu.style.zIndex = 0;
     sectionInputsSauvegarde.style.zIndex = 0;
-
-//    if(!lienElements.id) {
-//        sectionContainer.innerHTML = '';
-//        loadHtml('save0');
-//        sectionContainer.innerHTML = savesSession.array.join('');
-//    }
 
     const tdElement = document.querySelectorAll('td');
 
@@ -327,16 +252,17 @@ buttonValider.addEventListener('click', function (e) {
         nbrColElt = inputNbrCol.value;
 
     e.preventDefault();
-    if (pseudo !=  '' && nbrColElt != '' && nbrDivElt != '' && !sectionContainer.getElementsByTagName('table').length) {
-//        if(!lienElements.id) {
-//            loadHtml(lienElements.id);
-//        }
+    if (pseudo != '' && nbrColElt != '' && nbrDivElt != '' && !sectionContainer.getElementsByTagName('table').length) {
+        //        if(!lienElements.id) {
+        //            loadHtml(lienElements.id);
+        //        }
 
         nbrDivElt++;
         nbrColElt++;
 
         BuildTable(nbrColElt, nbrDivElt);
-//        saveHtml(lienElements.id);
+        //        saveHtml(lienElements.id)
+        
     }
 });
 
@@ -347,9 +273,12 @@ buttonReset.addEventListener('click', function (e) {
     sectionContainer.innerHTML = '';
     sectionContainer.style.border = 'none';
     savesSession.array = [];
-    
-//    window.localStorage.removeItem('save0');
-//    
-//    saveHtml(lienElements.id);
+
+    window.localStorage.removeItem('saveMap');
+    saveHtml();
     window.location.reload();
+});
+
+buttonSave.addEventListener('click', function() {
+    saveHtml();
 });

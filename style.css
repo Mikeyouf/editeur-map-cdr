@@ -229,6 +229,7 @@ label:hover {
     border-radius: 0 0 5px 0;
     padding: 0.7em;
     background: #eee;
+    display: none;
 }
 
 #sauvegardes {
