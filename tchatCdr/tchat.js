@@ -131,7 +131,7 @@ window.onload = function () {
             liElt.innerHTML = `
             <div class="message ${userClassRu} ${userClassFr} ${noUserClassRu} ${noUserClassFr}">
             <p class="pseudoChat">${messages.pseudo}</p>
-            <p class="date">${messages.messageDate}</p>
+            <p class="date">${messages.date}</p>
             <p class="messageChat"> ${messages.text}</p>
             </div>
             `;
@@ -225,7 +225,7 @@ window.onload = function () {
             liElt.innerHTML = `
             <div class="message ${userClassRu} ${noUserClassRu}">
             <p class="pseudoChat">${messages.pseudo}</p>
-            <p class="date">${messages.messageDate}</p>
+            <p class="date">${messages.date}</p>
             <p class="messageChat"> ${messages.text}</p>
             </div>
             `;
@@ -317,7 +317,7 @@ window.onload = function () {
             liElt.innerHTML = `
             <div class="message ${userClassFr} ${noUserClassFr}">
             <p class="pseudoChat">${messages.pseudo}</p>
-            <p class="date">${messages.messageDate}</p>
+            <p class="date">${messages.date}</p>
             <p class="messageChat"> ${messages.text}</p>
             </div>
             `;
