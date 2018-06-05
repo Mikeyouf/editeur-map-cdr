@@ -196,7 +196,7 @@ window.onload = function () {
 
         if (message !== "") {
             ref.push({
-                date: `${messages.messageDate}`,
+                date: `${messageDate}`,
                 pseudo: `${pseudo}`,
                 text: `${message}`,
                 messageId: `${messageId}`,
