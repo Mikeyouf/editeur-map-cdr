@@ -35,7 +35,7 @@ window.onload = function () {
 
     // Initialize Firebase
     const firebaseConfig = {
-        apiKey: "AIzaSyC0hDMeatsFgqlMWHFpSoex45_I88G-7CQ",
+        apiKey: "MyApiKey",
         authDomain: "chat-cdr-62f5a.firebaseapp.com",
         databaseURL: "https://chat-cdr-62f5a.firebaseio.com",
         projectId: "chat-cdr-62f5a",
