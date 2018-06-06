@@ -1,14 +1,13 @@
 window.onload = function () {
     //scroll to down
-    function scrollToTop(scrollDuration) {
-        var scrollStep = window.scrollY / (scrollDuration / 15),
-            scrollInterval = setInterval(function () {
-                if (window.scrollY != 0) {
-                    window.scrollBy(0, scrollStep);
-                } else clearInterval(scrollInterval);
-            }, 15);
-            clearInterval(scrollInterval);
-    }
+    // function scrollToTop(scrollDuration) {
+    //     var scrollStep = window.scrollY / (scrollDuration / 15),
+    //         scrollInterval = setInterval(function () {
+    //             if (window.scrollY != 0) {
+    //                 window.scrollBy(0, scrollStep);
+    //             } else clearInterval(scrollInterval);
+    //         }, 15);
+    // }
 
     // DATE
     // les noms de jours / mois
@@ -21,7 +20,7 @@ window.onload = function () {
     messageDate += date.getDate() + " "; // numero du jour
     messageDate += mois[date.getMonth()] + " "; // mois
     messageDate += date.getHours() + " :"; //heure
-    messageDate += date.getMinutes();
+    messageDate += date.getMinutes(); // minutes
 
     // DECODE URL
     const decodeURL = decodeURI(window.location.href);
@@ -99,6 +98,7 @@ window.onload = function () {
         const now = Date.now();
         const messageId = now;
         const ref = firebase.database().ref('messages');
+        const chatZone = document.getElementById("listeMessage");
 
         if (message !== "") {
             ref.push({
@@ -109,7 +109,9 @@ window.onload = function () {
                 nation: `${nation}`
             });
         }
-        scrollToTop(2500);
+        
+        chatZone.scrollTop = chatZone.scrollHeight;
+        // scrollToTop(2500);
         //on vide l'input
         textArea.value = "";
         textArea.style.focus = "auto";
@@ -196,6 +198,7 @@ window.onload = function () {
         const now = Date.now();
         const messageId = now;
         const ref = firebase.database().ref('messagesRu');
+        const chatZone = document.getElementById("listeMessageRu");
 
         if (message !== "") {
             ref.push({
@@ -206,7 +209,8 @@ window.onload = function () {
                 nation: `${nation}`
             });
         }
-        scrollToTop(2500);
+        chatZone.scrollTop = chatZone.scrollHeight;
+        // scrollToTop(2500);
         //on vide l'input
         textAreaRu.value = "";
         textAreaRu.style.focus = "auto";
@@ -289,6 +293,7 @@ window.onload = function () {
         const now = Date.now();
         const messageId = now;
         const ref = firebase.database().ref('messagesFr');
+        const chatZone = document.getElementById("listeMessageFr");
 
         if (message !== "") {
             ref.push({
@@ -299,7 +304,8 @@ window.onload = function () {
                 nation: `${nation}`
             });
         }
-        scrollToTop(2500);
+        chatZone.scrollTop = chatZone.scrollHeight;
+        // scrollToTop(2500);
         //on vide l'input
         textAreaFr.value = "";
         textAreaFr.style.focus = "auto";
