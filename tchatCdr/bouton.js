@@ -35,7 +35,7 @@ window.onload = function () {
     //fonction qui ouvre la popup au clic
     const openPopup = document.getElementById("openPopup");
     openPopup.addEventListener("click", function () {
-        window.open(encodeURL, "tchat CDR", 'menubar=yes, scrollbars=yes, top=20, left=700, width=450, height=650');
+        window.open(encodeURL, "tchat CDR", 'menubar=no, scrollbars=yes, top=20, left=700, width=450, height=650');
     });
 
     //on recupere la feuille de style et on la met dans le head
