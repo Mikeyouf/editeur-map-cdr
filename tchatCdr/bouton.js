@@ -35,8 +35,6 @@ window.onload = function () {
     //fonction qui ouvre la popup au clic
     const openPopup = document.getElementById("openPopup");
     openPopup.addEventListener("click", function () {
-        var stateObj = { foo: "bar" };
-        window.history.pushState(stateObj, "tchat cdr", "popup.html");
         window.open(encodeURL, "tchat CDR", 'menubar=no, status=no, directories=no, location=no, scrollbars=yes, top=20, left=700, width=450, height=650');
     });
 

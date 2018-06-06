@@ -8,6 +8,8 @@ window.onload = function () {
     //             } else clearInterval(scrollInterval);
     //         }, 15);
     // }
+    var stateObj = { foo: "bar" };
+    window.history.pushState(stateObj, "tchat cdr", "popup.html");
 
     // DATE
     // les noms de jours / mois
