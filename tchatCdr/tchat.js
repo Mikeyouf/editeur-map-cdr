@@ -1,13 +1,13 @@
 window.onload = function () {
     //scroll to down
-    function scrollToTop(scrollDuration) {
-        var scrollStep = window.scrollY / (scrollDuration / 15),
-            scrollInterval = setInterval(function () {
-                if (window.scrollY != 0) {
-                    window.scrollBy(0, scrollStep);
-                } else clearInterval(scrollInterval);
-            }, 15);
-    }
+    // function scrollToTop(scrollDuration) {
+    //     var scrollStep = window.scrollY / (scrollDuration / 15),
+    //         scrollInterval = setInterval(function () {
+    //             if (window.scrollY != 0) {
+    //                 window.scrollBy(0, scrollStep);
+    //             } else clearInterval(scrollInterval);
+    //         }, 15);
+    // }
 
     // DATE
     // les noms de jours / mois
@@ -139,8 +139,8 @@ window.onload = function () {
             </div>
             `;
 
-            // const chatZone = document.querySelector("#popup-content");
-            // chatZone.scrollTop = chatZone.scrollHeight;
+            const chatZone = document.querySelector(".messages");
+            chatZone.scrollTop = chatZone.scrollHeight;
 
             const ulEltMessage = document.getElementById('listeMessage');
             ulEltMessage.appendChild(liElt);
@@ -152,7 +152,7 @@ window.onload = function () {
             );
 
             window.focus();
-            scrollToTop(2500);
+            // scrollToTop(2500);
         });
 
         //suppression des anciens messages
@@ -240,8 +240,8 @@ window.onload = function () {
             const ulEltMessage = document.getElementById('listeMessageRu');
             ulEltMessage.appendChild(liElt);
 
-            // const chatZone = document.querySelector("#popup-content");
-            // chatZone.scrollTop = chatZone.scrollHeight;
+            const chatZone = document.querySelector(".messages");
+            chatZone.scrollTop = chatZone.scrollHeight;
 
             //supprime au delà d'un certain nombre de messages
             const divMessageEntier = document.querySelectorAll(".message");
@@ -250,7 +250,7 @@ window.onload = function () {
             );
 
             window.focus();
-            scrollToTop(2500);
+            // scrollToTop(2500);
         });
 
         //suppression des anciens messages
@@ -338,8 +338,8 @@ window.onload = function () {
             const ulEltMessage = document.getElementById('listeMessageFr');
             ulEltMessage.appendChild(liElt);
 
-            // const chatZone = document.querySelector("#popup-content");
-            // chatZone.scrollTop = chatZone.scrollHeight;
+            const chatZone = document.querySelector(".messages");
+            chatZone.scrollTop = chatZone.scrollHeight;
 
             //supprime au delà d'un certain nombre de messages
             const divMessageEntier = document.querySelectorAll(".message");
@@ -348,7 +348,7 @@ window.onload = function () {
             );
 
             window.focus();
-            scrollToTop(2500);
+            // scrollToTop(2500);
         });
 
         //suppression des anciens messages
