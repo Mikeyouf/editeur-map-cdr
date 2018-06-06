@@ -140,7 +140,9 @@ window.onload = function () {
             `;
 
             const chatZone = document.querySelector(".messages");
-            chatZone.scrollTop = chatZone.scrollHeight;
+            // chatZone.scrollTop = chatZone.scrollHeight;
+            const bottomScroll = chatZone.scrollHeight - chatZone.clientHeight;
+            chatZone.scrollTop = bottomScroll; // scroll tout en bas
 
             const ulEltMessage = document.getElementById('listeMessage');
             ulEltMessage.appendChild(liElt);
@@ -241,7 +243,9 @@ window.onload = function () {
             ulEltMessage.appendChild(liElt);
 
             const chatZone = document.querySelector(".messages");
-            chatZone.scrollTop = chatZone.scrollHeight;
+            // chatZone.scrollTop = chatZone.scrollHeight;
+            const bottomScroll = chatZone.scrollHeight - chatZone.clientHeight;
+            chatZone.scrollTop = bottomScroll; // scroll tout en bas
 
             //supprime au delà d'un certain nombre de messages
             const divMessageEntier = document.querySelectorAll(".message");
@@ -339,7 +343,9 @@ window.onload = function () {
             ulEltMessage.appendChild(liElt);
 
             const chatZone = document.querySelector(".messages");
-            chatZone.scrollTop = chatZone.scrollHeight;
+            // chatZone.scrollTop = chatZone.scrollHeight;
+            const bottomScroll = chatZone.scrollHeight - chatZone.clientHeight;
+            chatZone.scrollTop = bottomScroll; // scroll tout en bas
 
             //supprime au delà d'un certain nombre de messages
             const divMessageEntier = document.querySelectorAll(".message");
