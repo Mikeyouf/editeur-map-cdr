@@ -25,7 +25,7 @@ window.onload = function () {
     messageDate += minutes; // minutes
 
     // DECODE URL
-    const decodeURL = decodeURIComponent(window.location.href);
+    const decodeURL = decodeURIc(window.location.href);
     const params = decodeURL.split("?")[1].split("&").reduce((p, c) => {
         const param = c.split("=");
         p[param[0]] = param[1];
