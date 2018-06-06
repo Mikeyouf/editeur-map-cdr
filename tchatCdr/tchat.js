@@ -7,6 +7,7 @@ window.onload = function () {
                     window.scrollBy(0, scrollStep);
                 } else clearInterval(scrollInterval);
             }, 15);
+            clearInterval(scrollInterval);
     }
 
     // DATE
