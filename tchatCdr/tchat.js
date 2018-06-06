@@ -1,13 +1,13 @@
 window.onload = function () {
     //scroll to down
-    // function scrollToTop(scrollDuration) {
-    //     var scrollStep = window.scrollY / (scrollDuration / 15),
-    //         scrollInterval = setInterval(function () {
-    //             if (window.scrollY != 0) {
-    //                 window.scrollBy(0, scrollStep);
-    //             } else clearInterval(scrollInterval);
-    //         }, 15);
-    // }
+    function scrollToTop(scrollDuration) {
+        var scrollStep = window.scrollY / (scrollDuration / 15),
+            scrollInterval = setInterval(function () {
+                if (window.scrollY != 0) {
+                    window.scrollBy(0, scrollStep);
+                } else clearInterval(scrollInterval);
+            }, 15);
+    }
 
     // DATE
     // les noms de jours / mois
@@ -98,7 +98,6 @@ window.onload = function () {
         const now = Date.now();
         const messageId = now;
         const ref = firebase.database().ref('messages');
-        const chatZone = document.querySelector("#popup-content");
 
         if (message !== "") {
             ref.push({
@@ -110,7 +109,6 @@ window.onload = function () {
             });
         }
         
-        chatZone.scrollTop = chatZone.scrollHeight;
         // scrollToTop(2500);
         //on vide l'input
         textArea.value = "";
@@ -140,6 +138,9 @@ window.onload = function () {
             <p class="messageChat"> ${messages.text}</p>
             </div>
             `;
+
+            // const chatZone = document.querySelector("#popup-content");
+            // chatZone.scrollTop = chatZone.scrollHeight;
 
             const ulEltMessage = document.getElementById('listeMessage');
             ulEltMessage.appendChild(liElt);
@@ -198,7 +199,6 @@ window.onload = function () {
         const now = Date.now();
         const messageId = now;
         const ref = firebase.database().ref('messagesRu');
-        const chatZone = document.querySelector("#popup-content");
 
         if (message !== "") {
             ref.push({
@@ -209,7 +209,7 @@ window.onload = function () {
                 nation: `${nation}`
             });
         }
-        chatZone.scrollTop = chatZone.scrollHeight;
+        
         // scrollToTop(2500);
         //on vide l'input
         textAreaRu.value = "";
@@ -240,6 +240,9 @@ window.onload = function () {
             const ulEltMessage = document.getElementById('listeMessageRu');
             ulEltMessage.appendChild(liElt);
 
+            // const chatZone = document.querySelector("#popup-content");
+            // chatZone.scrollTop = chatZone.scrollHeight;
+
             //supprime au delà d'un certain nombre de messages
             const divMessageEntier = document.querySelectorAll(".message");
             Object.keys(divMessageEntier).slice(0, -20).map(
@@ -247,6 +250,7 @@ window.onload = function () {
             );
 
             window.focus();
+            scrollToTop(2500);
         });
 
         //suppression des anciens messages
@@ -293,7 +297,7 @@ window.onload = function () {
         const now = Date.now();
         const messageId = now;
         const ref = firebase.database().ref('messagesFr');
-        const chatZone = document.querySelector("#popup-content");
+        
 
         if (message !== "") {
             ref.push({
@@ -304,7 +308,7 @@ window.onload = function () {
                 nation: `${nation}`
             });
         }
-        chatZone.scrollTop = chatZone.scrollHeight;
+        
         // scrollToTop(2500);
         //on vide l'input
         textAreaFr.value = "";
@@ -334,6 +338,9 @@ window.onload = function () {
             const ulEltMessage = document.getElementById('listeMessageFr');
             ulEltMessage.appendChild(liElt);
 
+            // const chatZone = document.querySelector("#popup-content");
+            // chatZone.scrollTop = chatZone.scrollHeight;
+
             //supprime au delà d'un certain nombre de messages
             const divMessageEntier = document.querySelectorAll(".message");
             Object.keys(divMessageEntier).slice(0, -20).map(
@@ -341,6 +348,7 @@ window.onload = function () {
             );
 
             window.focus();
+            scrollToTop(2500);
         });
 
         //suppression des anciens messages
