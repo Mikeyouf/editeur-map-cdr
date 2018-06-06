@@ -98,7 +98,7 @@ window.onload = function () {
         const now = Date.now();
         const messageId = now;
         const ref = firebase.database().ref('messages');
-        const chatZone = document.querySelector(".divContainer");
+        const chatZone = document.querySelector("#mainChat");
 
         if (message !== "") {
             ref.push({
@@ -198,7 +198,7 @@ window.onload = function () {
         const now = Date.now();
         const messageId = now;
         const ref = firebase.database().ref('messagesRu');
-        const chatZone = document.querySelector(".divContainer");
+        const chatZone = document.querySelector("#mainChat");
 
         if (message !== "") {
             ref.push({
@@ -293,7 +293,7 @@ window.onload = function () {
         const now = Date.now();
         const messageId = now;
         const ref = firebase.database().ref('messagesFr');
-        const chatZone = document.querySelector(".divContainer");
+        const chatZone = document.querySelector("#mainChat");
 
         if (message !== "") {
             ref.push({
