@@ -98,7 +98,7 @@ window.onload = function () {
         const now = Date.now();
         const messageId = now;
         const ref = firebase.database().ref('messages');
-        const chatZone = document.getElementById("listeMessage");
+        const chatZone = document.querySelector(".mainDivElt");
 
         if (message !== "") {
             ref.push({
@@ -198,7 +198,7 @@ window.onload = function () {
         const now = Date.now();
         const messageId = now;
         const ref = firebase.database().ref('messagesRu');
-        const chatZone = document.getElementById("listeMessageRu");
+        const chatZone = document.querySelector(".mainDivElt");
 
         if (message !== "") {
             ref.push({
@@ -293,7 +293,7 @@ window.onload = function () {
         const now = Date.now();
         const messageId = now;
         const ref = firebase.database().ref('messagesFr');
-        const chatZone = document.getElementById("listeMessageFr");
+        const chatZone = document.querySelector(".mainDivElt");
 
         if (message !== "") {
             ref.push({
