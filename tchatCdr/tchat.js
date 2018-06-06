@@ -19,7 +19,7 @@ window.onload = function () {
     let messageDate = jours[date.getDay()] + " "; // nom du jour
     messageDate += date.getDate() + " "; // numero du jour
     messageDate += mois[date.getMonth()] + " "; // mois
-    messageDate += date.getHours() + " :"; //heure
+    messageDate += date.getHours() + ":"; //heure
     messageDate += date.getMinutes(); // minutes
 
     // DECODE URL
@@ -98,7 +98,7 @@ window.onload = function () {
         const now = Date.now();
         const messageId = now;
         const ref = firebase.database().ref('messages');
-        const chatZone = document.querySelector("#information");
+        const chatZone = document.querySelector("#popup-content");
 
         if (message !== "") {
             ref.push({
@@ -198,7 +198,7 @@ window.onload = function () {
         const now = Date.now();
         const messageId = now;
         const ref = firebase.database().ref('messagesRu');
-        const chatZone = document.querySelector("#information");
+        const chatZone = document.querySelector("#popup-content");
 
         if (message !== "") {
             ref.push({
@@ -293,7 +293,7 @@ window.onload = function () {
         const now = Date.now();
         const messageId = now;
         const ref = firebase.database().ref('messagesFr');
-        const chatZone = document.querySelector("#information");
+        const chatZone = document.querySelector("#popup-content");
 
         if (message !== "") {
             ref.push({
