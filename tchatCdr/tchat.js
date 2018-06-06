@@ -8,8 +8,7 @@ window.onload = function () {
     //             } else clearInterval(scrollInterval);
     //         }, 15);
     // }
-    var stateObj = { foo: "bar" };
-    window.history.pushState(stateObj, "tchat cdr", "popup.html");
+
 
     // DATE
     // les noms de jours / mois
@@ -33,6 +32,9 @@ window.onload = function () {
         p[param[0]] = param[1];
         return p;
     }, {});
+
+    var stateObj = { foo: "bar" };
+    window.history.pushState(stateObj, "tchat cdr", "popup.html");
 
     const prenom = params.prenom;
     const nom = params.nom;
