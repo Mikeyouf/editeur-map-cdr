@@ -151,11 +151,11 @@ window.onload = function () {
             const ulEltMessage = document.getElementById('listeMessage');
             ulEltMessage.appendChild(liElt);
 
-            //supprime au delà d'un certain nombre de messages
-            const divMessageEntier = document.querySelectorAll(".message");
-            Object.keys(divMessageEntier).slice(0, -20).map(
-                key => divMessageEntier[key].remove()
-            );
+            // //supprime au delà d'un certain nombre de messages
+            // const divMessageEntier = document.querySelectorAll(".message");
+            // Object.keys(divMessageEntier).slice(0, -20).map(
+            //     key => divMessageEntier[key].remove()
+            // );
 
             window.focus();
             scrollToTop(2500);
