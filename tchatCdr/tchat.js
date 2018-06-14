@@ -115,10 +115,10 @@ window.onload = function () {
             });
         }
         
-        scrollToTop(2500);
         //on vide l'input
         textArea.value = "";
         textArea.style.focus = "auto";
+        scrollToTop(2500);
     });
 
     const listenMessages = firebase.database().ref('messages');
@@ -216,10 +216,10 @@ window.onload = function () {
             });
         }
         
-        scrollToTop(2500);
         //on vide l'input
         textAreaRu.value = "";
         textAreaRu.style.focus = "auto";
+        scrollToTop(2500);
     });
 
     const listenMessagesRu = firebase.database().ref('messagesRu');
@@ -230,7 +230,6 @@ window.onload = function () {
             //const de CSS
             const userClassRu = messages.pseudo === pseudo && messages.nation === "Ru" ? "messageContentRu" : " ";
             const noUserClassRu = messages.pseudo !== pseudo && messages.nation === "Ru" ? "messageContentLeftRu" : " ";
-
 
             //on crée une balise li pour y mettre le message
             const liElt = document.createElement('li');
@@ -315,10 +314,10 @@ window.onload = function () {
             });
         }
         
-        scrollToTop(2500);
         //on vide l'input
         textAreaFr.value = "";
         textAreaFr.style.focus = "auto";
+        scrollToTop(2500);
     });
 
     const listenMessagesFr = firebase.database().ref('messagesFr');
