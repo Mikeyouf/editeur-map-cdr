@@ -8,6 +8,8 @@ window.onload = function () {
                 } else clearInterval(scrollInterval);
             }, 15);
     }
+    //TEST SCROLL
+    const boleanScroll = true;
 
     // DATE
     // les noms de jours / mois
@@ -154,7 +156,12 @@ window.onload = function () {
             );
 
             window.focus();
-            scrollToTop(2500);
+            if(boleanScroll) {
+                scrollToTop(2500);
+                boleanScroll = false;
+                console.log(boleanScroll);
+            }
+            
             // const chatZone = document.querySelector(".messages");
             // chatZone.scrollTop = chatZone.scrollHeight;
         });
@@ -250,7 +257,11 @@ window.onload = function () {
             );
 
             window.focus();
-            scrollToTop(2500);
+            if(boleanScroll) {
+                scrollToTop(2500);
+                boleanScroll = false;
+                console.log(boleanScroll);
+            }
             // const chatZone = document.querySelector(".messages");
             // chatZone.scrollTop = chatZone.scrollHeight;
         });
@@ -346,7 +357,11 @@ window.onload = function () {
             );
 
             window.focus();
-            scrollToTop(2500);
+            if(boleanScroll) {
+                scrollToTop(2500);
+                boleanScroll = false;
+                console.log(boleanScroll);
+            }
             // const chatZone = document.querySelector(".messages");
             // chatZone.scrollTop = chatZone.scrollHeight;
         });
