@@ -1,6 +1,8 @@
 window.onload = function () {
     //TEST SCROLL
     let boleanScroll = true;
+    let boleanScrollRu = true;
+    let boleanScrollFr = true;
     //scroll to down
     function scrollToTop(scrollDuration) {
         var scrollStep = window.scrollY / (scrollDuration / 15),
@@ -10,6 +12,8 @@ window.onload = function () {
                 } else clearInterval(scrollInterval);
             }, 15);
             boleanScroll = true;
+            boleanScrollRu = true;
+            boleanScrollFr = true;
     }
 
     // DATE
@@ -224,9 +228,9 @@ window.onload = function () {
         textAreaRu.value = "";
         textAreaRu.style.focus = "auto";
         
-        if(boleanScroll) {
+        if(boleanScrollRu) {
             scrollToTop(2500);
-            boleanScroll = false;
+            boleanScrollRu = false;
         }
     });
 
@@ -322,9 +326,9 @@ window.onload = function () {
         textAreaFr.value = "";
         textAreaFr.style.focus = "auto";
         
-        if(boleanScroll) {
+        if(boleanScrollFr) {
             scrollToTop(2500);
-            boleanScroll = false;
+            boleanScrollFr = false;
         }
     });
 
