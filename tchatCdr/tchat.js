@@ -115,11 +115,16 @@ window.onload = function () {
                 nation: `${nation}`
             });
         }
-        boleanScroll = true;
+        if(boleanScroll) {
+            scrollToTop(2500);
+            boleanScroll = false;
+        }
+        
         //on vide l'input
         textArea.value = "";
         textArea.style.focus = "auto";
         // scrollToTop(2500);
+        boleanScroll = true;
     });
 
     const listenMessages = firebase.database().ref('messages');
@@ -156,10 +161,6 @@ window.onload = function () {
             );
 
             window.focus();
-            if(boleanScroll) {
-                scrollToTop(2500);
-                boleanScroll = false;
-            }
             
             // const chatZone = document.querySelector(".messages");
             // chatZone.scrollTop = chatZone.scrollHeight;
