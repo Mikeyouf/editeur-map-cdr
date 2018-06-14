@@ -9,7 +9,7 @@ window.onload = function () {
             }, 15);
     }
     //TEST SCROLL
-    const boleanScroll = true;
+    let boleanScroll = true;
 
     // DATE
     // les noms de jours / mois
