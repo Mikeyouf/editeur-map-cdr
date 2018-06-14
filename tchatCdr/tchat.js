@@ -117,7 +117,7 @@ window.onload = function () {
         //on vide l'input
         textArea.value = "";
         textArea.style.focus = "auto";
-        // scrollToTop(2500);
+        scrollToTop(2500);
     });
 
     const listenMessages = firebase.database().ref('messages');
@@ -144,16 +144,14 @@ window.onload = function () {
             </div>
             `;
 
-            
-
             const ulEltMessage = document.getElementById('listeMessage');
             ulEltMessage.appendChild(liElt);
 
-            // //supprime au delà d'un certain nombre de messages
-            // const divMessageEntier = document.querySelectorAll(".message");
-            // Object.keys(divMessageEntier).slice(0, -20).map(
-            //     key => divMessageEntier[key].remove()
-            // );
+            //supprime au delà d'un certain nombre de messages
+            const divMessageEntier = document.querySelectorAll(".message");
+            Object.keys(divMessageEntier).slice(0, -20).map(
+                key => divMessageEntier[key].remove()
+            );
 
             window.focus();
             scrollToTop(2500);
@@ -245,8 +243,6 @@ window.onload = function () {
             const ulEltMessage = document.getElementById('listeMessageRu');
             ulEltMessage.appendChild(liElt);
 
-            
-
             //supprime au delà d'un certain nombre de messages
             const divMessageEntier = document.querySelectorAll(".message");
             Object.keys(divMessageEntier).slice(0, -20).map(
@@ -254,9 +250,9 @@ window.onload = function () {
             );
 
             window.focus();
-            // scrollToTop(2500);
-            const chatZone = document.querySelector(".messages");
-            chatZone.scrollTop = chatZone.scrollHeight;
+            scrollToTop(2500);
+            // const chatZone = document.querySelector(".messages");
+            // chatZone.scrollTop = chatZone.scrollHeight;
         });
 
         //suppression des anciens messages
@@ -265,7 +261,7 @@ window.onload = function () {
             if (!messages) {
                 return
             }
-            if (Object.keys(messages).length > 20) {
+            if (Object.keys(messages).length > 25) {
                 const query = listenMessages.orderByChild('messagesRu').limitToFirst(5);
                 const updates = {};
                 query.on('value', function (snapshot) {
@@ -304,7 +300,6 @@ window.onload = function () {
         const messageId = now;
         const ref = firebase.database().ref('messagesFr');
         
-
         if (message !== "") {
             ref.push({
                 date: `${messageDate}`,
@@ -318,7 +313,7 @@ window.onload = function () {
         //on vide l'input
         textAreaFr.value = "";
         textAreaFr.style.focus = "auto";
-        // scrollToTop(2500);
+        scrollToTop(2500);
     });
 
     const listenMessagesFr = firebase.database().ref('messagesFr');
@@ -344,8 +339,6 @@ window.onload = function () {
             const ulEltMessage = document.getElementById('listeMessageFr');
             ulEltMessage.appendChild(liElt);
 
-            
-
             //supprime au delà d'un certain nombre de messages
             const divMessageEntier = document.querySelectorAll(".message");
             Object.keys(divMessageEntier).slice(0, -20).map(
@@ -353,9 +346,9 @@ window.onload = function () {
             );
 
             window.focus();
-            // scrollToTop(2500);
-            const chatZone = document.querySelector(".messages");
-            chatZone.scrollTop = chatZone.scrollHeight;
+            scrollToTop(2500);
+            // const chatZone = document.querySelector(".messages");
+            // chatZone.scrollTop = chatZone.scrollHeight;
         });
 
         //suppression des anciens messages
@@ -364,7 +357,7 @@ window.onload = function () {
             if (!messages) {
                 return
             }
-            if (Object.keys(messages).length > 20) {
+            if (Object.keys(messages).length > 25) {
                 const query = listenMessages.orderByChild('messagesFr').limitToFirst(5);
                 const updates = {};
                 query.on('value', function (snapshot) {
