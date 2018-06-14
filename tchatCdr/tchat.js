@@ -13,6 +13,7 @@ window.onload = function () {
             let i = 60;
             while(i > 0) {
                 i--;
+                console.log(i);
                 if(i == 0) {
                     clearInterval(scrollInterval)
                 }
