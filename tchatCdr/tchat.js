@@ -124,11 +124,6 @@ window.onload = function () {
         //on vide l'input
         textArea.value = "";
         textArea.style.focus = "auto";
-
-        if(boleanScroll) {
-            scrollToTop(2500);
-            boleanScroll = false;
-        }
         
     });
 
@@ -166,6 +161,10 @@ window.onload = function () {
             );
 
             window.focus();
+            if(boleanScroll) {
+                scrollToTop(2500);
+                boleanScroll = false;
+            }
 
         });
 
@@ -228,10 +227,6 @@ window.onload = function () {
         textAreaRu.value = "";
         textAreaRu.style.focus = "auto";
         
-        if(boleanScrollRu) {
-            scrollToTop(2500);
-            boleanScrollRu = false;
-        }
     });
 
     const listenMessagesRu = firebase.database().ref('messagesRu');
@@ -264,6 +259,10 @@ window.onload = function () {
             );
 
             window.focus();
+            if(boleanScrollRu) {
+                scrollToTop(2500);
+                boleanScrollRu = false;
+            }
             // const chatZone = document.querySelector(".messages");
             // chatZone.scrollTop = chatZone.scrollHeight;
         });
@@ -326,10 +325,6 @@ window.onload = function () {
         textAreaFr.value = "";
         textAreaFr.style.focus = "auto";
         
-        if(boleanScrollFr) {
-            scrollToTop(2500);
-            boleanScrollFr = false;
-        }
     });
 
     const listenMessagesFr = firebase.database().ref('messagesFr');
@@ -362,6 +357,10 @@ window.onload = function () {
             );
 
             window.focus();
+            if(boleanScrollFr) {
+                scrollToTop(2500);
+                boleanScrollFr = false;
+            }
             // const chatZone = document.querySelector(".messages");
             // chatZone.scrollTop = chatZone.scrollHeight;
         });
