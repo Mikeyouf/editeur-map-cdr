@@ -3,7 +3,7 @@ window.onload = function () {
 
     var lastScrollTop = 0;
     window.scroll(function(event){
-    var st = $(this).scrollTop();
+    var st = scrollTop();
     if (st > lastScrollTop){
         console.log("scroll vers le bas");
     } else {
@@ -11,7 +11,7 @@ window.onload = function () {
     }
     lastScrollTop = st;
     });
-    
+
     let boleanScroll = true;
     let boleanScrollRu = true;
     let boleanScrollFr = true;
