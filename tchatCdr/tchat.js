@@ -1,4 +1,6 @@
 window.onload = function () {
+        //TEST SCROLL
+        let boleanScroll = true;
     //scroll to down
     function scrollToTop(scrollDuration) {
         var scrollStep = window.scrollY / (scrollDuration / 15),
@@ -7,9 +9,11 @@ window.onload = function () {
                     window.scrollBy(0, scrollStep);
                 } else clearInterval(scrollInterval);
             }, 15);
+            const chatZone = document.querySelector(".messages");
+            if(chatZone.scrollTop == chatZone.scrollHeight) {
+                boleanScroll = true;
+            }
     }
-    //TEST SCROLL
-    let boleanScroll = true;
 
     // DATE
     // les noms de jours / mois
@@ -119,6 +123,13 @@ window.onload = function () {
         //on vide l'input
         textArea.value = "";
         textArea.style.focus = "auto";
+
+        if(boleanScroll) {
+            scrollToTop(2500);
+            boleanScroll = false;
+        }
+        
+        console.log(boleanScroll);
         
     });
 
@@ -157,16 +168,6 @@ window.onload = function () {
 
             window.focus();
 
-            if(boleanScroll) {
-                scrollToTop(2500);
-                boleanScroll = false;
-            }
-            
-            const chatZone = document.querySelector(".messages");
-            if(chatZone.scrollTop == chatZone.scrollHeight) {
-                boleanScroll = true;
-            }
-            console.log(boleanScroll);
         });
 
         //suppression des anciens messages
