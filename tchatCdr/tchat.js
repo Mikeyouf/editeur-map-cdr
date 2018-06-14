@@ -233,7 +233,7 @@ window.onload = function () {
             const liElt = document.createElement('li');
 
             liElt.innerHTML = `
-            <div class="message ${userClassRu} ${noUserClassRu}">
+            <div class="messageRu ${userClassRu} ${noUserClassRu}">
             <p class="pseudoChat">${messages.pseudo}</p>
             <p class="date">${messages.date}</p>
             <p class="messageChat"> ${messages.text}</p>
@@ -244,7 +244,7 @@ window.onload = function () {
             ulEltMessage.appendChild(liElt);
 
             //supprime au delà d'un certain nombre de messages
-            const divMessageEntier = document.querySelectorAll(".message");
+            const divMessageEntier = document.querySelectorAll(".messageRu");
             Object.keys(divMessageEntier).slice(0, -20).map(
                 key => divMessageEntier[key].remove()
             );
@@ -329,7 +329,7 @@ window.onload = function () {
             const liElt = document.createElement('li');
 
             liElt.innerHTML = `
-            <div class="message ${userClassFr} ${noUserClassFr}">
+            <div class="messageFr ${userClassFr} ${noUserClassFr}">
             <p class="pseudoChat">${messages.pseudo}</p>
             <p class="date">${messages.date}</p>
             <p class="messageChat"> ${messages.text}</p>
@@ -340,7 +340,7 @@ window.onload = function () {
             ulEltMessage.appendChild(liElt);
 
             //supprime au delà d'un certain nombre de messages
-            const divMessageEntier = document.querySelectorAll(".message");
+            const divMessageEntier = document.querySelectorAll(".messageFr");
             Object.keys(divMessageEntier).slice(0, -20).map(
                 key => divMessageEntier[key].remove()
             );
