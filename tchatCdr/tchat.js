@@ -21,12 +21,13 @@ window.onload = function () {
             boleanScroll = false;
             boleanScrollRu = false;
             boleanScrollFr = false;
+            mesureDeBase = windowY;
         } else {
             boleanScroll = true;
             boleanScrollRu = true;
             boleanScrollFr = true;
         }
-        mesureDeBase = windowY;
+        
 
         console.log(`2/ mesureDeBase: ${mesureDeBase} - windowY: ${windowY} - boleanScroll: ${boleanScroll}`);
     });
