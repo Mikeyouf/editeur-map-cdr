@@ -8,7 +8,7 @@ window.onload = function () {
                 } else {
                     clearInterval(scrollInterval)
                 };
-            }, 15);
+            }, 500);
     }
 
     // DATE
