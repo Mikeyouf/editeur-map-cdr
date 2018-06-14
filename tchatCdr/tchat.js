@@ -159,8 +159,9 @@ window.onload = function () {
             if(boleanScroll) {
                 scrollToTop(2500);
                 boleanScroll = false;
-                console.log(boleanScroll);
             }
+
+            boleanScroll = true;
             
             // const chatZone = document.querySelector(".messages");
             // chatZone.scrollTop = chatZone.scrollHeight;
@@ -260,8 +261,9 @@ window.onload = function () {
             if(boleanScroll) {
                 scrollToTop(2500);
                 boleanScroll = false;
-                console.log(boleanScroll);
             }
+
+            boleanScroll = true;
             // const chatZone = document.querySelector(".messages");
             // chatZone.scrollTop = chatZone.scrollHeight;
         });
@@ -360,8 +362,9 @@ window.onload = function () {
             if(boleanScroll) {
                 scrollToTop(2500);
                 boleanScroll = false;
-                console.log(boleanScroll);
             }
+
+            boleanScroll = true;
             // const chatZone = document.querySelector(".messages");
             // chatZone.scrollTop = chatZone.scrollHeight;
         });
