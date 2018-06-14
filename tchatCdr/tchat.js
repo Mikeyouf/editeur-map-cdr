@@ -6,18 +6,10 @@ window.onload = function () {
                 if (window.scrollY != 0) {
                     window.scrollBy(0, scrollStep);
                 } 
-                //else {
-                //     clearInterval(scrollInterval)
-                // };
-            }, 60);
-            let i = 60;
-            while(i > 0) {
-                i--;
-                console.log(i);
-                if(i == 0) {
+                else {
                     clearInterval(scrollInterval)
-                }
-            }
+                };
+            }, 60);
     }
 
     // DATE
