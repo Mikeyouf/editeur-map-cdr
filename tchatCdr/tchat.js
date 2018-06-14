@@ -2,8 +2,8 @@ window.onload = function () {
     //TEST SCROLL
     const chatZone = document.querySelector(".messages");
     // chatZone.scrollTop = chatZone.scrollHeight;
-
-    let lastScrollTop = window.scrollY;
+    const eltScroll = document.body;
+    let lastScrollTop = eltScroll.scrollTop;
     window.addEventListener("scroll", function(event){
     let st = chatZone.scrollHeight;
     if (st > lastScrollTop){
