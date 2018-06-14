@@ -1,6 +1,6 @@
 window.onload = function () {
-        //TEST SCROLL
-        let boleanScroll = true;
+    //TEST SCROLL
+    let boleanScroll = true;
     //scroll to down
     function scrollToTop(scrollDuration) {
         var scrollStep = window.scrollY / (scrollDuration / 15),
@@ -126,8 +126,6 @@ window.onload = function () {
             boleanScroll = false;
         }
         
-        console.log(boleanScroll);
-        
     });
 
     const listenMessages = firebase.database().ref('messages');
@@ -221,11 +219,15 @@ window.onload = function () {
                 nation: `${nation}`
             });
         }
-        boleanScroll = true;
+        
         //on vide l'input
         textAreaRu.value = "";
         textAreaRu.style.focus = "auto";
-        // scrollToTop(2500);
+        
+        if(boleanScroll) {
+            scrollToTop(2500);
+            boleanScroll = false;
+        }
     });
 
     const listenMessagesRu = firebase.database().ref('messagesRu');
@@ -258,10 +260,6 @@ window.onload = function () {
             );
 
             window.focus();
-            if(boleanScroll) {
-                scrollToTop(2500);
-                boleanScroll = false;
-            }
             // const chatZone = document.querySelector(".messages");
             // chatZone.scrollTop = chatZone.scrollHeight;
         });
@@ -320,11 +318,14 @@ window.onload = function () {
                 nation: `${nation}`
             });
         }
-        boleanScroll = true;
         //on vide l'input
         textAreaFr.value = "";
         textAreaFr.style.focus = "auto";
-        // scrollToTop(2500);
+        
+        if(boleanScroll) {
+            scrollToTop(2500);
+            boleanScroll = false;
+        }
     });
 
     const listenMessagesFr = firebase.database().ref('messagesFr');
@@ -357,10 +358,6 @@ window.onload = function () {
             );
 
             window.focus();
-            if(boleanScroll) {
-                scrollToTop(2500);
-                boleanScroll = false;
-            }
             // const chatZone = document.querySelector(".messages");
             // chatZone.scrollTop = chatZone.scrollHeight;
         });
