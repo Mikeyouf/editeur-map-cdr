@@ -115,7 +115,7 @@ window.onload = function () {
             });
         }
         
-        // scrollToTop(2500);
+        scrollToTop(2500);
         //on vide l'input
         textArea.value = "";
         textArea.style.focus = "auto";
@@ -158,7 +158,7 @@ window.onload = function () {
             );
 
             window.focus();
-            // scrollToTop(2500);
+            scrollToTop(2500);
         });
 
         //suppression des anciens messages
@@ -216,7 +216,7 @@ window.onload = function () {
             });
         }
         
-        // scrollToTop(2500);
+        scrollToTop(2500);
         //on vide l'input
         textAreaRu.value = "";
         textAreaRu.style.focus = "auto";
@@ -256,7 +256,7 @@ window.onload = function () {
             );
 
             window.focus();
-            // scrollToTop(2500);
+            scrollToTop(2500);
         });
 
         //suppression des anciens messages
@@ -265,7 +265,7 @@ window.onload = function () {
             if (!messages) {
                 return
             }
-            if (Object.keys(messages).length > 25) {
+            if (Object.keys(messages).length > 20) {
                 const query = listenMessages.orderByChild('messagesRu').limitToFirst(5);
                 const updates = {};
                 query.on('value', function (snapshot) {
@@ -315,7 +315,7 @@ window.onload = function () {
             });
         }
         
-        // scrollToTop(2500);
+        scrollToTop(2500);
         //on vide l'input
         textAreaFr.value = "";
         textAreaFr.style.focus = "auto";
@@ -354,7 +354,7 @@ window.onload = function () {
             );
 
             window.focus();
-            // scrollToTop(2500);
+            scrollToTop(2500);
         });
 
         //suppression des anciens messages
@@ -363,7 +363,7 @@ window.onload = function () {
             if (!messages) {
                 return
             }
-            if (Object.keys(messages).length > 25) {
+            if (Object.keys(messages).length > 20) {
                 const query = listenMessages.orderByChild('messagesFr').limitToFirst(5);
                 const updates = {};
                 query.on('value', function (snapshot) {
