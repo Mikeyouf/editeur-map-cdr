@@ -13,9 +13,10 @@ window.onload = function () {
             }, 15);
     }
 
-    window.addEventListener("scroll", function(event){
+    window.addEventListener("scroll", function(){
         let mesureDeBase = 0;
         let windowY = window.pageYOffset;
+        console.log(`1/  mesureDeBase: ${mesureDeBase} - windowY: ${windowY} - boleanScroll: ${boleanScroll}`);
         if(mesureDeBase !== windowY) {
             boleanScroll = false;
             boleanScrollRu = false;
@@ -27,7 +28,7 @@ window.onload = function () {
         }
         mesureDeBase = windowY;
 
-        console.log(`mesureDeBase: ${mesureDeBase} - windowY: ${windowY} - boleanScroll: ${boleanScroll}`);
+        console.log(`2/ mesureDeBase: ${mesureDeBase} - windowY: ${windowY} - boleanScroll: ${boleanScroll}`);
     });
 
     // DATE
