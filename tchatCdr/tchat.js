@@ -12,6 +12,7 @@ window.onload = function () {
         console.log("scroll vers le haut");
     }
     lastScrollTop = st;
+    console.log(chatZone.scrollHeight, lastScrollTop);
     });
 
     let boleanScroll = true;
