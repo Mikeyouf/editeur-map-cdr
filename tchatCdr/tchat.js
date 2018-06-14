@@ -1,20 +1,5 @@
 window.onload = function () {
     //TEST SCROLL
-    const chatZone = document.querySelector(".messages");
-    // chatZone.scrollTop = chatZone.scrollHeight;
-    const eltScroll = document.body;
-    let lastScrollTop = eltScroll.scrollTop;
-    window.addEventListener("scroll", function(event){
-    let st = chatZone.scrollHeight;
-    if (st > lastScrollTop){
-        console.log("scroll vers le bas");
-    } else {
-        console.log("scroll vers le haut");
-    }
-    // lastScrollTop = st;
-    console.log(chatZone.scrollHeight, lastScrollTop);
-    });
-
     let boleanScroll = true;
     let boleanScrollRu = true;
     let boleanScrollFr = true;
@@ -26,10 +11,22 @@ window.onload = function () {
                     window.scrollBy(0, scrollStep);
                 } else clearInterval(scrollInterval);
             }, 15);
+    }
+
+    window.addEventListener("scroll", function(event){
+        let mesureDeBase = 0;
+        let windowY = window.pageYOffset;
+        if(mesureDeBase !== windowY) {
+            boleanScroll = false;
+            boleanScrollRu = false;
+            boleanScrollFr = false;
+        } else {
             boleanScroll = true;
             boleanScrollRu = true;
             boleanScrollFr = true;
-    }
+        }
+        mesureDeBase = windowY;
+    });
 
     // DATE
     // les noms de jours / mois
@@ -178,7 +175,6 @@ window.onload = function () {
             window.focus();
             if(boleanScroll) {
                 scrollToTop(2500);
-                boleanScroll = false;
             }
 
         });
