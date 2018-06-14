@@ -1,9 +1,11 @@
 window.onload = function () {
     //TEST SCROLL
+    const chatZone = document.querySelector(".messages");
+    // chatZone.scrollTop = chatZone.scrollHeight;
 
-    var lastScrollTop = 0;
-    window.scroll(function(event){
-    var st = scrollTop();
+    let lastScrollTop = 0;
+    window.onScroll(function(event){
+    let st = chatZone.scrollTop;
     if (st > lastScrollTop){
         console.log("scroll vers le bas");
     } else {
@@ -275,8 +277,7 @@ window.onload = function () {
                 scrollToTop(2500);
                 boleanScrollRu = false;
             }
-            // const chatZone = document.querySelector(".messages");
-            // chatZone.scrollTop = chatZone.scrollHeight;
+
         });
 
         //suppression des anciens messages
