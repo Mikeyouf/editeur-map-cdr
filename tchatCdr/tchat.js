@@ -26,6 +26,8 @@ window.onload = function () {
             boleanScrollFr = true;
         }
         mesureDeBase = windowY;
+
+        console.log(`mesureDeBase: ${mesureDeBase} - windowY: ${windowY} - boleanScroll: ${boleanScroll}`);
     });
 
     // DATE
