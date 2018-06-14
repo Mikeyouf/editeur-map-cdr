@@ -1,5 +1,5 @@
 window.onload = function () {
-    //scroll to down
+    // //scroll to down
     // function scrollToTop(scrollDuration) {
     //     var scrollStep = window.scrollY / (scrollDuration / 15),
     //         scrollInterval = setInterval(function () {
@@ -118,7 +118,7 @@ window.onload = function () {
         //on vide l'input
         textArea.value = "";
         textArea.style.focus = "auto";
-        scrollToTop(2500);
+        // scrollToTop(2500);
     });
 
     const listenMessages = firebase.database().ref('messages');
@@ -145,8 +145,7 @@ window.onload = function () {
             </div>
             `;
 
-            const chatZone = document.querySelector(".messages");
-            chatZone.scrollTop = chatZone.scrollHeight;
+            
 
             const ulEltMessage = document.getElementById('listeMessage');
             ulEltMessage.appendChild(liElt);
@@ -158,7 +157,9 @@ window.onload = function () {
             // );
 
             window.focus();
-            scrollToTop(2500);
+            // scrollToTop(2500);
+            const chatZone = document.querySelector(".messages");
+            chatZone.scrollTop = chatZone.scrollHeight;
         });
 
         //suppression des anciens messages
@@ -219,7 +220,7 @@ window.onload = function () {
         //on vide l'input
         textAreaRu.value = "";
         textAreaRu.style.focus = "auto";
-        scrollToTop(2500);
+        // scrollToTop(2500);
     });
 
     const listenMessagesRu = firebase.database().ref('messagesRu');
@@ -245,8 +246,7 @@ window.onload = function () {
             const ulEltMessage = document.getElementById('listeMessageRu');
             ulEltMessage.appendChild(liElt);
 
-            const chatZone = document.querySelector(".messages");
-            chatZone.scrollTop = chatZone.scrollHeight;
+            
 
             //supprime au delà d'un certain nombre de messages
             const divMessageEntier = document.querySelectorAll(".message");
@@ -255,7 +255,9 @@ window.onload = function () {
             );
 
             window.focus();
-            scrollToTop(2500);
+            // scrollToTop(2500);
+            const chatZone = document.querySelector(".messages");
+            chatZone.scrollTop = chatZone.scrollHeight;
         });
 
         //suppression des anciens messages
@@ -317,7 +319,7 @@ window.onload = function () {
         //on vide l'input
         textAreaFr.value = "";
         textAreaFr.style.focus = "auto";
-        scrollToTop(2500);
+        // scrollToTop(2500);
     });
 
     const listenMessagesFr = firebase.database().ref('messagesFr');
@@ -343,8 +345,7 @@ window.onload = function () {
             const ulEltMessage = document.getElementById('listeMessageFr');
             ulEltMessage.appendChild(liElt);
 
-            const chatZone = document.querySelector(".messages");
-            chatZone.scrollTop = chatZone.scrollHeight;
+            
 
             //supprime au delà d'un certain nombre de messages
             const divMessageEntier = document.querySelectorAll(".message");
@@ -353,7 +354,9 @@ window.onload = function () {
             );
 
             window.focus();
-            scrollToTop(2500);
+            // scrollToTop(2500);
+            const chatZone = document.querySelector(".messages");
+            chatZone.scrollTop = chatZone.scrollHeight;
         });
 
         //suppression des anciens messages
