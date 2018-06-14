@@ -1,14 +1,13 @@
 window.onload = function () {
-    // //scroll to down
-    // function scrollToTop(scrollDuration) {
-    //     var scrollStep = window.scrollY / (scrollDuration / 15),
-    //         scrollInterval = setInterval(function () {
-    //             if (window.scrollY != 0) {
-    //                 window.scrollBy(0, scrollStep);
-    //             } else clearInterval(scrollInterval);
-    //         }, 15);
-    // }
-
+    //scroll to down
+    function scrollToTop(scrollDuration) {
+        var scrollStep = window.scrollY / (scrollDuration / 15),
+            scrollInterval = setInterval(function () {
+                if (window.scrollY != 0) {
+                    window.scrollBy(0, scrollStep);
+                } else clearInterval(scrollInterval);
+            }, 15);
+    }
 
     // DATE
     // les noms de jours / mois
@@ -93,7 +92,7 @@ window.onload = function () {
     const boutonEnvoyer = document.querySelector("#boutonEnvoyerMain");
     const textArea = document.querySelector("#inputMessageElt");
     textArea.addEventListener("keyup", function () {
-        boutonEnvoyer.disabled = textArea.value.length > 120 ? true : false;
+        boutonEnvoyer.disabled = textArea.value.length > 140 ? true : false;
     });
 
     //envoyer le message dans la div message
@@ -157,9 +156,9 @@ window.onload = function () {
             // );
 
             window.focus();
-            // scrollToTop(2500);
-            const chatZone = document.querySelector(".messages");
-            chatZone.scrollTop = chatZone.scrollHeight;
+            scrollToTop(2500);
+            // const chatZone = document.querySelector(".messages");
+            // chatZone.scrollTop = chatZone.scrollHeight;
         });
 
         //suppression des anciens messages
@@ -168,7 +167,7 @@ window.onload = function () {
             if (!messages) {
                 return
             }
-            if (Object.keys(messages).length > 20) {
+            if (Object.keys(messages).length > 25) {
                 const query = listenMessages.orderByChild('messages').limitToFirst(5);
                 const updates = {};
                 query.on('value', function (snapshot) {
