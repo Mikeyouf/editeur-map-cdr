@@ -11,7 +11,7 @@ window.onload = function () {
     } else {
         console.log("scroll vers le haut");
     }
-    lastScrollTop = st;
+    // lastScrollTop = st;
     console.log(chatZone.scrollHeight, lastScrollTop);
     });
 
