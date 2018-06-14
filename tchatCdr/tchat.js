@@ -115,18 +115,10 @@ window.onload = function () {
                 nation: `${nation}`
             });
         }
-        if(boleanScroll) {
-            scrollToTop(2500);
-            boleanScroll = false;
-        }
-        if(!boleanScroll) {
-            boleanScroll = true;
-        }
         
         //on vide l'input
         textArea.value = "";
         textArea.style.focus = "auto";
-        // scrollToTop(2500);
         
     });
 
@@ -164,9 +156,17 @@ window.onload = function () {
             );
 
             window.focus();
+
+            if(boleanScroll) {
+                scrollToTop(2500);
+                boleanScroll = false;
+            }
             
-            // const chatZone = document.querySelector(".messages");
-            // chatZone.scrollTop = chatZone.scrollHeight;
+            const chatZone = document.querySelector(".messages");
+            if(chatZone.scrollTop == chatZone.scrollHeight) {
+                boleanScroll = true;
+            }
+            console.log(boleanScroll);
         });
 
         //suppression des anciens messages
