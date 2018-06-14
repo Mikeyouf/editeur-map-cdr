@@ -5,10 +5,12 @@ window.onload = function () {
             scrollInterval = setInterval(function () {
                 if (window.scrollY != 0) {
                     window.scrollBy(0, scrollStep);
-                } else {
-                    clearInterval(scrollInterval)
-                };
-            }, 80);
+                } 
+                //else {
+                //     clearInterval(scrollInterval)
+                // };
+            }, 60);
+            clearInterval(scrollInterval)
     }
 
     // DATE
