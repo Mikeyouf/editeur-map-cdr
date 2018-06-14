@@ -10,10 +10,13 @@ window.onload = function () {
                 //     clearInterval(scrollInterval)
                 // };
             }, 60);
-            var stopScroll = setInterval(function() {
-                clearInterval(scrollInterval);
-            }, 60);
-            clearInterval(stopScroll);
+            let i = 60;
+            while(i > 0) {
+                i--;
+                if(i == 0) {
+                    clearInterval(scrollInterval)
+                }
+            }
     }
 
     // DATE
