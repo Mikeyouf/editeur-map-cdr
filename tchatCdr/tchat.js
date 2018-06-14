@@ -117,7 +117,7 @@ window.onload = function () {
         //on vide l'input
         textArea.value = "";
         textArea.style.focus = "auto";
-        scrollToTop(2500);
+        // scrollToTop(2500);
     });
 
     const listenMessages = firebase.database().ref('messages');
@@ -313,7 +313,7 @@ window.onload = function () {
         //on vide l'input
         textAreaFr.value = "";
         textAreaFr.style.focus = "auto";
-        scrollToTop(2500);
+        // scrollToTop(2500);
     });
 
     const listenMessagesFr = firebase.database().ref('messagesFr');
