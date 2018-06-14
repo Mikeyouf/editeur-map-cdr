@@ -167,7 +167,7 @@ window.onload = function () {
             if (!messages) {
                 return
             }
-            if (Object.keys(messages).length > 25) {
+            if (Object.keys(messages).length > 20) {
                 const query = listenMessages.orderByChild('messages').limitToFirst(5);
                 const updates = {};
                 query.on('value', function (snapshot) {
