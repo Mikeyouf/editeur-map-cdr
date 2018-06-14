@@ -4,7 +4,7 @@ window.onload = function () {
     // chatZone.scrollTop = chatZone.scrollHeight;
 
     let lastScrollTop = 0;
-    window.scroll(function(event){
+    window.addEventListener("scroll", function(event){
     let st = chatZone.scrollTop;
     if (st > lastScrollTop){
         console.log("scroll vers le bas");
