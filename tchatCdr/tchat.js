@@ -115,7 +115,7 @@ window.onload = function () {
                 nation: `${nation}`
             });
         }
-        
+        boleanScroll = true;
         //on vide l'input
         textArea.value = "";
         textArea.style.focus = "auto";
@@ -160,8 +160,6 @@ window.onload = function () {
                 scrollToTop(2500);
                 boleanScroll = false;
             }
-
-            boleanScroll = true;
             
             // const chatZone = document.querySelector(".messages");
             // chatZone.scrollTop = chatZone.scrollHeight;
@@ -221,7 +219,7 @@ window.onload = function () {
                 nation: `${nation}`
             });
         }
-        
+        boleanScroll = true;
         //on vide l'input
         textAreaRu.value = "";
         textAreaRu.style.focus = "auto";
@@ -262,8 +260,6 @@ window.onload = function () {
                 scrollToTop(2500);
                 boleanScroll = false;
             }
-
-            boleanScroll = true;
             // const chatZone = document.querySelector(".messages");
             // chatZone.scrollTop = chatZone.scrollHeight;
         });
@@ -322,7 +318,7 @@ window.onload = function () {
                 nation: `${nation}`
             });
         }
-        
+        boleanScroll = true;
         //on vide l'input
         textAreaFr.value = "";
         textAreaFr.style.focus = "auto";
@@ -363,8 +359,6 @@ window.onload = function () {
                 scrollToTop(2500);
                 boleanScroll = false;
             }
-
-            boleanScroll = true;
             // const chatZone = document.querySelector(".messages");
             // chatZone.scrollTop = chatZone.scrollHeight;
         });
