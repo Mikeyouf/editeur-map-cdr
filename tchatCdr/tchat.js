@@ -1,5 +1,17 @@
 window.onload = function () {
     //TEST SCROLL
+
+    var lastScrollTop = 0;
+    window.scroll(function(event){
+    var st = $(this).scrollTop();
+    if (st > lastScrollTop){
+        console.log("scroll vers le bas");
+    } else {
+        console.log("scroll vers le haut");
+    }
+    lastScrollTop = st;
+    });
+    
     let boleanScroll = true;
     let boleanScrollRu = true;
     let boleanScrollFr = true;
