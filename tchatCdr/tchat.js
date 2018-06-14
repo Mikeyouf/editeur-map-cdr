@@ -1,8 +1,5 @@
 window.onload = function () {
-    //TEST SCROLL
-    let boleanScroll = true;
-    let boleanScrollRu = true;
-    let boleanScrollFr = true;
+
     //scroll to down
     function scrollToTop(scrollDuration) {
         var scrollStep = window.scrollY / (scrollDuration / 15),
@@ -12,25 +9,6 @@ window.onload = function () {
                 } else clearInterval(scrollInterval);
             }, 15);
     }
-
-    window.addEventListener("scroll", function(){
-        let mesureDeBase = 0;
-        let windowY = window.pageYOffset;
-        console.log(`1/  mesureDeBase: ${mesureDeBase} - windowY: ${windowY} - boleanScroll: ${boleanScroll}`);
-        if(mesureDeBase !== windowY) {
-            boleanScroll = false;
-            boleanScrollRu = false;
-            boleanScrollFr = false;
-            mesureDeBase = windowY;
-        } else {
-            boleanScroll = true;
-            boleanScrollRu = true;
-            boleanScrollFr = true;
-        }
-        
-
-        console.log(`2/ mesureDeBase: ${mesureDeBase} - windowY: ${windowY} - boleanScroll: ${boleanScroll}`);
-    });
 
     // DATE
     // les noms de jours / mois
@@ -177,9 +155,7 @@ window.onload = function () {
             );
 
             window.focus();
-            if(boleanScroll) {
-                scrollToTop(2500);
-            }
+            scrollToTop(2500);
 
         });
 
@@ -274,11 +250,8 @@ window.onload = function () {
             );
 
             window.focus();
-            if(boleanScrollRu) {
-                scrollToTop(2500);
-                boleanScrollRu = false;
-            }
-
+            scrollToTop(2500);
+            
         });
 
         //suppression des anciens messages
@@ -371,12 +344,7 @@ window.onload = function () {
             );
 
             window.focus();
-            if(boleanScrollFr) {
-                scrollToTop(2500);
-                boleanScrollFr = false;
-            }
-            // const chatZone = document.querySelector(".messages");
-            // chatZone.scrollTop = chatZone.scrollHeight;
+            scrollToTop(2500);
         });
 
         //suppression des anciens messages
