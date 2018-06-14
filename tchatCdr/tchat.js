@@ -9,10 +9,7 @@ window.onload = function () {
                     window.scrollBy(0, scrollStep);
                 } else clearInterval(scrollInterval);
             }, 15);
-            const chatZone = document.querySelector(".messages");
-            if(chatZone.scrollTop == chatZone.scrollHeight) {
-                boleanScroll = true;
-            }
+            boleanScroll = true;
     }
 
     // DATE
