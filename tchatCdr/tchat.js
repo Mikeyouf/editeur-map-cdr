@@ -119,12 +119,15 @@ window.onload = function () {
             scrollToTop(2500);
             boleanScroll = false;
         }
+        if(!boleanScroll) {
+            boleanScroll = true;
+        }
         
         //on vide l'input
         textArea.value = "";
         textArea.style.focus = "auto";
         // scrollToTop(2500);
-        boleanScroll = true;
+        
     });
 
     const listenMessages = firebase.database().ref('messages');
