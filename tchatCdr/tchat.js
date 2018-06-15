@@ -268,7 +268,7 @@ window.onload = function () {
                 query.on('value', function (snapshot) {
                     snapshot.forEach(child => updates[child.key] = null);
                 });
-                return listenMessages.update(updates);
+                return listenMessagesRu.update(updates);
             }
         });
 
@@ -361,7 +361,7 @@ window.onload = function () {
                 query.on('value', function (snapshot) {
                     snapshot.forEach(child => updates[child.key] = null);
                 });
-                return listenMessages.update(updates);
+                return listenMessagesFr.update(updates);
             }
         });
 
