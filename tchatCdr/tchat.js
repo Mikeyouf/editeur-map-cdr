@@ -1,16 +1,16 @@
 window.onload = function () {
-    //scroll to down
-    function scrollToTop(scrollDuration) {
-        var scrollStep = window.scrollY / (scrollDuration / 15),
-            scrollInterval = setInterval(function () {
-                if (window.scrollY != 0) {
-                    window.scrollBy(0, scrollStep);
-                } 
-                else {
-                    clearInterval(scrollInterval)
-                };
-            }, 60);
-    }
+    // //scroll to down
+    // function scrollToTop(scrollDuration) {
+    //     var scrollStep = window.scrollY / (scrollDuration / 15),
+    //         scrollInterval = setInterval(function () {
+    //             if (window.scrollY != 0) {
+    //                 window.scrollBy(0, scrollStep);
+    //             } 
+    //             else {
+    //                 clearInterval(scrollInterval)
+    //             };
+    //         }, 60);
+    // }
 
     // DATE
     // les noms de jours / mois
@@ -157,7 +157,7 @@ window.onload = function () {
             );
 
             window.focus();
-            scrollToTop(2500);
+            // scrollToTop(2500);
 
         });
 
@@ -252,7 +252,7 @@ window.onload = function () {
             );
 
             window.focus();
-            scrollToTop(2500);
+            // scrollToTop(2500);
             
         });
 
@@ -346,7 +346,7 @@ window.onload = function () {
             );
 
             window.focus();
-            scrollToTop(2500);
+            // scrollToTop(2500);
         });
 
         //suppression des anciens messages
