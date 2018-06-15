@@ -194,7 +194,7 @@ window.onload = function () {
     const boutonEnvoyerRu = document.querySelector("#boutonEnvoyerRu");
     const textAreaRu = document.querySelector("#inputMessageEltRu");
     textAreaRu.addEventListener("keyup", function () {
-        boutonEnvoyerRu.disabled = textAreaRu.value.length > 120 ? true : false;
+        boutonEnvoyerRu.disabled = textAreaRu.value.length > 140 ? true : false;
     });
 
     //envoyer le message dans la div message
@@ -263,7 +263,7 @@ window.onload = function () {
                 return
             }
             if (Object.keys(messages).length > 25) {
-                const query = listenMessages.orderByChild('messagesRu').limitToFirst(5);
+                const query = listenMessagesRu.orderByChild('messagesRu').limitToFirst(5);
                 const updates = {};
                 query.on('value', function (snapshot) {
                     snapshot.forEach(child => updates[child.key] = null);
@@ -356,7 +356,7 @@ window.onload = function () {
                 return
             }
             if (Object.keys(messages).length > 25) {
-                const query = listenMessages.orderByChild('messagesFr').limitToFirst(5);
+                const query = listenMessagesFr.orderByChild('messagesFr').limitToFirst(5);
                 const updates = {};
                 query.on('value', function (snapshot) {
                     snapshot.forEach(child => updates[child.key] = null);
